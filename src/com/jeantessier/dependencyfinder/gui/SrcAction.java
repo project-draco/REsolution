@@ -154,7 +154,7 @@ public class SrcAction extends AbstractAction implements Runnable {
 			 }else {
 				 for (File file : chooser.getSelectedFiles()) {
 		            	
-	            	 allSrcPaths.add(file.getAbsolutePath()+"\\");
+	            	 allSrcPaths.add(file.getAbsolutePath()+File.separator);
 	             }
 	             new Thread(this).start();
 			}

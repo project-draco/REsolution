@@ -162,7 +162,7 @@ public class FileViewer {
 	 */
 	private static String getClassName(String javaFilePath)
 	{
-		return javaFilePath.substring(javaFilePath.lastIndexOf("\\")+1,javaFilePath.length()-5);
+		return javaFilePath.substring(javaFilePath.lastIndexOf(File.separator)+1,javaFilePath.length()-5);
 	}
 	
 	/**
