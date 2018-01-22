@@ -54,7 +54,7 @@ import com.neu.utils.service.ButtonStyle;
 
 public class TreeAction extends AbstractAction implements Runnable{
 	
-	//ÁªÍ¨Æ¬
+	//è”é€šç‰‡
 	public static boolean flag = false;
 	
 	private REsolution model;
@@ -95,7 +95,7 @@ public class TreeAction extends AbstractAction implements Runnable{
 
 	private JPanel buildOptionPanel() {
 		JPanel jPanel = model.getTreeCheckjPanel();
-		//×¼±¸Êı¾İ
+		//å‡†å¤‡æ•°æ®
 		ArrayList<ArrayList<ArrayList<extend>>> treeList = null;
 		try {
 			treeList = getTreeData();
@@ -105,7 +105,7 @@ public class TreeAction extends AbstractAction implements Runnable{
 					"system tips", JOptionPane.YES_OPTION, JOptionPane.INFORMATION_MESSAGE);
 		}
 
-//		 ´´½¨checkboxLIst
+//		 åˆ›å»ºcheckboxLIst
 		List<JCheckBox> checkBoxList = model.getTreeCheckBoxList();
 		List<JButton> buttonList = model.getTreeButtonList();
 		
@@ -154,7 +154,7 @@ public class TreeAction extends AbstractAction implements Runnable{
 				buttonList.add(detailButton);
 			}
 			
-			// Ìí¼Óµ½Ãæ°åÖĞ
+			// æ·»åŠ åˆ°é¢æ¿ä¸­
 
 			GridBagPanel checkPanel = new GridBagPanel();
 			for (int i = 0; i < checkBoxList.size(); i++) {
@@ -182,7 +182,7 @@ public class TreeAction extends AbstractAction implements Runnable{
 		
 		RefactorInheritance.levels =  RefactorInheritance.getInheritanceTreelevels(preprocessing.extendsMatrix.clone());
 		RefactorInheritance.levels =  RefactorInheritance.getinterfaces(RefactorInheritance.levels);
-		RefactorInheritance.levels =  RefactorInheritance.getTreesBeforeRefactoring(RefactorInheritance.levels);//ÖØ¹¹Ç°µÄ¼Ì³ĞÊ÷½á¹¹
+		RefactorInheritance.levels =  RefactorInheritance.getTreesBeforeRefactoring(RefactorInheritance.levels);//é‡æ„å‰çš„ç»§æ‰¿æ ‘ç»“æ„
 //		RefactorInheritance.PrintTrees(RefactorInheritance.levels);
 		return RefactorInheritance.levels;
 	}
@@ -200,7 +200,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	
 	public ControlTreeListener(REsolution model,ArrayList<ArrayList<ArrayList<extend>>> treeBoxList){
 		this.model = model;
-		//×¼±¸Êı¾İ
+		//å‡†å¤‡æ•°æ®
 		this.treeBoxList = treeBoxList;
 				
 	}
@@ -226,7 +226,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
-		if (e.getClickCount()==2) {//¶ÔË«»÷ÊÂ¼ş½øĞĞÏàÓ¦£¬²¢ÇÒÈ¡µÃ±»Ë«»÷µÄcheckboxµÄË÷Òı
+		if (e.getClickCount()==2) {//å¯¹åŒå‡»äº‹ä»¶è¿›è¡Œç›¸åº”ï¼Œå¹¶ä¸”å–å¾—è¢«åŒå‡»çš„checkboxçš„ç´¢å¼•
 			
 			JCheckBox box = (JCheckBox)e.getComponent();
 			int index = Integer.parseInt(box.getText().split("_")[1]);
@@ -237,7 +237,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	
 	
 	/**
-	 * ¹¹½¨·Ö½â¼Ì³ĞÊ÷Ãæ°å
+	 * æ„å»ºåˆ†è§£ç»§æ‰¿æ ‘é¢æ¿
 	 * @param buttionIndex
 	 */
 	private void buildSplitTreePanel(int buttionIndex) {
@@ -261,7 +261,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 
 	
 	/**
-	 * ¹¹½¨Ô­Ê¼¼Ì³ĞÊ÷Ãæ°åµÄÖĞĞÄÃæ°å
+	 * æ„å»ºåŸå§‹ç»§æ‰¿æ ‘é¢æ¿çš„ä¸­å¿ƒé¢æ¿
 	 * @param compoentIndex
 	 */
 	public void buildInheritTreePanel(int compoentIndex){
@@ -296,7 +296,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 
 	/**
-	 * ¹¹½¨Ô­Ê¼¼Ì³ĞÊ÷Ãæ°åµÄÖĞĞÄÃæ°å
+	 * æ„å»ºåŸå§‹ç»§æ‰¿æ ‘é¢æ¿çš„ä¸­å¿ƒé¢æ¿
 	 * @param compoentIndex
 	 * @return
 	 */
@@ -318,7 +318,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 
 	/**
-	 * µÃµ½ËùÑ¡ÔñµÄ¼Ì³ĞÊ÷µÄË÷Òı
+	 * å¾—åˆ°æ‰€é€‰æ‹©çš„ç»§æ‰¿æ ‘çš„ç´¢å¼•
 	 * @param compoentIndex
 	 * @return
 	 */
@@ -341,7 +341,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 
 	/**
-	 * ¹é²¢¹ÂÁ¢½Úµãµ½µÚÒ»¿ÃÊ÷ÖĞ
+	 * å½’å¹¶å­¤ç«‹èŠ‚ç‚¹åˆ°ç¬¬ä¸€æ£µæ ‘ä¸­
 	 * @param levelSplit
 	 * @return
 	 */
@@ -365,9 +365,9 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 
 	/**
-	 * ½«·Ö½âµÄ×ÓÊ÷Ìí¼Óµ½Ô­À´µÄÊ÷
-	 * @param fatherTree ¸¸Ê÷
-	 * @param tree ĞèÒª±»¼ì²éµÄ×ÓÊ÷
+	 * å°†åˆ†è§£çš„å­æ ‘æ·»åŠ åˆ°åŸæ¥çš„æ ‘
+	 * @param fatherTree çˆ¶æ ‘
+	 * @param tree éœ€è¦è¢«æ£€æŸ¥çš„å­æ ‘
 	 */
 	private void addToRootTree(List<ArrayList<extend>> fatherTree,
 			ArrayList<ArrayList<extend>> tree) {
@@ -399,11 +399,11 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 
 	/**
-	 * µÃµ½¸¸½ÚµãËùÔÚµÄÎ»ÖÃ
+	 * å¾—åˆ°çˆ¶èŠ‚ç‚¹æ‰€åœ¨çš„ä½ç½®
 	 * 
 	 * @param str
 	 * @param newTree
-	 * @return indexs[0] ²ãÊı £¬indexs[1] ÁĞÊı
+	 * @return indexs[0] å±‚æ•° ï¼Œindexs[1] åˆ—æ•°
 	 */
 	private int[] getLevelCount(String str, List<ArrayList<extend>> fatherTree) {
 
@@ -425,7 +425,7 @@ class ControlTreeListener extends MouseAdapter implements ActionListener{
 	}
 	
 	/**
-	 * ²åÈë¹ÂÁ¢½Úµã
+	 * æ’å…¥å­¤ç«‹èŠ‚ç‚¹
 	 * @param rootTree
 	 * @param levelCount
 	 * @param ext

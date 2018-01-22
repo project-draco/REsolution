@@ -49,7 +49,7 @@ public class SourceParser {
 		
 	}
 	/**
-	 * ÅĞ¶Ï¸ÃÊôĞÔÊÇ²»ÊÇ±¾ÏµÍ³ÖĞµÄ
+	 * åˆ¤æ–­è¯¥å±æ€§æ˜¯ä¸æ˜¯æœ¬ç³»ç»Ÿä¸­çš„
 	 */
 	public static boolean judgeFeatureifthisSystem(String featurename, ArrayList<String> classname) {
 		boolean same = false;
@@ -58,8 +58,8 @@ public class SourceParser {
 			if (featurename.contains("(") && featurename.contains(")")) {
 				String str0[] = {};
 				int a = featurename.indexOf("(");
-				String feature_outfeaturenametemp = featurename.substring(0, a); // ÏÈÈ¥À¨ºÅ
-				str0 = feature_outfeaturenametemp.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+				String feature_outfeaturenametemp = featurename.substring(0, a); // å…ˆå»æ‹¬å·
+				str0 = feature_outfeaturenametemp.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 				if (str0.length > 2) {
 					feature_outfeaturename = str0[0] + ".";
 					for (int i = 1; i < str0.length - 2; i++) {
@@ -74,8 +74,8 @@ public class SourceParser {
 				String str0[] = {};
 				featurename = featurename.replaceAll(" ", "");
 				int a = featurename.indexOf("{");
-				String feature_outfeaturenametemp = featurename.substring(0, a); // ÏÈÈ¥À¨ºÅ
-				str0 = feature_outfeaturenametemp.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+				String feature_outfeaturenametemp = featurename.substring(0, a); // å…ˆå»æ‹¬å·
+				str0 = feature_outfeaturenametemp.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 				if (str0.length > 2) {
 					feature_outfeaturename = str0[0] + ".";
 					for (int i = 1; i < str0.length - 2; i++) {
@@ -99,11 +99,11 @@ public class SourceParser {
 					same = true;
 				}
 
-		} else {// ²»°üº¬À¨ºÅ
+		} else {// ä¸åŒ…å«æ‹¬å·
 			
 			String str0[] = {};
 			String feature_outfeaturename = featurename;
-			str0 = feature_outfeaturename.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+			str0 = feature_outfeaturename.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 			if (str0.length > 2) {
 				feature_outfeaturename = str0[0] + ".";
 				for (int i = 1; i < str0.length - 2; i++) {
@@ -150,8 +150,8 @@ public class SourceParser {
 			if (featurename.contains("(") && featurename.contains(")")) {
 				String str0[] = {};
 				int a = featurename.indexOf("(");
-				String feature_outfeaturenametemp = featurename.substring(0, a); // ÏÈÈ¥À¨ºÅ
-				str0 = feature_outfeaturenametemp.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+				String feature_outfeaturenametemp = featurename.substring(0, a); // å…ˆå»æ‹¬å·
+				str0 = feature_outfeaturenametemp.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 
 				if (str0.length > 2) {
 					feature_outfeaturename = str0[0] + ".";
@@ -169,8 +169,8 @@ public class SourceParser {
 				String str0[] = {};
 				featurename = featurename.replaceAll(" ", "");
 				int a = featurename.indexOf("{");
-				String feature_outfeaturenametemp = featurename.substring(0, a); // ÏÈÈ¥À¨ºÅ
-				str0 = feature_outfeaturenametemp.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+				String feature_outfeaturenametemp = featurename.substring(0, a); // å…ˆå»æ‹¬å·
+				str0 = feature_outfeaturenametemp.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 				
 				if (str0.length > 2) {
 					feature_outfeaturename = str0[0] + ".";
@@ -203,10 +203,10 @@ public class SourceParser {
 				feature_outfeaturenamelast = feature_outfeaturename;
 			}
 
-		} else {// ²»°üº¬À¨ºÅ
+		} else {// ä¸åŒ…å«æ‹¬å·
 			String str0[] = {};
 			String feature_outfeaturename = featurename;
-			str0 = feature_outfeaturename.toString().split("\\."); // ÔÙÈ¡×îºóÒ»¸ö.Ö®Ç°µÄ×Ö·û´®£¬¼´ÀàÃû
+			str0 = feature_outfeaturename.toString().split("\\."); // å†å–æœ€åä¸€ä¸ª.ä¹‹å‰çš„å­—ç¬¦ä¸²ï¼Œå³ç±»å
 			if (str0.length > 2) {
 				feature_outfeaturename = str0[0] + ".";
 				for (int i = 1; i < str0.length - 2; i++) {
@@ -243,7 +243,7 @@ public class SourceParser {
 
 	
 	public static String getonlyclassname(String ss) {
-		// ÊäÈëµÄwaitjudgeÊÇÀàÃû
+		// è¾“å…¥çš„waitjudgeæ˜¯ç±»å
 
 		if (ss.contains("$0") || ss.contains("$1") || ss.contains("$2") || ss.contains("$3") || ss.contains("$4") || ss.contains("$5") || ss.contains("$6") || ss.contains("$7") || ss.contains("$8") || ss.contains("$9")) {
 			int a = ss.indexOf("$");
@@ -254,7 +254,7 @@ public class SourceParser {
 	}
 	
 	
-	public static String methodonlyname(String filename) {// ´ø
+	public static String methodonlyname(String filename) {// å¸¦
 
 		if (filename.contains(" ")) {
 			filename = filename.replaceAll(" ", "");
@@ -283,7 +283,7 @@ public class SourceParser {
 	
 	
 	public static String ShortTablemethodonlyname(String filename) {
-		//System.out.println("º¯Êı==="+filename);
+		//System.out.println("å‡½æ•°==="+filename);
 		String classname = SourceParser.Getonlyclassname(filename);
 		String str4[] = new String[2];
 		str4 = filename.split(classname);
@@ -320,13 +320,13 @@ public class SourceParser {
 		   filename = methodfirst;
 		 //  System.out.println("!!!!!!!!filename==="+filename);
 		}
-		return filename;// ´ø
+		return filename;// å¸¦
 		
 	}
 	
 	
 	
-	public static String Shortmethodonlyname(String filename) {// ´ø
+	public static String Shortmethodonlyname(String filename) {// å¸¦
 
 		if (filename.contains(" ")) {
 			filename = filename.replaceAll(" ", "");
@@ -359,7 +359,7 @@ public class SourceParser {
 	
 	
 	/*
-	 * Êä³ölog
+	 * è¾“å‡ºlog
 	 */
 	public static void printlogsSpecial(Map <String, ClassObject> classesMap1)
 			throws SAXException, IOException, MWException {
@@ -443,7 +443,7 @@ public class SourceParser {
 	
 	
 	/*
-	 * Êä³ölog
+	 * è¾“å‡ºlog
 	 */
 	public static void printlogs1(Map <String, ClassObject> classesMap1)
 			throws IOException{

@@ -35,7 +35,7 @@ import org.apache.log4j.Logger;
 import com.neu.utils.service.RemoveComments;
 
 /**
- * ¶ÁÈ¡Ä¿Â¼¼°×ÓÄ¿Â¼ÏÂÖ¸¶¨ÎÄ¼şÃûµÄÂ·¾¶, ·µ»ØÒ»¸öList
+ * è¯»å–ç›®å½•åŠå­ç›®å½•ä¸‹æŒ‡å®šæ–‡ä»¶åçš„è·¯å¾„, è¿”å›ä¸€ä¸ªList
  */
 
 public class FileViewer {
@@ -56,11 +56,11 @@ public class FileViewer {
 	
 	/**
 	 * @param path
-	 *            ÎÄ¼şÂ·¾¶
+	 *            æ–‡ä»¶è·¯å¾„
 	 * @param suffix
-	 *            ºó×ºÃû, Îª¿ÕÔò±íÊ¾ËùÓĞÎÄ¼ş
+	 *            åç¼€å, ä¸ºç©ºåˆ™è¡¨ç¤ºæ‰€æœ‰æ–‡ä»¶
 	 * @param isdepth
-	 *            ÊÇ·ñ±éÀú×ÓÄ¿Â¼
+	 *            æ˜¯å¦éå†å­ç›®å½•
 	 * @return list
 	 */
 	public static List<String> getListFiles(String path, String suffix,
@@ -73,7 +73,7 @@ public class FileViewer {
 
 	private static List<String> listFile(List<String> lstFileNames, File f,
 			String suffix, boolean isdepth) {
-		// ÈôÊÇÄ¿Â¼, ²ÉÓÃµİ¹éµÄ·½·¨±éÀú×ÓÄ¿Â¼
+		// è‹¥æ˜¯ç›®å½•, é‡‡ç”¨é€’å½’çš„æ–¹æ³•éå†å­ç›®å½•
 		if (f.isDirectory()) {
 			File[] t = f.listFiles();
 
@@ -85,7 +85,7 @@ public class FileViewer {
 		} else {
 			String filePath = f.getAbsolutePath();
 			if (!suffix.equals("")) {
-				int begIndex = filePath.lastIndexOf("."); // ×îºóÒ»¸ö.(¼´ºó×ºÃûÇ°ÃæµÄ.)µÄË÷Òı
+				int begIndex = filePath.lastIndexOf("."); // æœ€åä¸€ä¸ª.(å³åç¼€åå‰é¢çš„.)çš„ç´¢å¼•
 				String tempsuffix = "";
 
 				if (begIndex != -1) {
@@ -135,14 +135,14 @@ public class FileViewer {
 			temp = getPackageName(text);
 
 		} catch (IOException e) {
-			// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+			// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 			e.printStackTrace();
 		} finally {
 			if (br != null)
 				try {
 					br.close();
 				} catch (IOException e) {
-					// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+					// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 					e.printStackTrace();
 				}
 		}

@@ -68,14 +68,14 @@ public class beforeallmetrics {
 		bm.LCOMavg = LCOM/(double)rm.classnameListmerge.size();
 		bm.mpcavg = mpc/(double)rm.classnameListmerge.size();
 		
-//		System.out.println("  �ع�ǰ bm.CBO=="+bm.CBO );
-//		System.out.println("  �ع�ǰ bm.Connectivity=="+bm.Connectivity );
-//		System.out.println("  �ع�ǰ bm.LCOM=="+bm.LCOM );
-//		System.out.println("  �ع�ǰ bm.mpc=="+bm.mpc );
-//		System.out.println("  �ع�ǰ bm.CBOavg=="+bm.CBOavg +" rm.classnameListmerge.size()=="+rm.classnameListmerge.size());
-//		System.out.println("  �ع�ǰ bm.Connectivityavg =="+bm.Connectivityavg  );
-//		System.out.println("  �ع�ǰ bm.LCOMavg=="+bm.LCOMavg );
-//		System.out.println("  �ع�ǰ bm.mpcavg=="+bm.mpcavg );
+//		System.out.println("  重构前 bm.CBO=="+bm.CBO );
+//		System.out.println("  重构前 bm.Connectivity=="+bm.Connectivity );
+//		System.out.println("  重构前 bm.LCOM=="+bm.LCOM );
+//		System.out.println("  重构前 bm.mpc=="+bm.mpc );
+//		System.out.println("  重构前 bm.CBOavg=="+bm.CBOavg +" rm.classnameListmerge.size()=="+rm.classnameListmerge.size());
+//		System.out.println("  重构前 bm.Connectivityavg =="+bm.Connectivityavg  );
+//		System.out.println("  重构前 bm.LCOMavg=="+bm.LCOMavg );
+//		System.out.println("  重构前 bm.mpcavg=="+bm.mpcavg );
 		return bm;
 	}
 }

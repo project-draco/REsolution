@@ -25,8 +25,8 @@
 
 package com.neu.utils.service;
 /**
- * Õâ¸öÀàÓÃÓÚÈ¥³ıÔ­ÎÄ¼şµÄ×¢ÊÍ
- *  author Àî¶Ë±¦
+ * è¿™ä¸ªç±»ç”¨äºå»é™¤åŸæ–‡ä»¶çš„æ³¨é‡Š
+ *  author æç«¯å®
  *  update LEEO date :2013-04-10
  */
 import java.io.IOException;
@@ -34,14 +34,14 @@ import java.io.Reader;
 
 public class RemoveComments{
 
-	// COMMENCODESÎªÆÕÍ¨´úÂëÄ£Ê½,PRECOMMENTSÎªĞ±¸ÜÄ£Ê½,MORELINECOMMENTSÎª¶àĞĞ×¢ÊÍÄ£Ê½,
-	// STARMODELÎª¶àĞĞ×¢ÊÍÏÂĞÇºÅÄ£Ê½£¬SINGLELINECOMMENTSÎªµ¥ĞĞ×¢ÊÍÄ£Ê½£¬STRINGMODELÎª×Ö·û´®Ä£Ê½£¬
-	// TRANSFERMODELÎª×Ö·û´®×ªÒåÄ£Ê½
+	// COMMENCODESä¸ºæ™®é€šä»£ç æ¨¡å¼,PRECOMMENTSä¸ºæ–œæ æ¨¡å¼,MORELINECOMMENTSä¸ºå¤šè¡Œæ³¨é‡Šæ¨¡å¼,
+	// STARMODELä¸ºå¤šè¡Œæ³¨é‡Šä¸‹æ˜Ÿå·æ¨¡å¼ï¼ŒSINGLELINECOMMENTSä¸ºå•è¡Œæ³¨é‡Šæ¨¡å¼ï¼ŒSTRINGMODELä¸ºå­—ç¬¦ä¸²æ¨¡å¼ï¼Œ
+	// TRANSFERMODELä¸ºå­—ç¬¦ä¸²è½¬ä¹‰æ¨¡å¼
 	private enum model {
 		COMMENCODES, PRECOMMENTS, MORELINECOMMENTS, STARMODEL, SINGLELINECOMMENTS, STRINGMODEL, TRANSFERMODEL
 	}
 	
-	//stats¼ÇÂ¼×´Ì¬
+	//statsè®°å½•çŠ¶æ€
 	private model stats = model.COMMENCODES;	
 
 	public String remove(Reader in) throws IOException {
@@ -50,14 +50,14 @@ public class RemoveComments{
 		while ((n = in.read()) != -1) {
 			switch ((char) n) {
 			case '/':
-				if (stats == model.COMMENCODES) {// Èç¹ûµ±Ç°Î»ÆÕÍ¨´úÂëÄ£Ê½Ôò×ªµ½Ğ±¸ÜÄ£Ê½
+				if (stats == model.COMMENCODES) {// å¦‚æœå½“å‰ä½æ™®é€šä»£ç æ¨¡å¼åˆ™è½¬åˆ°æ–œæ æ¨¡å¼
 					stats = model.PRECOMMENTS;
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûµ±Ç°ÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½µ¥ĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœå½“å‰ä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°å•è¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.SINGLELINECOMMENTS;
 					s.append("  ");
 				} else if (stats == model.MORELINECOMMENTS) {//
 					s.append(" ");
-				} else if (stats == model.STARMODEL) {// Èç¹ûµ±Ç°ÎªĞÇºÅÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂëÄ£Ê½
+				} else if (stats == model.STARMODEL) {// å¦‚æœå½“å‰ä¸ºæ˜Ÿå·æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ¨¡å¼
 					stats = model.COMMENCODES;
 					s.append(" ");
 				} else if (stats == model.SINGLELINECOMMENTS) {
@@ -72,10 +72,10 @@ public class RemoveComments{
 			case '*':
 				if (stats == model.COMMENCODES) {
 					s.append("*");
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½¶àĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°å¤šè¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.MORELINECOMMENTS;
 					s.append("  ");
-				} else if (stats == model.MORELINECOMMENTS) {// Èç¹ûµ±Ç°Îª¶àĞĞ×¢ÊÍÄ£Ê½Ôò×ªµ½ĞÇºÅÄ£Ê½
+				} else if (stats == model.MORELINECOMMENTS) {// å¦‚æœå½“å‰ä¸ºå¤šè¡Œæ³¨é‡Šæ¨¡å¼åˆ™è½¬åˆ°æ˜Ÿå·æ¨¡å¼
 					stats = model.STARMODEL;
 					s.append(" ");
 				} else if (stats == model.STARMODEL) {
@@ -89,21 +89,21 @@ public class RemoveComments{
 				}
 				break;
 			case '"':
-				if (stats == model.COMMENCODES) {// Èç¹ûµ±Ç°ÎªÆÕÍ¨´úÂëÄ£Ê½Ôò×ªµ½×Ö·û´®Ä£Ê½
+				if (stats == model.COMMENCODES) {// å¦‚æœå½“å‰ä¸ºæ™®é€šä»£ç æ¨¡å¼åˆ™è½¬åˆ°å­—ç¬¦ä¸²æ¨¡å¼
 					stats = model.STRINGMODEL;
 					s.append("\"");
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûµ±Ç°ÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂëÄ£Ê½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœå½“å‰ä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ¨¡å¼
 					stats = model.COMMENCODES;
 					s.append("/\"");
-				} else if (stats == model.STARMODEL) {// Èç¹ûµ±Ç°ÎªĞÇºÅÄ£Ê½Ôò×ªµ½¶àĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.STARMODEL) {// å¦‚æœå½“å‰ä¸ºæ˜Ÿå·æ¨¡å¼åˆ™è½¬åˆ°å¤šè¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.MORELINECOMMENTS;
 					s.append(" ");
 				} else if (stats == model.SINGLELINECOMMENTS) {
 					s.append(" ");
-				} else if (stats == model.STRINGMODEL) {// Èç¹ûµ±Ç°Îª×Ö·û´®Ä£Ê½Ôò×ªµ½ÆÕÍ¨´úÂëÄ£Ê½
+				} else if (stats == model.STRINGMODEL) {// å¦‚æœå½“å‰ä¸ºå­—ç¬¦ä¸²æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ¨¡å¼
 					stats = model.COMMENCODES;
 					s.append("\"");
-				} else if (stats == model.TRANSFERMODEL) {// Èç¹ûµ±Ç°Îª×ªÒåÄ£Ê½Ôò×ªµ½×Ö·û´®¸ñÊ½
+				} else if (stats == model.TRANSFERMODEL) {// å¦‚æœå½“å‰ä¸ºè½¬ä¹‰æ¨¡å¼åˆ™è½¬åˆ°å­—ç¬¦ä¸²æ ¼å¼
 					stats = model.STRINGMODEL;
 					s.append("\"");
 				}
@@ -111,20 +111,20 @@ public class RemoveComments{
 			case '\\':
 				if (stats == model.COMMENCODES) {
 					s.append("\\");
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûµ±Ç°ÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂë¸ñÊ½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœå½“å‰ä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ ¼å¼
 					stats = model.COMMENCODES;
 					s.append("/\\");
 				} else if (stats == model.MORELINECOMMENTS) {
 					s.append(" ");
-				} else if (stats == model.STARMODEL) {// Èç¹ûµ±Ç°ÎªĞÇºÅÄ£Ê½Ôò×ªµ½¶àĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.STARMODEL) {// å¦‚æœå½“å‰ä¸ºæ˜Ÿå·æ¨¡å¼åˆ™è½¬åˆ°å¤šè¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.MORELINECOMMENTS;
 					s.append(" ");
 				} else if (stats == model.SINGLELINECOMMENTS) {
 					s.append(" ");
-				} else if (stats == model.STRINGMODEL) {// Èç¹ûµ±Ç°Îª×Ö·û´®Ä£Ê½Ôò×ªµ½×Ö·û´®×ªÒÆÄ£Ê½
+				} else if (stats == model.STRINGMODEL) {// å¦‚æœå½“å‰ä¸ºå­—ç¬¦ä¸²æ¨¡å¼åˆ™è½¬åˆ°å­—ç¬¦ä¸²è½¬ç§»æ¨¡å¼
 					stats = model.TRANSFERMODEL;
 					s.append("\\");
-				} else if (stats == model.TRANSFERMODEL) {// Èç¹ûµ±Ç°Îª×Ö·û´®×ªÒåÄ£Ê½Ôò×ªµ½×Ö·û´®Ä£Ê½
+				} else if (stats == model.TRANSFERMODEL) {// å¦‚æœå½“å‰ä¸ºå­—ç¬¦ä¸²è½¬ä¹‰æ¨¡å¼åˆ™è½¬åˆ°å­—ç¬¦ä¸²æ¨¡å¼
 					stats = model.STRINGMODEL;
 					s.append("\\");
 				}
@@ -132,15 +132,15 @@ public class RemoveComments{
 			case '\n':
 				if (stats == model.COMMENCODES) {
 					s.append("\n");
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûµ±Ç°ÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂë¸ñÊ½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœå½“å‰ä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ ¼å¼
 					stats = model.COMMENCODES;
 					s.append("/\n");
 				} else if (stats == model.MORELINECOMMENTS) {
 					s.append("\n");
-				} else if (stats == model.STARMODEL) {// Èç¹ûµ±Ç°ÎªĞÇºÅÄ£Ê½Ôò×ªµ½¶àĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.STARMODEL) {// å¦‚æœå½“å‰ä¸ºæ˜Ÿå·æ¨¡å¼åˆ™è½¬åˆ°å¤šè¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.MORELINECOMMENTS;
 					s.append("\n");
-				} else if (stats == model.SINGLELINECOMMENTS) {// Èç¹ûµ±Ç°Îªµ¥ĞĞ×¢ÊÍÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂë¸ñÊ½
+				} else if (stats == model.SINGLELINECOMMENTS) {// å¦‚æœå½“å‰ä¸ºå•è¡Œæ³¨é‡Šæ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ ¼å¼
 					stats = model.COMMENCODES;
 					s.append("\n");
 				} else if (stats == model.STRINGMODEL) {
@@ -152,17 +152,17 @@ public class RemoveComments{
 			default:
 				if (stats == model.COMMENCODES) {
 					s.append((char) n);
-				} else if (stats == model.PRECOMMENTS) {// Èç¹ûµ±Ç°ÎªĞ±¸ÜÄ£Ê½Ôò×ªµ½ÆÕÍ¨´úÂë¸ñÊ½
+				} else if (stats == model.PRECOMMENTS) {// å¦‚æœå½“å‰ä¸ºæ–œæ æ¨¡å¼åˆ™è½¬åˆ°æ™®é€šä»£ç æ ¼å¼
 					stats = model.COMMENCODES;
 					s.append("/" + (char) n);
-				} else if (stats == model.STARMODEL) {// Èç¹ûµ±Ç°ÎªĞÇºÅÄ£Ê½Ôò×ªµ½¶àĞĞ×¢ÊÍÄ£Ê½
+				} else if (stats == model.STARMODEL) {// å¦‚æœå½“å‰ä¸ºæ˜Ÿå·æ¨¡å¼åˆ™è½¬åˆ°å¤šè¡Œæ³¨é‡Šæ¨¡å¼
 					stats = model.MORELINECOMMENTS;
 					s.append(" ");
 				} else if (stats == model.SINGLELINECOMMENTS) {
 					s.append(" ");
 				} else if (stats == model.STRINGMODEL) {
 					s.append((char) n);
-				} else if (stats == model.TRANSFERMODEL) {// Èç¹ûµ±Ç°Îª×Ö·û´®×ªÒåÄ£Ê½Ôò×ªµ½×Ö·û´®Ä£Ê½
+				} else if (stats == model.TRANSFERMODEL) {// å¦‚æœå½“å‰ä¸ºå­—ç¬¦ä¸²è½¬ä¹‰æ¨¡å¼åˆ™è½¬åˆ°å­—ç¬¦ä¸²æ¨¡å¼
 					stats = model.STRINGMODEL;
 					s.append((char) n);
 				}

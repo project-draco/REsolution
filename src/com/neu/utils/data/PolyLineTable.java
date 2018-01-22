@@ -243,10 +243,10 @@ public class PolyLineTable extends Table{
 			float realStep = (new Float(column))/10;
 			this.stepColumnValue =(int)(realStep+0.5);
 				
-			if (realStep>this.stepColumnValue) {//Ğ¡ÓÚËÄ  ÉáÈ¥
+			if (realStep>this.stepColumnValue) {//å°äºå››  èˆå»
 				Float stepfloat = new Float(this.stepColumnValue);
 					
-				float difference =(float)Math.round((realStep-stepfloat)*100)/100;//±£ÁôÁ½Î»Ğ¡Êı
+				float difference =(float)Math.round((realStep-stepfloat)*100)/100;//ä¿ç•™ä¸¤ä½å°æ•°
 				
 				int increament = (int)Math.ceil((difference*10)/this.stepColumnValue);
 				

@@ -84,7 +84,7 @@ public class OODMetrics {
 	}
 	
 /*
- *  ÀàCµ÷ÓÃ¹ıµÄÍâ²¿ÀàºÍµ÷ÓÃ¹ıÀàCµÄÍâ²¿Ààde×ÜÊı
+ *  ç±»Cè°ƒç”¨è¿‡çš„å¤–éƒ¨ç±»å’Œè°ƒç”¨è¿‡ç±»Cçš„å¤–éƒ¨ç±»deæ€»æ•°
  *  */	
 	public double computeCBO(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double 	CBO = 0;
@@ -154,7 +154,7 @@ public class OODMetrics {
 		return CBO;
 	}
 /*
- *  ÀàCÖĞprivate(protected)ÊôĞÔÕ¼ËùÓĞÊôĞÔµÄ±ÈÖµ
+ *  ç±»Cä¸­private(protected)å±æ€§å æ‰€æœ‰å±æ€§çš„æ¯”å€¼
  *  */	
 	public double computeDAM(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double DAM = 0;
@@ -192,7 +192,7 @@ public class OODMetrics {
 	}
 	
 /*
- *  ÀàCµ÷ÓÃ¹ıµÄÍâ²¿ÀàµÄ·½·¨ºÍµ÷ÓÃ¹ıÀàCµÄÍâ²¿ÀàµÄ·½·¨de×ÜÊı
+ *  ç±»Cè°ƒç”¨è¿‡çš„å¤–éƒ¨ç±»çš„æ–¹æ³•å’Œè°ƒç”¨è¿‡ç±»Cçš„å¤–éƒ¨ç±»çš„æ–¹æ³•deæ€»æ•°
  *  */
 	public double computeMPC(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double MPC = 0;
@@ -271,17 +271,17 @@ public class OODMetrics {
 		return MPC;
 	}
 /*
- *  CAMC = |Pi|×ÜºÍ/|T|*n
- *  Pi = Mi ½» T
- *  T£ºclassÖĞ²ÎÊıµÄÀàĞÍ¸öÊı
- *  Mi£ºmethodÖĞ²ÎÊıµÄÀàĞÍ¸öÊı
+ *  CAMC = |Pi|æ€»å’Œ/|T|*n
+ *  Pi = Mi äº¤ T
+ *  Tï¼šclassä¸­å‚æ•°çš„ç±»å‹ä¸ªæ•°
+ *  Miï¼šmethodä¸­å‚æ•°çš„ç±»å‹ä¸ªæ•°
  *  */	
 	public double computeCAM(ArrayList<ArrayList<String>> classList){
 		double CAM = 0;
 		double amountCAM = 0;
 		for(int i = 0; i < classList.size(); i++){
 			List<String> parameterList = new ArrayList<String>();
-		/////////////////ËùÓĞ·½·¨µÄ
+		/////////////////æ‰€æœ‰æ–¹æ³•çš„
 			for(int j = 0; j < classList.get(i).size(); j++){
 				if(classList.get(i).get(j).contains("(") || classList.get(i).get(j).contains("{")){
 					String method = classList.get(i).get(j);
@@ -298,7 +298,7 @@ public class OODMetrics {
 					}
 				}
 			}
-		////////////Ã¿¸ö·½·¨µÄ
+		////////////æ¯ä¸ªæ–¹æ³•çš„
 			int CAMinMethod = 0;
 			List<String> classMethodList = new ArrayList<String>();
 			for(int j = 0; j < classList.get(i).size(); j++){
@@ -342,7 +342,7 @@ public class OODMetrics {
 		return CAM;
 	}
 /*
- *  Ã¿¸öÀàÖĞ¶¨ÒåµÄ×Ô¶¨ÒåÀàĞÍµÄÊôĞÔµÄ¸öÊıµÄ¾ùÖµ
+ *  æ¯ä¸ªç±»ä¸­å®šä¹‰çš„è‡ªå®šä¹‰ç±»å‹çš„å±æ€§çš„ä¸ªæ•°çš„å‡å€¼
  *  */	
 	public double computeMOA(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double MOA = 0;
@@ -407,7 +407,7 @@ public class OODMetrics {
 		return MOA;
 	}
 /*
- * Ò»¸öÀàÖĞpublic·½·¨µÄ¸öÊı¾ùÖµ
+ * ä¸€ä¸ªç±»ä¸­publicæ–¹æ³•çš„ä¸ªæ•°å‡å€¼
  * */
 	public double computeCIS(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double CIS = 0;
@@ -456,7 +456,7 @@ public class OODMetrics {
 	}
 	
 	public  double computeNOP(ArrayList<ArrayList<String>> methodsList,int[][] Matrix)
-	{//Æ½¾ùÖØĞ´·½·¨Êı
+	{//å¹³å‡é‡å†™æ–¹æ³•æ•°
 		double NOP=0;
 		double sum=0;
 		ArrayList<ArrayList<Integer>> inboundClassList=GetOutbound(Matrix) ;
@@ -483,8 +483,8 @@ public class OODMetrics {
 				{
 					if(methodsList.get(parent).get(t).contains(Childmethodname))
 					{
-						//System.out.println("´æÔÚÖØĞ´--º¢×Ó£º"+methodsList.get(child).get(j));
-						//System.out.println("´æÔÚÖØĞ´--¸¸Ç×£º"+methodsList.get(parent).get(t));
+						//System.out.println("å­˜åœ¨é‡å†™--å­©å­ï¼š"+methodsList.get(child).get(j));
+						//System.out.println("å­˜åœ¨é‡å†™--çˆ¶äº²ï¼š"+methodsList.get(parent).get(t));
 						sum++;
 					}
 				}
@@ -493,9 +493,9 @@ public class OODMetrics {
 		}
 		double size=Matrix.length;
 		NOP=sum/size;
-		System.out.println("Æ½¾ùÖØĞ´·½·¨Êı  £º  "+NOP);
-		System.out.println("NOP--sum £º  "+sum);
-		System.out.println("NOP--size £º  "+sum);
+		System.out.println("å¹³å‡é‡å†™æ–¹æ³•æ•°  ï¼š  "+NOP);
+		System.out.println("NOP--sum ï¼š  "+sum);
+		System.out.println("NOP--size ï¼š  "+sum);
 		return NOP;
 	}
 	
@@ -546,7 +546,7 @@ public class OODMetrics {
 		return methodsList;
 	}
 
-	//µÃµ½outboundList
+	//å¾—åˆ°outboundList
 	private ArrayList<ArrayList<Integer>> GetOutbound(int[][] Matrix) 
 	{
 		ArrayList<ArrayList<Integer>> outboundClassList=new ArrayList<ArrayList<Integer>>();
@@ -562,7 +562,7 @@ public class OODMetrics {
 					break;
 				}				
 			}
-			if(flag==1)//µÚiÀàÓĞ¸¸Àà
+			if(flag==1)//ç¬¬iç±»æœ‰çˆ¶ç±»
 			{
 				outbound.add(i);
 				for(int j=0;j<Matrix.length ;j++)
@@ -584,14 +584,14 @@ public class OODMetrics {
 	{
 		ArrayList<ArrayList<Integer>> inboundClassList=new ArrayList<ArrayList<Integer>>();
 		
-		//£¡£¡£¡×ª»»inboundClassList£¡£¡£¡
+		//ï¼ï¼ï¼è½¬æ¢inboundClassListï¼ï¼ï¼
 		for(int i=0;i<outboundClassList.size();i++)
 		{
 			ArrayList<Integer> inbound = new ArrayList<Integer> ();		
-			for(int j=1;j<outboundClassList.get(i).size();j++)//outboundClassList[i]ÖĞ±éÀú¸¸Àà
+			for(int j=1;j<outboundClassList.get(i).size();j++)//outboundClassList[i]ä¸­éå†çˆ¶ç±»
 			{
 				int parent=outboundClassList.get(i).get(j);
-				//ÈôinboundClassListÒÑÈ¡ÍêparentÀà£¬²»ÔÙÖØ¸´È¡
+				//è‹¥inboundClassListå·²å–å®Œparentç±»ï¼Œä¸å†é‡å¤å–
 				int flag=0;
 				for(int m=0;m<inboundClassList.size();m++)
 				{
@@ -633,10 +633,10 @@ public class OODMetrics {
 		return inboundClassList;
 	}
 	
-	//ÕÒ×æÏÈ½Úµã
+	//æ‰¾ç¥–å…ˆèŠ‚ç‚¹
 	private static ArrayList<Integer> DealHighClass(ArrayList<ArrayList<Integer>> inboundClassList,ArrayList<ArrayList<Integer>> outboundClassList) 	
 	{
-		//ÕÒÎ´´¦ÀíµÄ×î¶¥²ãµÄÀà
+		//æ‰¾æœªå¤„ç†çš„æœ€é¡¶å±‚çš„ç±»
 		ArrayList<Integer> NoParentClass = new ArrayList<Integer> ();
 		for(int i=0;i<inboundClassList.size();i++)
 		{
@@ -649,7 +649,7 @@ public class OODMetrics {
 			if(j==outboundClassList.size())
 				NoParentClass.add(inboundClassList.get(i).get(0));
 		}
-		//System.out.println("Î´´¦ÀíµÄ×î¶¥²ãµÄÀà:"+NoParentClass);
+		//System.out.println("æœªå¤„ç†çš„æœ€é¡¶å±‚çš„ç±»:"+NoParentClass);
 		return NoParentClass;
 	}
 	
@@ -662,12 +662,12 @@ public class OODMetrics {
 			noParent.remove(index);
 		if(Child==Parent)
 		{
-			//System.out.println("¶Ô¶Ô¶Ô");
+			//System.out.println("å¯¹å¯¹å¯¹");
 			return 1;
 		}
 		if(noParent.contains(Child))
 		{
-			//System.out.println("´í´í´í");
+			//System.out.println("é”™é”™é”™");
 			return 0;
 		}
 		for(int i=0;i<outboundClassList.size();i++)
@@ -686,7 +686,7 @@ public class OODMetrics {
 
 	public double computeNOM(ArrayList<ArrayList<String>> methodsList,int[][] Matrix)
 	{
-		//Æ½¾ù·½·¨Êı
+		//å¹³å‡æ–¹æ³•æ•°
 				double NOM = 0;
 				double sum=0;				
 				ArrayList<ArrayList<String>> NewMethodsList=DeleteDuplication(methodsList);
@@ -696,7 +696,7 @@ public class OODMetrics {
 					sum+=NewMethodsList.get(i).size();
 				}			
 				NOM=sum/size;
-				System.out.println("Æ½¾ù·½·¨Êı£º"+NOM);
+				System.out.println("å¹³å‡æ–¹æ³•æ•°ï¼š"+NOM);
 				return NOM;
 	}
 	
@@ -716,12 +716,12 @@ public class OODMetrics {
 					continue;
 				if(Connect(i,j,NoParentClass,outboundClassList)==1)
 				{
-					//System.out.println("º¢×Ó£º"+i+"¸¸Ç×£º"+j+"  ¾àÀë£º"+Distance);
+					//System.out.println("å­©å­ï¼š"+i+"çˆ¶äº²ï¼š"+j+"  è·ç¦»ï¼š"+Distance);
 					SumAncestors++;
 				}		
 			}			
 		}
-		//System.out.println("ËùÓĞÀàµÄ×æÏÈ×ÜÊı£º"+SumAncestors);
+		//System.out.println("æ‰€æœ‰ç±»çš„ç¥–å…ˆæ€»æ•°ï¼š"+SumAncestors);
 		double SumAncestors1=SumAncestors;
 		double size=Matrix.length;
 		for(int i=0;i<Matrix.length;i++)
@@ -739,7 +739,7 @@ public class OODMetrics {
 				size--;
 		}		
 		ANA=SumAncestors1/size;
-		System.out.println("Æ½¾ùÀàµÄ×æÏÈ×ÜÊı£º"+ANA);		
+		System.out.println("å¹³å‡ç±»çš„ç¥–å…ˆæ€»æ•°ï¼š"+ANA);		
 		return ANA;
 	}
 
@@ -747,7 +747,7 @@ public class OODMetrics {
 	{
 		double DSC = 0;
 		DSC=Matrix.length;
-		System.out.println("ÀàµÄ¸öÊı  £º  "+DSC);
+		System.out.println("ç±»çš„ä¸ªæ•°  ï¼š  "+DSC);
 		return DSC;
 	}
 		

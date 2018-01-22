@@ -29,11 +29,11 @@ import java.util.ArrayList;
 
 public class statisitic {
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄ×î´óÖµ
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„æœ€å¤§å€¼
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û,Èç¹ûÊäÈëÖµ²»ºÏ·¨£¬·µ»ØÎª-1
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ,å¦‚æœè¾“å…¥å€¼ä¸åˆæ³•ï¼Œè¿”å›ä¸º-1
 	  */
 	 public static double getMax(double[] inputData) {
 	  if (inputData == null || inputData.length == 0)
@@ -48,11 +48,11 @@ public class statisitic {
 	 }
 
 	 /**
-	  * ÇóÇó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄ×îĞ¡Öµ
+	  * æ±‚æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„æœ€å°å€¼
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û,Èç¹ûÊäÈëÖµ²»ºÏ·¨£¬·µ»ØÎª-1
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ,å¦‚æœè¾“å…¥å€¼ä¸åˆæ³•ï¼Œè¿”å›ä¸º-1
 	  */
 	 public static double getMin(double[] inputData) {
 	  if (inputData == null || inputData.length == 0)
@@ -67,11 +67,11 @@ public class statisitic {
 	 }
 
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄºÍ
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„å’Œ
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static double getSum(double[] inputData) {
 	  if (inputData == null || inputData.length == 0)
@@ -100,11 +100,11 @@ public class statisitic {
 
 		 }
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄÊıÄ¿
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„æ•°ç›®
 	  * 
 	  * @param input
-	  *            Data ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            Data è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static int getCount(double[] inputData) {
 	  if (inputData == null)
@@ -122,11 +122,11 @@ public class statisitic {
 		 }
 
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄÆ½¾ùÖµ
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„å¹³å‡å€¼
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static double getAverage(double[] inputData) {
 	  if (inputData == null || inputData.length == 0)
@@ -149,11 +149,11 @@ public class statisitic {
 		  return result;
 		 }
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄÆ½·½ºÍ
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„å¹³æ–¹å’Œ
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static double getSquareSum(double[] inputData) {
 		  if(inputData==null||inputData.length==0)
@@ -184,11 +184,11 @@ public class statisitic {
 		  return sqrsum;
 		 }
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄ·½²î
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„æ–¹å·®
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static double getVariance(double[] inputData) {
 	  int count = getCount(inputData);
@@ -213,15 +213,15 @@ public class statisitic {
 		 }
 
 	 /**
-	  * Çó¸ø¶¨Ë«¾«¶ÈÊı×éÖĞÖµµÄ±ê×¼²î
+	  * æ±‚ç»™å®šåŒç²¾åº¦æ•°ç»„ä¸­å€¼çš„æ ‡å‡†å·®
 	  * 
 	  * @param inputData
-	  *            ÊäÈëÊı¾İÊı×é
-	  * @return ÔËËã½á¹û
+	  *            è¾“å…¥æ•°æ®æ•°ç»„
+	  * @return è¿ç®—ç»“æœ
 	  */
 	 public static double getStandardDiviation(double[] inputData) {
 	  double result;
-	  //¾ø¶ÔÖµ»¯ºÜÖØÒª
+	  //ç»å¯¹å€¼åŒ–å¾ˆé‡è¦
 	  result = Math.sqrt(Math.abs(getVariance(inputData)));
 	  
 	  return result;
@@ -231,7 +231,7 @@ public class statisitic {
 	 
 	 public static double getStandardDiviation1(ArrayList<Double> inputData) {
 		  double result;
-		  //¾ø¶ÔÖµ»¯ºÜÖØÒª
+		  //ç»å¯¹å€¼åŒ–å¾ˆé‡è¦
 		  result = Math.sqrt(Math.abs(getVariance1(inputData)));
 		  
 		  return result;
@@ -239,7 +239,7 @@ public class statisitic {
 		 }
 	 
 	 
-	   public static double[] bubbleSort(double[] args){//Ã°ÅİÅÅĞòËã·¨
+	   public static double[] bubbleSort(double[] args){//å†’æ³¡æ’åºç®—æ³•
 		                  for(int i=0;i<args.length-1;i++){
 		                          for(int j=i+1;j<args.length;j++){
 		                                 if (args[i]>args[j]){
@@ -254,7 +254,7 @@ public class statisitic {
 	   
 	   
 	   
-	   public static ArrayList<Double> bubbleSort1(ArrayList<Double> args){//Ã°ÅİÅÅĞòËã·¨
+	   public static ArrayList<Double> bubbleSort1(ArrayList<Double> args){//å†’æ³¡æ’åºç®—æ³•
 		                  for(int i=0;i<args.size()-1;i++){
 		                          for(int j=i+1;j<args.size();j++){
 		                                 if (args.get(i)>args.get(j)){
@@ -272,7 +272,7 @@ public class statisitic {
 		   inputData = bubbleSort(inputData);
 		   double min = 0;
 		   if(inputData.length%2==0){
-			//   System.out.println("Å¼Êı==");
+			//   System.out.println("å¶æ•°==");
 			   min = (inputData[(inputData.length)/2-1]+inputData[(inputData.length)/2])/2;
 			        
 		   }else{
@@ -289,7 +289,7 @@ public class statisitic {
 		   inputData = bubbleSort1(inputData);
 		   double min = 0;
 		   if(inputData.size()%2==0){
-			//   System.out.println("Å¼Êı==");
+			//   System.out.println("å¶æ•°==");
 			   min = (inputData.get((inputData.size())/2-1)+inputData.get((inputData.size())/2))/2;
 			        
 		   }else{

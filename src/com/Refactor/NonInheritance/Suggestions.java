@@ -32,10 +32,10 @@ import java.util.Map;
 public class Suggestions {
 	Map<String, UndoClass> undoClasses = new HashMap<String, UndoClass>  ();
 	Map<String, UndoEntity> UndoEntities = new HashMap<String, UndoEntity> ();
-	ArrayList<UndoEntity>  UndoEntitySort = new ArrayList<UndoEntity>();//×ó±ßµÄ
-	ArrayList<UndoClass>  undoClasseSort = new ArrayList<UndoClass>();//ÓÒ±ßµÄ
-	double[] Q_Orig = new double[undoClasseSort.size()+UndoEntitySort.size()+1];//Ô­Ê¼ÇúÏß
-	double[] Q_Undo = new double[undoClasseSort.size()+UndoEntitySort.size()+1];//ÓĞ³·ÏúÖ®ºóµÄÇúÏß
+	ArrayList<UndoEntity>  UndoEntitySort = new ArrayList<UndoEntity>();//å·¦è¾¹çš„
+	ArrayList<UndoClass>  undoClasseSort = new ArrayList<UndoClass>();//å³è¾¹çš„
+	double[] Q_Orig = new double[undoClasseSort.size()+UndoEntitySort.size()+1];//åŸå§‹æ›²çº¿
+	double[] Q_Undo = new double[undoClasseSort.size()+UndoEntitySort.size()+1];//æœ‰æ’¤é”€ä¹‹åçš„æ›²çº¿
 	
 	
 	private int undoClassLength = 0;

@@ -59,7 +59,7 @@ public class ClearAction extends AbstractAction implements Runnable {
 		if (JOptionPane.showConfirmDialog
 				(null,"This action will clear all the variables of the current system. Are you sure you want to proceed?", "system tips", 
 						JOptionPane.YES_OPTION, JOptionPane.INFORMATION_MESSAGE) == JOptionPane.YES_OPTION) {
-			//Çå¿Õ½á¹ûÃæ°å
+			//æ¸…ç©ºç»“æœé¢æ¿
 			JTabbedPane pane = model.getResultRightPanelJTabbledPane();
 			if (pane != null) {
 				pane.removeAll();
@@ -79,7 +79,7 @@ public class ClearAction extends AbstractAction implements Runnable {
 			
 //			model.clearNodeFactory();
 			model.setNewDependencyGraph();
-			//Çå¿ÕÑ¡ÔñÀ¸
+			//æ¸…ç©ºé€‰æ‹©æ 
 			if (model.getCheckBoxList() != null) {
 				model.getCheckBoxList().clear();
 			}
@@ -99,7 +99,7 @@ public class ClearAction extends AbstractAction implements Runnable {
 				model.getControlCheckjPanel().remove(1);
 			}
 			model.repaint();
-			//ÖØÖÃ¹¦ÄÜ°´Å¥×´Ì¬
+			//é‡ç½®åŠŸèƒ½æŒ‰é’®çŠ¶æ€
 			model.resetState();
 			
 		}

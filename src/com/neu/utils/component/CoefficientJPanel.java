@@ -98,7 +98,7 @@ public class CoefficientJPanel extends JPanel{
 			drawLable((Graphics2D)g,this.pingjunzhi,this.zhongzhi,this.fangcha);
 		}
 		
-		//»æÖÆyÖáËµÃ÷ÎÄ×Ö
+		//ç»˜åˆ¶yè½´è¯´æ˜æ–‡å­—
 		drawRotateStr(g,this.s,this.getHeight()*0.45f, this.getWidth()*0.05f);
 		
 		g.drawString("50 merging operation", (int)(this.getWidth()*0.38), (int)(this.getHeight()*0.98));
@@ -140,7 +140,7 @@ public class CoefficientJPanel extends JPanel{
 		triangle.lineTo((int)(this.getWidth()*0.847)+10, (int)(this.getHeight()*0.255)+2);
 		triangle.lineTo((int)(this.getWidth()*0.847)+5, (int)(this.getHeight()*0.255+10));
 		triangle.closePath();
-		// ÊµĞÄ¼ıÍ·
+		// å®å¿ƒç®­å¤´
 		g.fill(triangle);
 		g.setColor(Color.black);
 		g.drawString("Extract Classes", (int)(this.getWidth()*0.892), (int)(this.getHeight()*0.263));
@@ -163,7 +163,7 @@ public class CoefficientJPanel extends JPanel{
 
 
 	/**
-	 * »­³öXÖá
+	 * ç”»å‡ºXè½´
 	 * @param g
 	 */
 	private void drawX(Graphics g) {
@@ -178,7 +178,7 @@ public class CoefficientJPanel extends JPanel{
 	}
 	
 	/**
-	 * »­³öYÖá
+	 * ç”»å‡ºYè½´
 	 * @param g
 	 */
 	private void drawY(Graphics g) {
@@ -195,7 +195,7 @@ public class CoefficientJPanel extends JPanel{
 	
 	
 	/**
-	 * »­³ö¾ØÕóÊı¾İ
+	 * ç”»å‡ºçŸ©é˜µæ•°æ®
 	 * @param g
 	 */
 	private void drawMetrics(Graphics2D g) {
@@ -257,7 +257,7 @@ public class CoefficientJPanel extends JPanel{
 					triangle.lineTo(xPoints[i]+5, y-5);
 					triangle.lineTo(xPoints[i], y);
 					triangle.closePath();
-					// ÊµĞÄ¼ıÍ·
+					// å®å¿ƒç®­å¤´
 					g.fill(triangle);
 //					g.fillOval(xPoints[i]-4, y-4, 8, 8);
 				}
@@ -294,7 +294,7 @@ public class CoefficientJPanel extends JPanel{
 
 
 	/**
-	 * Ğı×ª×ø±ê»­³öyÖÜËµÃ÷±êÇ©
+	 * æ—‹è½¬åæ ‡ç”»å‡ºyå‘¨è¯´æ˜æ ‡ç­¾
 	 * @param g
 	 * @param s
 	 * @param x
@@ -302,15 +302,15 @@ public class CoefficientJPanel extends JPanel{
 	 */
 	private void drawRotateStr(Graphics g,String s,float x,float y) {
 		Graphics2D g2 = (Graphics2D)g;
-		//Ğı×ª270¶È
+		//æ—‹è½¬270åº¦
 		g2.translate(0, this.getHeight());
 		g2.rotate(1.5*Math.PI);
 		
-		//»æÖÆyÖáËµÃ÷ÎÄ×Ö
+		//ç»˜åˆ¶yè½´è¯´æ˜æ–‡å­—
 		g2.setFont(new Font("Times New Roman", 1, 14));
 		g2.drawString(s, x,y);
 		
-		//»Ö¸´Õı³£×ø±ê
+		//æ¢å¤æ­£å¸¸åæ ‡
 		g2.translate(this.getHeight(), 0);
 		g2.rotate(0.5*Math.PI);
 	}

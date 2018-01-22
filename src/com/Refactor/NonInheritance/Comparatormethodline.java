@@ -32,7 +32,7 @@ public class Comparatormethodline implements Comparator {
 		Methodfeature user0 = (Methodfeature) arg0;
 		Methodfeature user1 = (Methodfeature) arg1;
 		int flag = 0;
-		// Ê×ÏÈ±È½ÏÄêÁä£¬Èç¹ûÄêÁäÏàÍ¬£¬Ôò±È½ÏÃû×Ö
+		// é¦–å…ˆæ¯”è¾ƒå¹´é¾„ï¼Œå¦‚æœå¹´é¾„ç›¸åŒï¼Œåˆ™æ¯”è¾ƒåå­—
 		if (user0.methodlinesbe > user1.methodlinesbe) {
 			flag = 1;
 		}

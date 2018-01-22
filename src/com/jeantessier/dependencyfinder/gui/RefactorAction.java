@@ -146,7 +146,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
         	barLisenter.beginSession();
         	////////////////////////
         	
-    		NonInheritanceRefactoring.Clear();//Íõ°¢¹û
+    		NonInheritanceRefactoring.Clear();//ç‹é˜¿æœ
     		
     		model.getStatusLine().showInfo("Non-Inheritance Restructuring...");
     		
@@ -179,7 +179,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨ÒéÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®é¢æ¿
 	 * 
 	 * @return
 	 */
@@ -212,7 +212,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÓÒÏÂ
+	 * æ„å»ºå³ä¸‹
 	 * @param data 
 	 * 
 	 * @return
@@ -324,7 +324,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 	}
 	
 	/**
-	 * ¹¹½¨×óÏÂ
+	 * æ„å»ºå·¦ä¸‹
 	 * 
 	 * @return
 	 */
@@ -359,7 +359,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 
 	
 	/**
-	 * ¹¹½¨ÓÒÉÏ
+	 * æ„å»ºå³ä¸Š
 	 * 
 	 * @return
 	 */
@@ -370,7 +370,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨×óÉÏ
+	 * æ„å»ºå·¦ä¸Š
 	 * 
 	 * @return
 	 */
@@ -381,7 +381,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨Òé½µĞòÅÅÁĞµÄÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®é™åºæ’åˆ—çš„é¢æ¿
 	 * 
 	 * @param list
 	 * @param title
@@ -395,7 +395,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 		JLabel titleLabel = new JLabel(title);
 		titlePanel.add(titleLabel);
 
-		// ÖĞ¼äÏÔÊ¾Ãæ°å
+		// ä¸­é—´æ˜¾ç¤ºé¢æ¿
 		JPanel centerPanel = buildPanel(data,title);
 
 		JPanel s = new JPanel();
@@ -430,7 +430,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 
 	
 	/**
-	 * ÖØ¹¹Èí¼ş
+	 * é‡æ„è½¯ä»¶
 	 * @param barLisenter 
 	 */
 	private Suggestions refactorSoftware(ArrayList<Integer> selectedCheckBoxIndexs, ProgressBarLisenter barLisenter) {
@@ -440,7 +440,7 @@ public class RefactorAction extends AbstractAction implements Runnable {
 		NonInheritanceRefactoring.persent = 0;
 
 		
-		NonInheritanceRefactoring.IndexChechBox = selectedCheckBoxIndexs;// ÓëÑ§µÜ¶ÔÍê½Ó¿ÚÉ¾µô
+		NonInheritanceRefactoring.IndexChechBox = selectedCheckBoxIndexs;// ä¸å­¦å¼Ÿå¯¹å®Œæ¥å£åˆ æ‰
 
 		for (int p = 0; p < preprocessing.MergeSetList.size(); p++) {
 			if (NonInheritanceRefactoring.IndexChechBox.contains(p)) {
@@ -478,13 +478,13 @@ public class RefactorAction extends AbstractAction implements Runnable {
 			barLisenter.endFile();
 			
 		}
-		NonInheritanceRefactoring.FinalSortSuggestions();// ·ÖÎö×îÖÕÖØ¹¹½¨Òé
+		NonInheritanceRefactoring.FinalSortSuggestions();// åˆ†ææœ€ç»ˆé‡æ„å»ºè®®
 
 		
-		//sg.UndoEntitySortµÃµ½×ó±ßµÄÃæ°åÊı¾İ
-		//sg.undoClasseSortµÃµ½ÓÒ±ßµÄÃæ°åÊı¾İ
+		//sg.UndoEntitySortå¾—åˆ°å·¦è¾¹çš„é¢æ¿æ•°æ®
+		//sg.undoClasseSortå¾—åˆ°å³è¾¹çš„é¢æ¿æ•°æ®
 		
-		try {// ´òÓ¡·Ç¼Ì³ĞÌåÏµÖØ¹¹½¨Òé
+		try {// æ‰“å°éç»§æ‰¿ä½“ç³»é‡æ„å»ºè®®
 			GenerateRefactoringSuggestions
 					.PrintRefactoringSuggestions(NonInheritanceRefactoring.sgs);
 		} catch (IOException e) {
@@ -495,14 +495,14 @@ public class RefactorAction extends AbstractAction implements Runnable {
 
 		System.out.println("size ===="+preprocessing.MergeSetList.size());
 		
-		tool.GetQlog(0, 0, preprocessing.MergeSetList.size());// ³·Ïú²Ù×÷
+		tool.GetQlog(0, 0, preprocessing.MergeSetList.size());// æ’¤é”€æ“ä½œ
 		
 		
 		return NonInheritanceRefactoring.sgs;
 	}
 
 	/**
-	 * µÃµ½ÓÃ»§Ñ¡ÔñÒªÖØ¹¹µÄÁªÍ¨Æ¬µÄË÷Òı
+	 * å¾—åˆ°ç”¨æˆ·é€‰æ‹©è¦é‡æ„çš„è”é€šç‰‡çš„ç´¢å¼•
 	 * 
 	 * @param checkBoxList
 	 * @return

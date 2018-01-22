@@ -43,7 +43,7 @@ import javax.swing.plaf.basic.BasicScrollBarUI;
 public class CBScrollBarUI extends BasicScrollBarUI {
 
 	public static void main(String[] args) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 
 	}
 	
@@ -69,7 +69,7 @@ public class CBScrollBarUI extends BasicScrollBarUI {
 		
 		int tw = thumbBounds.width;
 		int th = thumbBounds.height; 
-		// ÖØ¶¨Í¼ĞÎÉÏÏÂÎÄµÄÔ­µã£¬Õâ¾äÒ»¶¨ÒªĞ´£¬²»È»»á³öÏÖÍÏ¶¯»¬¿éÊ±»¬¿é²»¶¯µÄÏÖÏó
+		// é‡å®šå›¾å½¢ä¸Šä¸‹æ–‡çš„åŸç‚¹ï¼Œè¿™å¥ä¸€å®šè¦å†™ï¼Œä¸ç„¶ä¼šå‡ºç°æ‹–åŠ¨æ»‘å—æ—¶æ»‘å—ä¸åŠ¨çš„ç°è±¡
 		g.translate(thumbBounds.x, thumbBounds.y);
 		Graphics2D g2 = (Graphics2D) g;
 		GradientPaint gp = null;
@@ -86,10 +86,10 @@ public class CBScrollBarUI extends BasicScrollBarUI {
 		
 	}
 	
-	// ÖØ»æ»¬¿éµÄ»¬¶¯ÇøÓò±³¾°
+	// é‡ç»˜æ»‘å—çš„æ»‘åŠ¨åŒºåŸŸèƒŒæ™¯
 	@Override
 	protected void paintTrack(Graphics g, JComponent c, Rectangle trackBounds) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 //		super.paintTrack(g, c, trackBounds);
 
 		Graphics2D g2 = (Graphics2D) g;
@@ -115,7 +115,7 @@ public class CBScrollBarUI extends BasicScrollBarUI {
 			this.paintIncreaseHighlight(g);
 	}
 	
-	// ÖØ»æµ±Êó±êµã»÷»¬¶¯µ½ÏòÉÏ»òÏò×ó°´Å¥Ö®¼äµÄÇøÓò
+	// é‡ç»˜å½“é¼ æ ‡ç‚¹å‡»æ»‘åŠ¨åˆ°å‘ä¸Šæˆ–å‘å·¦æŒ‰é’®ä¹‹é—´çš„åŒºåŸŸ
 	@Override
 	protected void paintDecreaseHighlight(Graphics g) {
 //		super.paintDecreaseHighlight(g);
@@ -135,7 +135,7 @@ public class CBScrollBarUI extends BasicScrollBarUI {
 		
 	}
 	
-	// ÖØ»æµ±Êó±êµã»÷»¬¿éÖÁÏòÏÂ»òÏòÓÒ°´Å¥Ö®¼äµÄÇøÓò
+	// é‡ç»˜å½“é¼ æ ‡ç‚¹å‡»æ»‘å—è‡³å‘ä¸‹æˆ–å‘å³æŒ‰é’®ä¹‹é—´çš„åŒºåŸŸ
 	@Override
 	protected void paintIncreaseHighlight(Graphics g) {
 //		super.paintIncreaseHighlight(g);
@@ -151,13 +151,13 @@ public class CBScrollBarUI extends BasicScrollBarUI {
 	
 	@Override
 	protected JButton createDecreaseButton(int orientation) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		return new BasicArrowButton(orientation);
 	}
 	
 	@Override
 	protected JButton createIncreaseButton(int orientation) {
-		// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+		// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 		return new BasicArrowButton(orientation);
 	}
 	

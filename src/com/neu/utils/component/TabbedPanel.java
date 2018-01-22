@@ -66,7 +66,7 @@ import com.jeantessier.dependencyfinder.gui.RefactorAction;
 import com.neu.utils.data.TabName;
 
 /**
- * ¿É¹Ø±ÕµÄJTabbedPane±êÇ©
+ * å¯å…³é—­çš„JTabbedPaneæ ‡ç­¾
  *
  * @author monitor Created on 2011-2-25, 23:52:41
  */
@@ -85,7 +85,7 @@ public class TabbedPanel extends JPanel {
 			throw new NullPointerException("TabbedPane is null");
 		this.pane = pane;
 		setOpaque(false);
-		// tab±êÌâ
+		// tabæ ‡é¢˜
 		label = new JLabel() {
 			@Override
 			public String getText() {
@@ -104,7 +104,7 @@ public class TabbedPanel extends JPanel {
 		add(new TabButton());
 		setBorder(BorderFactory.createEmptyBorder(1, 0, 0, 0));
 
-		// ÊµÏÖ²¿·Ö±êÇ©Ò³µÄÍÏ×§
+		// å®ç°éƒ¨åˆ†æ ‡ç­¾é¡µçš„æ‹–æ‹½
 		pageDrag(pane, label, dfmodel);
 		pageChange(pane, label);
 
@@ -176,20 +176,20 @@ public class TabbedPanel extends JPanel {
 		});
 	}
 
-	/** tabÉÏµÄ¹Ø±Õ°´Å¥ */
+	/** tabä¸Šçš„å…³é—­æŒ‰é’® */
 	private class TabButton extends JButton {
 		public TabButton() {
 			int size = 17;
 			setPreferredSize(new Dimension(size, size));
-			setToolTipText("¹Ø±Õ");
+			setToolTipText("å…³é—­");
 			setUI(new BasicButtonUI());
 			setContentAreaFilled(false);
 			setFocusable(false);
 			setBorder(BorderFactory.createEtchedBorder());
 			setBorderPainted(false);
-			// ·­×ªĞ§¹û
+			// ç¿»è½¬æ•ˆæœ
 			setRolloverEnabled(true);
-			// Êó±êÊÂ¼ş£¬½øÈëÊ±»­±ß¿ò£¬ÒÆ³öÊ±È¡Ïû±ß¿ò
+			// é¼ æ ‡äº‹ä»¶ï¼Œè¿›å…¥æ—¶ç”»è¾¹æ¡†ï¼Œç§»å‡ºæ—¶å–æ¶ˆè¾¹æ¡†
 			addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseEntered(MouseEvent e) {
@@ -209,7 +209,7 @@ public class TabbedPanel extends JPanel {
 					}
 				}
 			});
-			// µ¥»÷¹Ø±Õ°´Å¥ÊÂ¼ş
+			// å•å‡»å…³é—­æŒ‰é’®äº‹ä»¶
 			addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent evt) {
 					int i = pane.indexOfTabComponent(TabbedPanel.this);
@@ -252,13 +252,13 @@ public class TabbedPanel extends JPanel {
 		protected void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			Graphics2D g2 = (Graphics2D) g.create();
-			// Êó±ê°´ÏÂÊ±Æ«ÒÆÒ»¸ö×ø±êµã
+			// é¼ æ ‡æŒ‰ä¸‹æ—¶åç§»ä¸€ä¸ªåæ ‡ç‚¹
 			if (getModel().isPressed()) {
 				g2.translate(1, 1);
 			}
 			g2.setStroke(new BasicStroke(2));
 			g2.setColor(Color.BLACK);
-			// Êó±êÔÚ°´Å¥ÉÏÊ±ÎªºìÉ«
+			// é¼ æ ‡åœ¨æŒ‰é’®ä¸Šæ—¶ä¸ºçº¢è‰²
 			if (getModel().isRollover()) {
 				g2.setColor(Color.RED);
 			}

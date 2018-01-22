@@ -35,7 +35,7 @@ import java.util.Map;
 
 public class filename {
 
-	// Ğ´ÎÄ¼şº¯Êı
+	// å†™æ–‡ä»¶å‡½æ•°
 	public static void writeByFileWrite(String _sDestFile, String _sContent)
 
 	throws IOException {
@@ -66,19 +66,19 @@ public class filename {
 
 	}
 
-	// ¶ÁÈ¡ÎÄ¼ş
+	// è¯»å–æ–‡ä»¶
 
 	public static ArrayList<String> readfilelist(ArrayList<String> array) {
 		/**
-		 * ÒÔĞĞÎªµ¥Î»¶ÁÈ¡ÎÄ¼ş£¬³£ÓÃÓÚ¶ÁÃæÏòĞĞµÄ¸ñÊ½»¯ÎÄ¼ş
+		 * ä»¥è¡Œä¸ºå•ä½è¯»å–æ–‡ä»¶ï¼Œå¸¸ç”¨äºè¯»é¢å‘è¡Œçš„æ ¼å¼åŒ–æ–‡ä»¶
 		 */
 
-		// System.out.println("ÒÔĞĞÎªµ¥Î»¶ÁÈ¡ÎÄ¼şÄÚÈİ£¬Ò»´Î¶ÁÒ»ÕûĞĞ£º");
+		// System.out.println("ä»¥è¡Œä¸ºå•ä½è¯»å–æ–‡ä»¶å†…å®¹ï¼Œä¸€æ¬¡è¯»ä¸€æ•´è¡Œï¼š");
 		String tempString = null;
 		ArrayList<String> arraya = new ArrayList();
 
 		for (int i = 0; i < array.size(); i++) {
-			// ÏÔÊ¾ĞĞºÅ
+			// æ˜¾ç¤ºè¡Œå·
 			tempString = array.get(i);
 			String javaclassname = null;
 
@@ -88,7 +88,7 @@ public class filename {
 			if (tempString.endsWith(".java")) {
 
 				str0 = tempString.split("\\" + "\\");
-				javaclassname = str0[str0.length - 1]; // µÃµ½×ÓÀàÃû³Æ
+				javaclassname = str0[str0.length - 1]; // å¾—åˆ°å­ç±»åç§°
 
 				str1 = javaclassname.split(".java");
 				String sContent = null;
@@ -112,7 +112,7 @@ public class filename {
 
 	/**
 	 * 
-	 * ¶ÁÈ¡Ä³¸öÎÄ¼ş¼ĞÏÂµÄËùÓĞÎÄ¼ş¼ĞºÍÎÄ¼ş, ·µ»ØËùÓĞÎÄ¼şÃû
+	 * è¯»å–æŸä¸ªæ–‡ä»¶å¤¹ä¸‹çš„æ‰€æœ‰æ–‡ä»¶å¤¹å’Œæ–‡ä»¶, è¿”å›æ‰€æœ‰æ–‡ä»¶å
 	 * 
 	 * @param filepath
 	 *            String
@@ -128,18 +128,18 @@ public class filename {
 		}
 
 		File file = new File(filepath);
-		// ÎÄ¼ş
+		// æ–‡ä»¶
 		if (!file.isDirectory()) {
 			pathMap.put(pathMap.size(), file.getPath());
 
-		} else if (file.isDirectory()) { // Èç¹ûÊÇÄ¿Â¼£¬ ±éÀúËùÓĞ×ÓÄ¿Â¼È¡³öËùÓĞÎÄ¼şÃû
+		} else if (file.isDirectory()) { // å¦‚æœæ˜¯ç›®å½•ï¼Œ éå†æ‰€æœ‰å­ç›®å½•å–å‡ºæ‰€æœ‰æ–‡ä»¶å
 			String[] filelist = file.list();
 			for (int i = 0; i < filelist.length; i++) {
 				File readfile = new File(filepath + "\\" + filelist[i]);
 				if (!readfile.isDirectory()) {
 					pathMap.put(pathMap.size(), readfile.getPath());
 
-				} else if (readfile.isDirectory()) { // ×ÓÄ¿Â¼µÄÄ¿Â¼
+				} else if (readfile.isDirectory()) { // å­ç›®å½•çš„ç›®å½•
 					readfile(filepath + "\\" + filelist[i], pathMap);
 				}
 			}

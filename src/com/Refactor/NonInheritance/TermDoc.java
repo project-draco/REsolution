@@ -43,7 +43,7 @@ public class TermDoc {
 	static ArrayList<String> toowords;
 	static ArrayList<String> newwords = new ArrayList<String>();
 	static ArrayList<double[]> vectors = new ArrayList<double[]>();
-	static StringTokenizer tokenizer = null; // µ¥¸ö´Ê
+	static StringTokenizer tokenizer = null; // å•ä¸ªè¯
 	static DoubleMatrix2D TDmatrix;
 
 	public TermDoc() {
@@ -77,14 +77,14 @@ public class TermDoc {
 		this.vectors = vectors;
 	}
 
-	// ´ÓÁĞ±íÀïËÑË÷µÄ½á¹ûÁĞ±í
+	// ä»åˆ—è¡¨é‡Œæœç´¢çš„ç»“æœåˆ—è¡¨
 	@SuppressWarnings("unused")
 	public static void searchList(ArrayList<String> document) {
 		tokenizer = new StringTokenizer(document.toString(),
 				" .,:;-()<>[]!?/-*\"\r\n");
 		String aWord = "";
-		// ·ÖÓÃÀ´±È½ÏµÄ´Ê
-		int vSize = words.size();// wordsÊÇÃ¿¼ÓÈëÒ»¸öÎÄµµÈ¥ÖØºóµÄÊı×é
+		// åˆ†ç”¨æ¥æ¯”è¾ƒçš„è¯
+		int vSize = words.size();// wordsæ˜¯æ¯åŠ å…¥ä¸€ä¸ªæ–‡æ¡£å»é‡åçš„æ•°ç»„
 		double[] aVector;
 		double[] newVector;
 		double[] tmpVector;
@@ -94,18 +94,18 @@ public class TermDoc {
 			aVector = new double[vSize];
 		}
 		while (tokenizer.hasMoreTokens()) {
-			aWord = tokenizer.nextToken().toLowerCase();// ·Ö¸îÈ¥ÖØÎÄµµµÄ×Ö·û´®£¬½«´óĞ´×ª»»ÎªĞ¡Ğ´
+			aWord = tokenizer.nextToken().toLowerCase();// åˆ†å‰²å»é‡æ–‡æ¡£çš„å­—ç¬¦ä¸²ï¼Œå°†å¤§å†™è½¬æ¢ä¸ºå°å†™
 			if (words.indexOf(aWord) == -1) {
-				// µÃµ½³õÊ¼ÎÄµµµÄ´Ê
+				// å¾—åˆ°åˆå§‹æ–‡æ¡£çš„è¯
 				words.add(aWord);
-				// ²âÊÔÈ¡µ½µÄ´Ê
-				vSize = words.size();// vSize³õÊ¼ÎÄµµÊı×éµÄ´óĞ¡
+				// æµ‹è¯•å–åˆ°çš„è¯
+				vSize = words.size();// vSizeåˆå§‹æ–‡æ¡£æ•°ç»„çš„å¤§å°
 				newVector = new double[vSize];
-				// ÊµÏÖÊı×éµÄ¸´ÖÆ:½«Ô­Êı×é¸´ÖÆ¸øÄ¿µÄÊı×énewVector
+				// å®ç°æ•°ç»„çš„å¤åˆ¶:å°†åŸæ•°ç»„å¤åˆ¶ç»™ç›®çš„æ•°ç»„newVector
 				System.arraycopy(aVector, 0, newVector, 0, vSize - 1);
-				newVector[vSize - 1] = 1.0;// ĞÂ¸´ÖÆÀ´µÄ´Ê£¬ÏàÍ¬Îª1
+				newVector[vSize - 1] = 1.0;// æ–°å¤åˆ¶æ¥çš„è¯ï¼Œç›¸åŒä¸º1
 				aVector = new double[vSize];
-				// ½«aVectorÌæ»»
+				// å°†aVectoræ›¿æ¢
 				aVector = newVector;
 				if (vectors.size() > 0) {
 					for (int counter = 0; counter < vectors.size(); counter++) {
@@ -117,7 +117,7 @@ public class TermDoc {
 						vectors.set(counter, newVector);
 					}
 				}
-			} else if (words.indexOf(aWord) >= 0)// ±È´Ê
+			} else if (words.indexOf(aWord) >= 0)// æ¯”è¯
 			{
 				aVector[words.indexOf(aWord)]++;
 			}
@@ -125,7 +125,7 @@ public class TermDoc {
 		vectors.add(aVector);
 	}
 
-	// ĞĞÎª´Ê£¬ÁĞÎªÎÄµµµÄ¹ØÏµ¾ØÕó
+	// è¡Œä¸ºè¯ï¼Œåˆ—ä¸ºæ–‡æ¡£çš„å…³ç³»çŸ©é˜µ
 	public static DoubleMatrix2D createMatrix() {
 
 		DoubleMatrix2D matrix = new SparseDoubleMatrix2D(words.size(),
@@ -135,14 +135,14 @@ public class TermDoc {
 			for (int wordNr = 0; wordNr < words.size(); wordNr++) {
 				matrix.set(wordNr, vectorNr, aVector[wordNr]);
 			}
-			// Ã¿Ìí¼ÓÒ»¸öÎÄ±¾ºóµÄĞÂ¾ØÕó
+			// æ¯æ·»åŠ ä¸€ä¸ªæ–‡æœ¬åçš„æ–°çŸ©é˜µ
 		}
 		return matrix;
 	}
 
-	// Êä³öĞĞÎª´Ê£¬ÁĞÎªÎÄµµµÄ¹ØÏµ¾ØÕó
+	// è¾“å‡ºè¡Œä¸ºè¯ï¼Œåˆ—ä¸ºæ–‡æ¡£çš„å…³ç³»çŸ©é˜µ
 	public void showMatrix() {
-		System.out.println("µ±Ç°¾ØÕó:\n----------------");
+		System.out.println("å½“å‰çŸ©é˜µ:\n----------------");
 		DoubleMatrix2D matrix = createMatrix();
 		for (int row = 0; row < matrix.rows(); row++) {
 			for (int column = 0; column < matrix.columns(); column++) {
@@ -152,7 +152,7 @@ public class TermDoc {
 		}
 	}
 
-	// ¼ÆËãÃ¿ÆªÎÄµµÖĞ´ÊµÄ¸öÊı
+	// è®¡ç®—æ¯ç¯‡æ–‡æ¡£ä¸­è¯çš„ä¸ªæ•°
 	public double[][] oldTF() {
 		double[][] tf = new double[words.size()][vectors.size()];
 		for (int vectorNr = 0; vectorNr < vectors.size(); vectorNr++) {
@@ -162,7 +162,7 @@ public class TermDoc {
 			}
 
 		}
-		return tf;// ×ø±êÎª¡¾ĞĞ¡¢ÁĞ¡¿=TF
+		return tf;// åæ ‡ä¸ºã€è¡Œã€åˆ—ã€‘=TF
 	}
 
 	public static double[][] TF() {
@@ -173,7 +173,7 @@ public class TermDoc {
 			num = new double[words.size()];
 			for (int wordNr = 0; wordNr < words.size(); wordNr++) {
 				if (aVector[wordNr] != 0) {
-					num[vectorNr] += aVector[wordNr]; // Êı×éÔ½½çÁË
+					num[vectorNr] += aVector[wordNr]; // æ•°ç»„è¶Šç•Œäº†
 				}
 			}
 
@@ -185,10 +185,10 @@ public class TermDoc {
 			}
 
 		}
-		return tf;// ×ø±êÎª¡¾ĞĞ¡¢ÁĞ¡¿=TF
+		return tf;// åæ ‡ä¸ºã€è¡Œã€åˆ—ã€‘=TF
 	}
 
-	// ¼ÆËãÎÄµµµÄIDFÖµ
+	// è®¡ç®—æ–‡æ¡£çš„IDFå€¼
 	public static double[] IDF() {
 		double D = vectors.size();
 		double[] Dt = new double[words.size()];
@@ -202,10 +202,10 @@ public class TermDoc {
 //			idf[row] = (Math.log((1 + D) / Dt[row])) / (Math.log(10));
 			idf[row] = Math.log(D/Dt[row]+1);
 		}
-		return idf;// ¡¾ĞĞ¡¿=idf
+		return idf;// ã€è¡Œã€‘=idf
 	}
 
-	// ¼ÆËãTF-IDFµÄÖµ
+	// è®¡ç®—TF-IDFçš„å€¼
 	public static double[][] TFIDF() {
 		double[][] tf = TF();
 		double[] idf = IDF();
@@ -232,8 +232,8 @@ public class TermDoc {
 				vectors.size());
 		DoubleMatrix2D newmatrix2 = null;
 		double[][] tfidf = TFIDF();
-		double[][] value;// value¶àÎ¬3ÁĞ¡¾ĞĞ¡¢ÁĞ¡¢Öµ¡¿
-		int[] num = new int[vectors.size()];// ÎÄµµÊı
+		double[][] value;// valueå¤šç»´3åˆ—ã€è¡Œã€åˆ—ã€å€¼ã€‘
+		int[] num = new int[vectors.size()];// æ–‡æ¡£æ•°
 		int[] flag = new int[words.size()];
 		int[] flag2 = new int[words.size()];
 		int totle = 0;
@@ -339,7 +339,7 @@ public class TermDoc {
 			
 			}
 		}
-		// µÃµ½È¡³öµÄTerm´Ê
+		// å¾—åˆ°å–å‡ºçš„Termè¯
 		for (int i = 0; i < toowords.size(); i++) {
 			if (newwords.indexOf(toowords.get(i)) == -1) {
 				newwords.add(toowords.get(i));

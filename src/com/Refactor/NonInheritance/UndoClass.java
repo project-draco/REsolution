@@ -26,8 +26,8 @@
 package com.Refactor.NonInheritance;
 
 public class UndoClass {
-	String classname;// 类名
-	double detaQ = 0;// 增量
+	String classname;// 绫诲悕
+	double detaQ = 0;// 澧為噺
 	int xEntity = 0;
 	
 	public int getxEntity() {

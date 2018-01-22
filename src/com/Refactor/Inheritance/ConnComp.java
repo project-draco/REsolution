@@ -28,7 +28,7 @@ import java.util.ArrayList;
 
 import com.jeantessier.dependencyfinder.gui.SrcAction;
 
-//建立一个类，使用里面的变量。使用它要实例化  
+//寤虹珛涓�涓被锛屼娇鐢ㄩ噷闈㈢殑鍙橀噺銆備娇鐢ㄥ畠瑕佸疄渚嬪寲  
 public class ConnComp {
 
 	public static double getdgree(int[][] extendsMatrix, int i) {

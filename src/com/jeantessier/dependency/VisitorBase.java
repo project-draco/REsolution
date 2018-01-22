@@ -92,9 +92,9 @@ public abstract class VisitorBase implements Visitor {
         }
        
         for (Node node : getStrategy().order(nodes)) {
-        	boolean c = node instanceof ClassNode;//ºó¼ÓµÄ
-        	boolean f = node instanceof FeatureNode;//ºó¼ÓµÄ
-        	if(c){//node ÊÇclass ÀàĞÍ
+        	boolean c = node instanceof ClassNode;//ååŠ çš„
+        	boolean f = node instanceof FeatureNode;//ååŠ çš„
+        	if(c){//node æ˜¯class ç±»å‹
       
         	String name = node.getName();
         	if(SrcAction.classname.contains(name))
@@ -107,11 +107,11 @@ public abstract class VisitorBase implements Visitor {
             for(Object obj : node.getInboundDependencies())
             {
      		  String in = obj.toString();
-     		  if(SourceParser.judgeIsClassorFeature(in)){//ÊÇÊôĞÔ
+     		  if(SourceParser.judgeIsClassorFeature(in)){//æ˜¯å±æ€§
      			  if(SourceParser.judgeFeatureifthisSystem(in, SrcAction.classname)&&(!SourceParser.methodonlyname(in).contains("$"))){
      			    inboundFeatureList.add(in);
      			  }
-     		  }else{//ÊÇÀà
+     		  }else{//æ˜¯ç±»
      			 if(SrcAction.classname.contains(SourceParser.getonlyclassname(in))){
      			 inboundClassList.add(in);
      			 }else{
@@ -129,11 +129,11 @@ public abstract class VisitorBase implements Visitor {
             for(Object obj : node.getOutboundDependencies())
             {
      		  String out = obj.toString() ; 
-     		  if(SourceParser.judgeIsClassorFeature(out)){//ÊÇÊôĞÔ
+     		  if(SourceParser.judgeIsClassorFeature(out)){//æ˜¯å±æ€§
      			  if(SourceParser.judgeFeatureifthisSystem(out, SrcAction.classname)&&(!SourceParser.methodonlyname(out).contains("$"))){
      			    outboundFeatureList.add(out);
      			  }
-     		  }else{//ÊÇÀà     ÕâÀïÊÇ¼Ì³Ğ¹ØÏµ
+     		  }else{//æ˜¯ç±»     è¿™é‡Œæ˜¯ç»§æ‰¿å…³ç³»
      			 if(SrcAction.classname.contains(SourceParser.getonlyclassname(out))){
      			 outboundClassList.add(out);
      			 }else{
@@ -156,7 +156,7 @@ public abstract class VisitorBase implements Visitor {
         	}else{
         		flag = false;
         	}
-        	} else if(flag&&f){ //Èç¹û½ÚµãÊÇÊôĞÔ
+        	} else if(flag&&f){ //å¦‚æœèŠ‚ç‚¹æ˜¯å±æ€§
         		
             String featurename = node.getName();
             if(!SourceParser.methodonlyname(featurename).contains("$")){
@@ -172,12 +172,12 @@ public abstract class VisitorBase implements Visitor {
             for(Object obj : node.getInboundDependencies())
             {
          		  String in = obj.toString() ; 
-         		  if(SourceParser.judgeIsClassorFeature(in)){//ÊÇÊôĞÔ
+         		  if(SourceParser.judgeIsClassorFeature(in)){//æ˜¯å±æ€§
          			  if(SourceParser.judgeFeatureifthisSystem(in, SrcAction.classname)&&(!SourceParser.methodonlyname(in).contains("$"))){
          			    inboundFeatureList.add(in);
          			    inboundMethodList.add(in);
          			  }
-         		  }else{//ÊÇÀà
+         		  }else{//æ˜¯ç±»
          			 if(SrcAction.classname.contains(SourceParser.getonlyclassname(in))){
          			 inboundClassList.add(in);
          			 }else{
@@ -205,7 +205,7 @@ public abstract class VisitorBase implements Visitor {
       			    outboundFeatureList.add(out);
       			    outboundMethodList.add(out);
       			  }
-      		  }else{//ÊÇÀà
+      		  }else{//æ˜¯ç±»
       			 if(SrcAction.classname.contains(SourceParser.getonlyclassname(out))){
       			 outboundClassList.add(out);
       			 }else{//attribute

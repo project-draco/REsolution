@@ -78,7 +78,7 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 	
 	/**
-	 * ±ß¿òÊôĞÔÖµ
+	 * è¾¹æ¡†å±æ€§å€¼
 	 */
 	private int LEFT_BORDER ;
 	private int RIGHT_BORDER ;
@@ -86,13 +86,13 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	private int BOTTOM_BORDER ;
 	
 	/**
-	 * ÁĞÊôĞÔÖµ
+	 * åˆ—å±æ€§å€¼
 	 */
 	private int stepColumnValue;
 	private int columnCount;
 	private int stepColumnPX;
 	/**
-	 * ĞĞÊôĞÔÖµ
+	 * è¡Œå±æ€§å€¼
 	 */
 	private double maxValue;
 	private double minValue;
@@ -101,20 +101,20 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	private int stepRowPX;
 	
 	/**
-	 * µãµÄ¿í/¸ß
+	 * ç‚¹çš„å®½/é«˜
 	 */
 	private int dotWidth = 10;
 	private int dotHeight = 10;
 	
 	
 	/**
-	 * Ê®×ÖÏß
+	 * åå­—çº¿
 	 */
 	private int mouseX = -1;
 	private int mouseY = -1;
 	
-	private static Subject data;//¹Û²ìÊı¾İ
-	private Graphics2D g2d;//»­±Ê
+	private static Subject data;//è§‚å¯Ÿæ•°æ®
+	private Graphics2D g2d;//ç”»ç¬”
 	private Color green =  new Color(10, 111, 40);
 	private Color pink =  new Color(255, 149, 184);
 	private Color purple =  new Color(121,9,204);
@@ -162,7 +162,7 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 	
 	/**
-	 * »­Êı¾İ
+	 * ç”»æ•°æ®
 	 */
 	private void drawData() {
 		
@@ -188,12 +188,12 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 
 	/**
-	 * »­±í¸ñ
+	 * ç”»è¡¨æ ¼
 	 */
 	private void drawTable() {
 		initBorder();
-		int widthLength = getWidth()-LEFT_BORDER-RIGHT_BORDER;//¿í¶È
-		int hightLength = getHeight()-TOP_BORDER-BOTTOM_BORDER;//¸ß¶È
+		int widthLength = getWidth()-LEFT_BORDER-RIGHT_BORDER;//å®½åº¦
+		int hightLength = getHeight()-TOP_BORDER-BOTTOM_BORDER;//é«˜åº¦
 		calculateColumn(widthLength);
 		calculateRow(hightLength);
 		
@@ -225,7 +225,7 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 	
 	/**
-	 * ¸ù¾İx,y×ø±ê¼ÆËãµã
+	 * æ ¹æ®x,yåæ ‡è®¡ç®—ç‚¹
 	 * @param xValue
 	 * @param qValue
 	 * @return
@@ -242,7 +242,7 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 	
 	/**i
-	 * ¼ÆËãÁĞÊı
+	 * è®¡ç®—åˆ—æ•°
 	 */
 	private void calculateColumn(int length){
 	
@@ -256,10 +256,10 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 			float realStep = (new Float(column))/10;
 			this.stepColumnValue =(int)(realStep+0.5);
 				
-			if (realStep>this.stepColumnValue) {//Ğ¡ÓÚËÄ  ÉáÈ¥
+			if (realStep>this.stepColumnValue) {//å°äºå››  èˆå»
 				Float stepfloat = new Float(this.stepColumnValue);
 					
-				float difference =(float)Math.round((realStep-stepfloat)*100)/100;//±£ÁôÁ½Î»Ğ¡Êı
+				float difference =(float)Math.round((realStep-stepfloat)*100)/100;//ä¿ç•™ä¸¤ä½å°æ•°
 				
 				int increament = (int)Math.ceil((difference*10)/this.stepColumnValue);
 				
@@ -275,7 +275,7 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 
 	
 	/**
-	 * ¼ÆËãĞĞÊı
+	 * è®¡ç®—è¡Œæ•°
 	 * @param length
 	 */
 	private void calculateRow(int length) {
@@ -296,8 +296,8 @@ public class ScatterPanel extends JPanel implements Observer ,MouseListener,Mous
 	}
 	
 	/**
-	 * ÖØÖÃ½ÚµãÁĞ±íÖĞÆäÓàÎ´Ñ¡ÖĞ½ÚµãµÄÑÕÉ«
-	 * @param dot Ñ¡ÖĞ½Úµã
+	 * é‡ç½®èŠ‚ç‚¹åˆ—è¡¨ä¸­å…¶ä½™æœªé€‰ä¸­èŠ‚ç‚¹çš„é¢œè‰²
+	 * @param dot é€‰ä¸­èŠ‚ç‚¹
 	 */
 	private void resetDefaultColor(DotWithColor dot){
 		

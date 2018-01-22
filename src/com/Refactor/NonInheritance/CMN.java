@@ -44,7 +44,7 @@ import com.mathworks.toolbox.javabuilder.MWException;
 
 public class CMN {
 	
-	public static int Th2 =1;   //Ä¬ÈÏÊÇ0     0£º0   1£ºÆ½¾ùÖµ    2£º×î´óÖµ
+	public static int Th2 =1;   //é»˜è®¤æ˜¯0     0ï¼š0   1ï¼šå¹³å‡å€¼    2ï¼šæœ€å¤§å€¼
 
 	public static ArrayList<String> getAllMehthodnames(String filename)
 			throws IOException {
@@ -65,7 +65,7 @@ public class CMN {
 
 	public static double[][] getAllLineFromFile(String filename)
 			throws IOException {
-		// ´ÓÎÄµµÖĞ¶ÁÈ¡¾ØÕó
+		// ä»æ–‡æ¡£ä¸­è¯»å–çŸ©é˜µ
 		int n = 0;
 		ArrayList<String> MarixzeroList = new ArrayList<String>();
 		File file = new File(filename);
@@ -267,12 +267,12 @@ public class CMN {
 	
 		int[][] A = x;
 		ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-		// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+		// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 		cns = initialCNSclss(cns, SrcAction.classname);
 		double[][] Q = new double[A.length][A.length];
 		double W = get_W1(A);
 		Q = initialQclss2(cns, SrcAction.classname, A, W);
-		double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+		double MQ = 0;// è®°å½•æ¨¡å—åº¦
 
 		while (cns.size()> threhold) {
 
@@ -364,7 +364,7 @@ public class CMN {
 				}
 				
 				
-			}//Èç¹ûÊÇÊôĞÔ
+			}//å¦‚æœæ˜¯å±æ€§
 
 			
 		}
@@ -448,7 +448,7 @@ public class CMN {
 		double[][] Q = new double[A.length][A.length];
 		double W = CMN.get_W(A);
 		Q = CMN.initialQ(cns, methodlist, A, W);
-		double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+		double MQ = 0;// è®°å½•æ¨¡å—åº¦
 		while (CMN.get_Qmax(Q).max > 0) {
 			int id_i = CMN.get_Qmax(Q).i;
 			int id_j = CMN.get_Qmax(Q).j;
@@ -458,7 +458,7 @@ public class CMN {
 			MQ = MQ + CMN.get_Qmax(Q).max;
 		}
 
-	//	System.out.println("Ä£¿é¶È=" + MQ);
+	//	System.out.println("æ¨¡å—åº¦=" + MQ);
 		return cns;
 
 	}
@@ -469,13 +469,13 @@ public class CMN {
 				CMN cmn = new CMN();
 
 				ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-				// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+				// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 				cns = cmn.initialCNS(cns, methodbukefen, methodduli);
 
 				double[][] Q = new double[A.length][A.length];
 				double W = cmn.get_W(A);
 				Q = cmn.initialQ(cns, methodlist, A, W,methodbukefen,methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 				while (cmn.get_Qmax(Q).max > 0) {
 					 
 					int id_i = cmn.get_Qmax(Q).i;
@@ -561,7 +561,7 @@ public class CMN {
 	}
 	
 	
-	public static boolean IsintheSameClass(ArrayList<String> cnsi,  ArrayList<String> cnsj) {//²»ÊôÓÚÍ¬Ò»¸öÀà·µ»Øtrue
+	public static boolean IsintheSameClass(ArrayList<String> cnsi,  ArrayList<String> cnsj) {//ä¸å±äºåŒä¸€ä¸ªç±»è¿”å›true
 		boolean same = false;
 		for(int i = 0; i < cnsi.size(); i++){
 			for(int j = 0; j < cnsj.size(); j++){
@@ -581,14 +581,14 @@ public class CMN {
 
 		returnvalue rv = new returnvalue();
 		ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-		// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+		// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 		cns = CMN.initialCNS(cns, methodbukefen, methodduli);
 		cns = dealgetsetattr(cns,methodlist);
 
 		double[][] Q = new double[cns.size()][cns.size()];
 		double W = CMN.get_W(A);
 		Q = CMN.initialQ(cns, methodlist, A, W,methodbukefen,methodduli);
-		double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+		double MQ = 0;// è®°å½•æ¨¡å—åº¦
 		while (CMN.get_Qmax(Q).max > 0) {
 			 
 			int id_i = CMN.get_Qmax(Q).i;
@@ -670,7 +670,7 @@ public class CMN {
 		return Q;		
 	}
 	
-	public static boolean JudgeMoveEntityoperations(ArrayList<String> cns1,ArrayList<String> cns2){//·µ»Øtrue ²»ºÏ²¢
+	public static boolean JudgeMoveEntityoperations(ArrayList<String> cns1,ArrayList<String> cns2){//è¿”å›true ä¸åˆå¹¶
 		boolean flag = false;
 		ArrayList<String> cnsClass1 = new ArrayList<String>();
 		ArrayList<String> cnsClass2 = new ArrayList<String>();
@@ -784,13 +784,13 @@ public class CMN {
 
 		returnvalue rv = new returnvalue();
 		ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-		// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+		// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 		cns = CMN.initialCNS1(cns,  methodlist);
 		cns = dealgetsetattr(cns,methodlist);
 		double[][] Q = new double[cns.size()][cns.size()];
 		double W = CMN.get_W(A);
 		Q = CMN.initialQInher(cns, methodlist, A, W);
-		double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+		double MQ = 0;// è®°å½•æ¨¡å—åº¦
 
 		while (CMN.get_Qmax(Q).max > 0) {
 			int id_i = CMN.get_Qmax(Q).i;
@@ -898,14 +898,14 @@ public class CMN {
 
 				ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
 
-				// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+				// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 				cns = CMN.initialCNS(cns, methodbukefen, methodduli);
 				cns = dealgetsetattr(cns,methodlist);
 
 				double[][] Q = new double[cns.size()][cns.size()];
 				double W = CMN.get_W(A);
 				Q = CMN.initialQ(cns, methodlist, A, W,methodbukefen,methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 
 				while (CMN.get_Qmax(Q).max > 0) {
 					 
@@ -944,7 +944,7 @@ public class CMN {
 			xshare = NonInheritanceRefactoring.makeshareattributmatrix(methodlist);
 			ycall = NonInheritanceRefactoring.makecallingmethodmatrix(methodlist);
 			zexe = NonInheritanceRefactoring.makeexecutematrix(methodlist);
-			// ÓïÒåÏàËÆ¶È¾ØÕó
+			// è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 			wsem = semantic.makesemanticmatrix(methodlist);
 			wsem = semantic.filterSemantic1(wsem);
 		}
@@ -986,7 +986,7 @@ public class CMN {
 					zexe = semantic.filterexeBetweenclass(zexe, methodlist, xshare, ycall);
 				}
 				if(d > 0){
-					//ÓïÒåÏàËÆ¶È¾ØÕó
+					//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 					wsem = semantic.makesemanticmatrix(methodlist);
 					wsem = semantic.filterSemantic(wsem);
 					wsem = semantic.filterSemanticBetweenclass(wsem,methodlist,xshare,ycall);
@@ -1008,7 +1008,7 @@ public class CMN {
 				double W = get_W(A);
 				
 				double[][] Q = initialQ(cns, methodlist, A, W, methodbukefen, methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 				double threshold = 0;
 				double max = 0;
 				int count = 0;
@@ -1029,7 +1029,7 @@ public class CMN {
 				}
 
 				threshold = tool.th2(threshold, max);
-				//°áÒÆº¯ÊıÖØ¹¹
+				//æ¬ç§»å‡½æ•°é‡æ„
 				while ((get_Qmax(Q).max >threshold)&&(!JudgeMoveEntityoperations(cns.get(get_Qmax(Q).i),cns.get(get_Qmax(Q).j)))) {
 					int id_i = get_Qmax(Q).i;
 					int id_j = get_Qmax(Q).j;
@@ -1085,7 +1085,7 @@ public class CMN {
 					zexe = NonInheritanceRefactoring.makeexecutematrix(methodlist);
 				}
 				if(d > 0){
-					//ÓïÒåÏàËÆ¶È¾ØÕó
+					//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 					wsem = semantic.makesemanticmatrix(methodlist);
 					wsem = semantic.filterSemantic(wsem);
 				
@@ -1109,7 +1109,7 @@ public class CMN {
 				double W = get_W(A);
 				
 				double[][] Q = initialQ(cns, methodlist, A, W, methodbukefen, methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 				while (get_Qmax(Q).max > 0) {
 					int id_i = get_Qmax(Q).i;
 					int id_j = get_Qmax(Q).j;
@@ -1282,7 +1282,7 @@ public class CMN {
 		ArrayList<String> Targetnow = (ArrayList<String>) Target.clone();
 		ArrayList<String> Sourcenow = (ArrayList<String>) Source.clone();
 		
-		for(int i = 0 ; i < Source.size(); i++){//°áÒÆ×Ü´ÎÊı
+		for(int i = 0 ; i < Source.size(); i++){//æ¬ç§»æ€»æ¬¡æ•°
 
 			int idmax = 0;
 			double Qmax = -10;
@@ -1329,7 +1329,7 @@ public class CMN {
 		return sg;	
 		
 		
-//		System.out.println("Ô´eg==========================" );
+//		System.out.println("æºeg==========================" );
 //		
 //		for(int i = 0 ; i < eg.size(); i++){
 //			System.out.println(eg.get(i));
@@ -1339,7 +1339,7 @@ public class CMN {
 //			System.out.println(Source.get(i));
 //		}
 //		
-//		System.out.println("Ä¿±ê=========================="+target);
+//		System.out.println("ç›®æ ‡=========================="+target);
 //		for(int i = 0 ; i < Target.size(); i++){
 //			System.out.println(Target.get(i));
 //		}
@@ -1387,7 +1387,7 @@ public class CMN {
 		
     
 //		for(int i = 0 ; i < entitygroup.size(); i++){
-//			System.out.println("µÚ"+i+"×é½¨Òé===========================");
+//			System.out.println("ç¬¬"+i+"ç»„å»ºè®®===========================");
 //			for(int j = 0 ; j < entitygroup.get(i).size(); j++){
 //				System.out.println(entitygroup.get(i).get(j));
 //			}
@@ -1518,7 +1518,7 @@ public class CMN {
 
 	}
 
-	// Ğ´ÎÄ¼şº¯Êı
+	// å†™æ–‡ä»¶å‡½æ•°
 		public static void writeByFileWrite(String _sDestFile, String _sContent)
 
 		throws IOException {
@@ -1550,11 +1550,11 @@ public class CMN {
 		}
 	
 	public static void printCNS(ArrayList<ArrayList<String>> cns) throws IOException {
-		String log   =  "D:\\ÖØ¹¹ÒÔºó.txt";
+		String log   =  "D:\\é‡æ„ä»¥å.txt";
 		int kkk = 0;
 		for (int i = 0; i < cns.size(); i++) {
 			kkk = kkk + cns.get(i).size();
-			//writeByFileWrite(log,"µÚ" + i + "¸öÉçÍÅ½á¹¹£º" + cns.get(i).size()+"\n");
+			//writeByFileWrite(log,"ç¬¬" + i + "ä¸ªç¤¾å›¢ç»“æ„ï¼š" + cns.get(i).size()+"\n");
 			for (int j = 0; j < cns.get(i).size(); j++) {
 		
 			// writeByFileWrite(log,cns.get(i).get(j)+"\n");
@@ -1570,14 +1570,14 @@ public class CMN {
 		int kkk = 0;
 		for (int i = 0; i < cns.size(); i++) {
 			kkk = kkk + cns.get(i).size();
-		//	writeByFileWrite(log,"µÚ" + i + "¸öÉçÍÅ½á¹¹£º" + cns.get(i).size()+"\n");
+		//	writeByFileWrite(log,"ç¬¬" + i + "ä¸ªç¤¾å›¢ç»“æ„ï¼š" + cns.get(i).size()+"\n");
 			for (int j = 0; j < cns.get(i).size(); j++) {
 				
 		//	 writeByFileWrite(log,cns.get(i).get(j)+"\n");
 			}
 		}
 		
-	//	writeByFileWrite(log,"¹²"+kkk+"------------------------------------------"+"\n");
+	//	writeByFileWrite(log,"å…±"+kkk+"------------------------------------------"+"\n");
 		NonInheritanceRefactoring.huafenhou  =  kkk;
 
 	}
@@ -1585,7 +1585,7 @@ public class CMN {
 	public static void printCNS1(String log1, ArrayList<ArrayList<String>> cns) throws IOException {
 		int kkk = 0;
 		for (int i = 0; i < cns.size(); i++) {
-			//tool.writeByFileWrite(log1,"µÚ" + i + "¸öÉçÍÅ½á¹¹£º" + cns.get(i).size()+"\n");
+			//tool.writeByFileWrite(log1,"ç¬¬" + i + "ä¸ªç¤¾å›¢ç»“æ„ï¼š" + cns.get(i).size()+"\n");
 			for (int j = 0; j < cns.get(i).size(); j++) {
 				kkk = kkk + cns.get(i).size();			
 		   // 	tool.writeByFileWrite(log1,cns.get(i).get(j)+"\n");
@@ -1696,7 +1696,7 @@ public class CMN {
 		return id;
 	}
 	
-	public static index get_QmaxCondition(double[][] Q, ArrayList<ArrayList<String>> cns) {//´¿Í¬ÀàºÏ²¢£¡
+	public static index get_QmaxCondition(double[][] Q, ArrayList<ArrayList<String>> cns) {//çº¯åŒç±»åˆå¹¶ï¼
 		double Qmax = -100;
 		index id = new index();
 		for (int i = 0; i < Q.length; i++) {
@@ -1720,14 +1720,14 @@ public class CMN {
 
 		        returnvalue rv = new returnvalue();
 				ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-				// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+				// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 				cns = CMN.initialCNS(cns, methodbukefen, methodduli);
 				cns = dealgetsetattr(cns,methodlist);
 
 				double[][] Q = new double[cns.size()][cns.size()];
 				double W = CMN.get_W(A);
 				Q = CMN.initialQ(cns, methodlist, A, W,methodbukefen,methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 
 				while (CMN.get_Qmax(Q).max > 0) {
 					 
@@ -1750,13 +1750,13 @@ public class CMN {
 			ArrayList<String> methodduli) {
 		
 				ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
-				// ÉçÇø½á¹¹³õÊ¼»¯²Ù×÷
+				// ç¤¾åŒºç»“æ„åˆå§‹åŒ–æ“ä½œ
 				cns = initialCNS(cns, methodbukefen, methodduli);
 			
 				double[][] Q = new double[A.length][A.length];
 				double W = get_W(A);
 				Q = initialQ(cns, methodlist, A, W,methodbukefen,methodduli);
-				double MQ = 0;// ¼ÇÂ¼Ä£¿é¶È
+				double MQ = 0;// è®°å½•æ¨¡å—åº¦
 				
 				while (get_Qmax(Q).max > 0) {
 					 
@@ -1769,7 +1769,7 @@ public class CMN {
 					MQ = MQ + get_Qmax(Q).max;
 				}
 		
-				System.out.println("Ä£¿é¶È=" + MQ);
+				System.out.println("æ¨¡å—åº¦=" + MQ);
 				return cns;
 
 			}

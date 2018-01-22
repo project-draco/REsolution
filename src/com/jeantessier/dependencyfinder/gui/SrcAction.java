@@ -99,11 +99,11 @@ public class SrcAction extends AbstractAction implements Runnable {
     	
     	System.out.println("sourcepath->"+sourcepath);
     	
-//    	sourcepath = "D:\\¿ªÔ´\\JHotDraw 7.0.6\\src\\";
-     // sourcepath = "E:\\¿ªÔ´\\ÏµÍ³¼¶±ğÖØ¹¹µÄÊµÑé¶ÔÏó\\jfreechart-0.9.10\\src\\";
-	//sourcepath = "E:\\¿ªÔ´\\ÏµÍ³¼¶±ğÖØ¹¹µÄÊµÑé¶ÔÏó\\Apache HSQLDB\\hsqldb\\src\\";
-    	//sourcepath = "E:\\¿ªÔ´\\ÏµÍ³¼¶±ğÖØ¹¹µÄÊµÑé¶ÔÏó\\jEdit\\";
-    // sourcepath = "E:\\¿ªÔ´\\ÏµÍ³¼¶±ğÖØ¹¹µÄÊµÑé¶ÔÏó\\jmol-9\\src\\";
+//    	sourcepath = "D:\\å¼€æº\\JHotDraw 7.0.6\\src\\";
+     // sourcepath = "E:\\å¼€æº\\ç³»ç»Ÿçº§åˆ«é‡æ„çš„å®éªŒå¯¹è±¡\\jfreechart-0.9.10\\src\\";
+	//sourcepath = "E:\\å¼€æº\\ç³»ç»Ÿçº§åˆ«é‡æ„çš„å®éªŒå¯¹è±¡\\Apache HSQLDB\\hsqldb\\src\\";
+    	//sourcepath = "E:\\å¼€æº\\ç³»ç»Ÿçº§åˆ«é‡æ„çš„å®éªŒå¯¹è±¡\\jEdit\\";
+    // sourcepath = "E:\\å¼€æº\\ç³»ç»Ÿçº§åˆ«é‡æ„çš„å®éªŒå¯¹è±¡\\jmol-9\\src\\";
     	
     	/**
     	 * @author revo begin
@@ -189,7 +189,7 @@ public class SrcAction extends AbstractAction implements Runnable {
             
             Tempvarible();
         	
-        	long time1 =  System.currentTimeMillis();// µ±Ç°Ê±¼ä¶ÔÓ¦µÄºÁÃëÊı
+        	long time1 =  System.currentTimeMillis();// å½“å‰æ—¶é—´å¯¹åº”çš„æ¯«ç§’æ•°
             printer.traverseNodes(model.getPackages());
             
             VisitorBase.judge = false;
@@ -219,13 +219,13 @@ public class SrcAction extends AbstractAction implements Runnable {
             model.getStatusLine().showInfo("Saved " + file.getName());
             model.getStatusLine().showInfo("preprocessing Classes...");
           
-            preprocessing.preprocessingClasses(barLisenter); //Ô¤´¦Àí²Ù×÷
+            preprocessing.preprocessingClasses(barLisenter); //é¢„å¤„ç†æ“ä½œ
 //            Main.mainNoninheritance();
 //          // MainAdjust.AdjustCoefficients();
 //             MainInheritance.InheritanceOperations();
             long time2 = System.currentTimeMillis();
             System.out.println();
-            System.out.println("½âÎö+ÖØ¹¹ÓÃÊ±£º" + (time2-time1));
+            System.out.println("è§£æ+é‡æ„ç”¨æ—¶ï¼š" + (time2-time1));
             
             barLisenter.endSession();
         } catch (Exception e) {

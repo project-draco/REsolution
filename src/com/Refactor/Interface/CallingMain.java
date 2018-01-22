@@ -49,7 +49,7 @@ package com.Refactor.Interface;
 public class CallingMain {
 
 //	public static void CMDNEvent() throws IOException, SAXException, MWException{
-//		preprocessing.preprocessingClasses(); //Ô¤´¦Àí²Ù×÷
+//		preprocessing.preprocessingClasses(); //é¢„å¤„ç†æ“ä½œ
 //	}
 	
 //	public static void SetDefaultCoefficients(){
@@ -71,7 +71,7 @@ public class CallingMain {
 //		 double i = 1;
 //		 NonInheritanceRefactoring.persent = 0;
 //		 
-//		 NonInheritanceRefactoring.TempIndexChechBox();//ÓëÑ§µÜ¶ÔÍê½Ó¿ÚÉ¾µô
+//		 NonInheritanceRefactoring.TempIndexChechBox();//ä¸å­¦å¼Ÿå¯¹å®Œæ¥å£åˆ æ‰
 //		 
 //		 for (int p = 0; p < preprocessing.MergeSetList.size(); p++) {
 //			 if(NonInheritanceRefactoring.IndexChechBox.contains(p)){
@@ -81,13 +81,13 @@ public class CallingMain {
 //			 NonInheritanceRefactoring.persent = i/(double)preprocessing.MergeSetList.size();
 //			 }
 //		 }
-//		 NonInheritanceRefactoring.FinalSortSuggestions();//·ÖÎö×îÖÕÖØ¹¹½¨Òé
-//		 GenerateRefactoringSuggestions.PrintRefactoringSuggestions(NonInheritanceRefactoring.sgs);//´òÓ¡·Ç¼Ì³ĞÌåÏµÖØ¹¹½¨Òé
-//		 NonInheritanceRefactoring.GetQSorttoDrawFigure(0, 0,preprocessing.MergeSetList.size());//³·Ïú²Ù×÷
+//		 NonInheritanceRefactoring.FinalSortSuggestions();//åˆ†ææœ€ç»ˆé‡æ„å»ºè®®
+//		 GenerateRefactoringSuggestions.PrintRefactoringSuggestions(NonInheritanceRefactoring.sgs);//æ‰“å°éç»§æ‰¿ä½“ç³»é‡æ„å»ºè®®
+//		 NonInheritanceRefactoring.GetQSorttoDrawFigure(0, 0,preprocessing.MergeSetList.size());//æ’¤é”€æ“ä½œ
 //	}
 	
 //	public static void UndoRefactoringOperations(int unClass, int unEntity){
-//		NonInheritanceRefactoring.GetQSorttoDrawFigure(unClass, unEntity ,preprocessing.MergeSetList.size());//³·Ïú²Ù×÷
+//		NonInheritanceRefactoring.GetQSorttoDrawFigure(unClass, unEntity ,preprocessing.MergeSetList.size());//æ’¤é”€æ“ä½œ
 //	}
 //	
 //	public static void DrawCCMatrix(int CCindx) throws SAXException, IOException, MWException{
@@ -97,7 +97,7 @@ public class CallingMain {
 //	public static void TreeEvent() throws IOException{
 //		RefactorInheritance.levels =  RefactorInheritance.getInheritanceTreelevels(preprocessing.extendsMatrix.clone());
 //		RefactorInheritance.levels =  RefactorInheritance.getinterfaces(RefactorInheritance.levels);
-//		RefactorInheritance.levels =  RefactorInheritance.getTreesBeforeRefactoring(RefactorInheritance.levels);//ÖØ¹¹Ç°µÄ¼Ì³ĞÊ÷½á¹¹
+//		RefactorInheritance.levels =  RefactorInheritance.getTreesBeforeRefactoring(RefactorInheritance.levels);//é‡æ„å‰çš„ç»§æ‰¿æ ‘ç»“æ„
 //	}	
 	
 //	public static void Refactor2Event() throws IOException, SAXException, MWException{
@@ -106,7 +106,7 @@ public class CallingMain {
 //		 RefactorInheritance.TempIndexChechBox();
 //		 RefactorInheritance.persent = 0;
 //		 levelsRefactor = RefactorInheritance.RefactorEachLevel(log1,levelsRefactor,preprocessing.extendsMatrix.clone());	 
-//		 ArrayList<SplitTrees> SplitTree = RefactorInheritance.TidyResults(levelsRefactor);//ĞèÒª±»·Ö½âµÄÊ÷ ĞÅÏ¢
+//		 ArrayList<SplitTrees> SplitTree = RefactorInheritance.TidyResults(levelsRefactor);//éœ€è¦è¢«åˆ†è§£çš„æ ‘ ä¿¡æ¯
 //		 SplitTree = RefactorInheritance.CalculatInheritanceTreesQ(SplitTree,levelsRefactor);
 //		 RefactorInheritance.rv.levelsRefactor = levelsRefactor;
 //		 RefactorInheritance.rv.SplitTree = SplitTree;
@@ -115,7 +115,7 @@ public class CallingMain {
 	
 	
 //	public static void UndoTreeRefactoringOperations(int uTree){
-//		RefactorInheritance.CalculatInheritanceTreesDetaQ(uTree);//³·Ïú²Ù×÷
+//		RefactorInheritance.CalculatInheritanceTreesDetaQ(uTree);//æ’¤é”€æ“ä½œ
 //	}
 //	
 //	public static void MetricsEvent(){

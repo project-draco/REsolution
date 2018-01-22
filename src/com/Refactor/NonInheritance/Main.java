@@ -42,14 +42,14 @@ import com.mathworks.toolbox.javabuilder.MWException;
 
 public class Main {
 	
-	static ArrayList<String> buchai = new ArrayList<String>();// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
-	static ArrayList< ArrayList<String> >jiubuchai = new  ArrayList< ArrayList<String> >();// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
+	static ArrayList<String> buchai = new ArrayList<String>();// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
+	static ArrayList< ArrayList<String> >jiubuchai = new  ArrayList< ArrayList<String> >();// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
 	static ArrayList<ArrayList<String>> methodbukefenlocal = new ArrayList<ArrayList<String>>();
 	static double OriQ = 0;
 	static double RefQ = 0;
 	static double[][] A;
 	public static void mainNoninheritance() throws SAXException, IOException, MWException {
 		
-		 NonInheritanceRefactoring.RefactorNonIheritance(NonInheritanceRefactoring.a, NonInheritanceRefactoring.b, NonInheritanceRefactoring.c, NonInheritanceRefactoring.d);//·Ç¼Ì³ĞÌåÏµÖØ¹¹			 
+		 NonInheritanceRefactoring.RefactorNonIheritance(NonInheritanceRefactoring.a, NonInheritanceRefactoring.b, NonInheritanceRefactoring.c, NonInheritanceRefactoring.d);//éç»§æ‰¿ä½“ç³»é‡æ„			 
 	}
 }

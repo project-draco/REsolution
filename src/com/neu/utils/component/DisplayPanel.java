@@ -44,7 +44,7 @@ public class DisplayPanel extends JPanel{
 	}
 	
 	public JPanel buildPanel() {
-		// 中间显示面板
+		// 涓棿鏄剧ず闈㈡澘
 		JPanel centerPanel = new JPanel(new BorderLayout());
 
 		JPanel guidePanel = buildGuidePanel();
@@ -59,13 +59,13 @@ public class DisplayPanel extends JPanel{
 	}
 	
 	/**
-	 * 构建排列顺序导航箭头面板
+	 * 鏋勫缓鎺掑垪椤哄簭瀵艰埅绠ご闈㈡澘
 	 * @return
 	 */
 	private JPanel buildGuidePanel() {
 
 		JPanel guidePanel = new JPanel(new BorderLayout());
-		JLabel qLabel = new JLabel("△Q");
+		JLabel qLabel = new JLabel("鈻砆");
 		JLabel lowerLabel = new JLabel("lower");
 
 		JPanel jPanel_north = new JPanel();

@@ -28,29 +28,29 @@ import java.util.ArrayList;
 
 
 public class extend {
- public int matrixInd = 10000;//ÔÚclassnamelistÖĞµÄĞòºÅ
+ public int matrixInd = 10000;//åœ¨classnamelistä¸­çš„åºå·
  public String TreenodeName;
- public ArrayList<Integer> SubClassInd = new  ArrayList<Integer>();//×ÓÀàµÄË÷Òı
- public ArrayList<Integer> SuperClassInd = new  ArrayList<Integer>();  //¸¸ÀàµÄË÷Òı
- public ArrayList<String> SubClassName = new  ArrayList<String>();//×ÓÀàµÄÀàÃû
- public ArrayList<String> SuperClassName = new  ArrayList<String>();  //¸¸ÀàµÄÀàÃû
+ public ArrayList<Integer> SubClassInd = new  ArrayList<Integer>();//å­ç±»çš„ç´¢å¼•
+ public ArrayList<Integer> SuperClassInd = new  ArrayList<Integer>();  //çˆ¶ç±»çš„ç´¢å¼•
+ public ArrayList<String> SubClassName = new  ArrayList<String>();//å­ç±»çš„ç±»å
+ public ArrayList<String> SuperClassName = new  ArrayList<String>();  //çˆ¶ç±»çš„ç±»å
  
- public ArrayList<String> OutdependencyClassName = new  ArrayList<String>();//±»Õâ¸öÀàËùÒÀÀµËùÓĞÀàµÄÀàÃû
+ public ArrayList<String> OutdependencyClassName = new  ArrayList<String>();//è¢«è¿™ä¸ªç±»æ‰€ä¾èµ–æ‰€æœ‰ç±»çš„ç±»å
  
- public ArrayList<String> IndependencyClassName = new  ArrayList<String>();//ËùÓĞÒÀÀµÕâ¸öÀàµÄÀàÃû
+ public ArrayList<String> IndependencyClassName = new  ArrayList<String>();//æ‰€æœ‰ä¾èµ–è¿™ä¸ªç±»çš„ç±»å
  
- public int DrawlevelNo = 10000;//ÔÚ¿ÉÊÓ»¯Ê±£¬¸ÃÀàÓ¦´¦ÓÚµÄ²ã¼¶
+ public int DrawlevelNo = 10000;//åœ¨å¯è§†åŒ–æ—¶ï¼Œè¯¥ç±»åº”å¤„äºçš„å±‚çº§
  
  public double DeltaQ = 0;
  public int move = 0;
  
- public boolean split = false; //ÊÇ·ñ±»·Ö½âÁË
+ public boolean split = false; //æ˜¯å¦è¢«åˆ†è§£äº†
  
- public boolean interfaceornot = false;   //ÊÇ²»ÊÇ½Ó¿Ú
- public ArrayList< ArrayList<String> > cns = new ArrayList< ArrayList<String> >();//°üº¬µÄÊôĞÔÁĞ±í
+ public boolean interfaceornot = false;   //æ˜¯ä¸æ˜¯æ¥å£
+ public ArrayList< ArrayList<String> > cns = new ArrayList< ArrayList<String> >();//åŒ…å«çš„å±æ€§åˆ—è¡¨
  
- public boolean NOfuleibeifenjie = false;  //¸¸Àà½ÚµãÊÇ·ñ±»·Ö½â
- public int mainidx = 0;  //Ö÷¼Ì³ĞÊ÷±êºÅ
+ public boolean NOfuleibeifenjie = false;  //çˆ¶ç±»èŠ‚ç‚¹æ˜¯å¦è¢«åˆ†è§£
+ public int mainidx = 0;  //ä¸»ç»§æ‰¿æ ‘æ ‡å·
  
  public NodeColor color;
 }

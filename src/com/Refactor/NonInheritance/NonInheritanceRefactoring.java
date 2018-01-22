@@ -55,11 +55,11 @@ public class NonInheritanceRefactoring {
 	public static ArrayList<Integer> IndexChechBox = new ArrayList<Integer>();
 	public static ArrayList<ArrayList<String>> result0 = new ArrayList<ArrayList<String>>();
 	
-	public static double YCurrent = 0; //¡¾µ±Ç°µÄy×ø±ê¡¿
-	public static int XCurrent = 0;//¡¾µ±Ç°µÄx×ø±ê¡¿
-	public static int Xtotal = 0;//¡¾x×ø±êÖá×Ü³¤¶È¡¿
-	public static double Ymax = 0;//¡¾Y×ø±êÖá×î´óÖµ¡¿
-	public static double Ymin = 0;//¡¾Y×ø±êÖá×îĞ¡Öµ¡¿
+	public static double YCurrent = 0; //ã€å½“å‰çš„yåæ ‡ã€‘
+	public static int XCurrent = 0;//ã€å½“å‰çš„xåæ ‡ã€‘
+	public static int Xtotal = 0;//ã€xåæ ‡è½´æ€»é•¿åº¦ã€‘
+	public static double Ymax = 0;//ã€Yåæ ‡è½´æœ€å¤§å€¼ã€‘
+	public static double Ymin = 0;//ã€Yåæ ‡è½´æœ€å°å€¼ã€‘
 	
 	static int huafenhou = 0;
 	public static Suggestions sgs = new Suggestions();
@@ -87,16 +87,16 @@ public class NonInheritanceRefactoring {
 	public static ArrayList<ArrayList<String>> RefactorOneConnect(MergeMethodNonInheri rm, double a, double b, double c, double d) throws IOException, SAXException, MWException{
 		
 		ArrayList<ArrayList<String>> result0 = new ArrayList<ArrayList<String>>();
-		ArrayList<String> methodlist = rm.methodlist;  //µ÷½Ú
-		ArrayList<ArrayList<String>> methodlistoriginalpart = rm.methodlistoriginalpart;// Ô­Ê¼ÀàµÄ½á¹¹                             //µ÷½Ú
+		ArrayList<String> methodlist = rm.methodlist;  //è°ƒèŠ‚
+		ArrayList<ArrayList<String>> methodlistoriginalpart = rm.methodlistoriginalpart;// åŸå§‹ç±»çš„ç»“æ„                             //è°ƒèŠ‚
 		ArrayList<ArrayList<String>> methodbukefen = rm.methodbukefen ;
 		ArrayList<String> methodduli= rm.methodduli;
 		ArrayList<ArrayList<String>> cns = new ArrayList<ArrayList<String>>();
 
 		if(preprocessing.DSC>7){
-	    cns = CMN.CommunityDetectionNoextentsCondition(a, b, c, d, methodlist, methodbukefen, methodduli,methodlistoriginalpart);//ÖØ¹¹ºóÀàµÄ½á¹¹
+	    cns = CMN.CommunityDetectionNoextentsCondition(a, b, c, d, methodlist, methodbukefen, methodduli,methodlistoriginalpart);//é‡æ„åç±»çš„ç»“æ„
 		}else{
-		cns = CMN.CommunityDetectionNoextentsCondition1(a, b, c, d, methodlist, methodbukefen, methodduli);//ÖØ¹¹ºóÀàµÄ½á¹¹
+		cns = CMN.CommunityDetectionNoextentsCondition1(a, b, c, d, methodlist, methodbukefen, methodduli);//é‡æ„åç±»çš„ç»“æ„
 		}
 		
         for(int pp = 0; pp < cns.size(); pp++){
@@ -147,12 +147,12 @@ public class NonInheritanceRefactoring {
 //		SrcAction.classesMap.get(SrcAction.classname.get(i)).methodlines.clear();
 		}
 		GenerateRefactoringSuggestions.zengjialei = 0;
-		YCurrent=0;//·Ç¼Ì³ĞÌåÏµÖØ¹¹½áÊøºó£¬ÏµÍ³µÄQÖµ
+		YCurrent=0;//éç»§æ‰¿ä½“ç³»é‡æ„ç»“æŸåï¼Œç³»ç»Ÿçš„Qå€¼
 		Ymax = 0;
 		Ymin = 0;
 		Xtotal = 0;
-		Main.buchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
-		Main.jiubuchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
+		Main.buchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
+		Main.jiubuchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
 		Main.methodbukefenlocal.clear();
 		Main.RefQ = 0;
 	}
@@ -173,12 +173,12 @@ public class NonInheritanceRefactoring {
 		SrcAction.allSrcPaths.clear();
 		IndexChechBox.clear();
 		result0.clear();
-		YCurrent=0;//·Ç¼Ì³ĞÌåÏµÖØ¹¹½áÊøºó£¬ÏµÍ³µÄQÖµ
+		YCurrent=0;//éç»§æ‰¿ä½“ç³»é‡æ„ç»“æŸåï¼Œç³»ç»Ÿçš„Qå€¼
 		Ymax = 0;
 		Ymin = 0;
 		Xtotal = 0;
-		Main.buchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
-		Main.jiubuchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
+		Main.buchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
+		Main.jiubuchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
 		Main.methodbukefenlocal.clear();
 		Main.OriQ = 0;
 		Main.RefQ = 0;
@@ -222,12 +222,12 @@ public static void ClearAction1(){
 		sgs.UndoEntitySort.clear();
 		GenerateRefactoringSuggestions.zengjialei = 0;
 		result0.clear();;
-		YCurrent=0;//·Ç¼Ì³ĞÌåÏµÖØ¹¹½áÊøºó£¬ÏµÍ³µÄQÖµ
+		YCurrent=0;//éç»§æ‰¿ä½“ç³»é‡æ„ç»“æŸåï¼Œç³»ç»Ÿçš„Qå€¼
 		Ymax = 0;
 		Ymin = 0;
 		Xtotal = 0;
-		Main.buchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
-		Main.jiubuchai.clear();;// Èç¹ûÒ»¸öÀàÄÚ²¿Ö»°üº¬3¸öº¯Êı£¬²»×ö²ğ·Ö
+		Main.buchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
+		Main.jiubuchai.clear();;// å¦‚æœä¸€ä¸ªç±»å†…éƒ¨åªåŒ…å«3ä¸ªå‡½æ•°ï¼Œä¸åšæ‹†åˆ†
 		Main.methodbukefenlocal.clear();
 		Main.OriQ = 0;
 		Main.RefQ = 0;
@@ -245,7 +245,7 @@ public static void ClearAction1(){
 		RefactorInheritance.levels.clear();
 		
 	}
-	//È¡µÃ»æÍ¼Êı¾İ
+	//å–å¾—ç»˜å›¾æ•°æ®
 	public static void GetQSorttoDrawFigure(int unClass, int unEntity,int rmsize){
 		int count = 1;
 		int count1 = 1;
@@ -287,7 +287,7 @@ public static void ClearAction1(){
 		for(int i = 0 ; i  < sgs.Q_Orig.length; i++ ){
 			 System.out.println("sgs.Q_Orig==="+i+"  "+ sgs.Q_Orig[i]);
 		}
-		 System.out.println("³·Ïú==="+unClass+"²½ÌáÁ¶ÀàÖØ¹¹²Ù×÷==="+ "  ³·Ïú==="+unEntity+"²½°áÒÆº¯ÊıÖØ¹¹²Ù×÷===" + "===XCurrent==" + XCurrent + "===Xtotal=="+Xtotal+"  ===YCurrent==="+ YCurrent);
+		 System.out.println("æ’¤é”€==="+unClass+"æ­¥æç‚¼ç±»é‡æ„æ“ä½œ==="+ "  æ’¤é”€==="+unEntity+"æ­¥æ¬ç§»å‡½æ•°é‡æ„æ“ä½œ===" + "===XCurrent==" + XCurrent + "===Xtotal=="+Xtotal+"  ===YCurrent==="+ YCurrent);
 		 System.out.println(" sgs.Q_Orig[sgs.Q_Orig.length-1] -  sgs.Q_Orig[0]"+(sgs.Q_Orig[sgs.Q_Orig.length-1]-sgs.Q_Orig[0]));
 		 
 		for(int i = 0 ; i  < sgs.Q_Undo.length; i++ ){
@@ -297,7 +297,7 @@ public static void ClearAction1(){
 	
 	
 	
-	//È¡µÃ»æÍ¼Êı¾İ
+	//å–å¾—ç»˜å›¾æ•°æ®
 	
 	
 	
@@ -334,9 +334,9 @@ public static void ClearAction1(){
 			 persent = i/(double)preprocessing.MergeSetList.size();
 			 }
 		 }
-		 FinalSortSuggestions();//·ÖÎö×îÖÕÖØ¹¹½¨Òé
-		 GenerateRefactoringSuggestions.PrintRefactoringSuggestions(NonInheritanceRefactoring.sgs);//´òÓ¡·Ç¼Ì³ĞÌåÏµÖØ¹¹½¨Òé
-		 tool.GetQlog(0, 0,preprocessing.MergeSetList.size());//³·Ïú²Ù×÷
+		 FinalSortSuggestions();//åˆ†ææœ€ç»ˆé‡æ„å»ºè®®
+		 GenerateRefactoringSuggestions.PrintRefactoringSuggestions(NonInheritanceRefactoring.sgs);//æ‰“å°éç»§æ‰¿ä½“ç³»é‡æ„å»ºè®®
+		 tool.GetQlog(0, 0,preprocessing.MergeSetList.size());//æ’¤é”€æ“ä½œ
 	}
 	
 	
@@ -369,7 +369,7 @@ public static void ClearAction1(){
 		}
 		
 		if(d > 0){
-			//ÓïÒåÏàËÆ¶È¾ØÕó
+			//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 			wsem = semantic.makesemanticmatrix(methodlist);
 			wsem = semantic.filterSemantic(wsem, methodlist, xshare,  ycall, zexe);
 			

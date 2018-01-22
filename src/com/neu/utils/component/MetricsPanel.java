@@ -127,7 +127,7 @@ public class MetricsPanel extends JPanel{
 		
 		drawMetrics(g);
 		
-		//»æÖÆyÖáËµÃ÷ÎÄ×Ö
+		//ç»˜åˆ¶yè½´è¯´æ˜æ–‡å­—
 		String s = "Metrics Quotient Change";
 		drawRotateStr(g,s,this.getHeight()*0.45f, this.getWidth()*0.15f);
 		
@@ -136,7 +136,7 @@ public class MetricsPanel extends JPanel{
 	}
 
 	/**
-	 * »­³ö¾ØÕóÊı¾İ
+	 * ç”»å‡ºçŸ©é˜µæ•°æ®
 	 * @param g
 	 */
 	private void drawMetrics(Graphics g) {		
@@ -161,7 +161,7 @@ public class MetricsPanel extends JPanel{
 
 	
 	/**
-	 * »­³öYÖá
+	 * ç”»å‡ºYè½´
 	 * @param g
 	 */
 	private void drawY(Graphics g) {
@@ -186,7 +186,7 @@ public class MetricsPanel extends JPanel{
 			y++;
 		}
 		
-		//»­»ùÏß
+		//ç”»åŸºçº¿
 		if (min<0) {
 			zeroLine = (int)(this.getHeight()*0.7-((0-min)/yValue)*yStep);
 			g.setColor(Color.red);
@@ -198,7 +198,7 @@ public class MetricsPanel extends JPanel{
 	}
 
 	/**
-	 * »­³öXÖá
+	 * ç”»å‡ºXè½´
 	 * @param g
 	 */
 	private void drawX(Graphics g) {
@@ -214,7 +214,7 @@ public class MetricsPanel extends JPanel{
 	}
 	
 	/**
-	 * Ğı×ª×ø±ê»­³öyÖáËµÃ÷±êÇ©
+	 * æ—‹è½¬åæ ‡ç”»å‡ºyè½´è¯´æ˜æ ‡ç­¾
 	 * @param g
 	 * @param s
 	 * @param x
@@ -222,21 +222,21 @@ public class MetricsPanel extends JPanel{
 	 */
 	private void drawRotateStr(Graphics g,String s,float x,float y) {
 		Graphics2D g2 = (Graphics2D)g;
-		//Ğı×ª270¶È
+		//æ—‹è½¬270åº¦
 		g2.translate(0, this.getHeight());
 		g2.rotate(1.5*Math.PI);
 		
-		//»æÖÆyÖáËµÃ÷ÎÄ×Ö
+		//ç»˜åˆ¶yè½´è¯´æ˜æ–‡å­—
 		g2.setFont(new Font("Times New Roman", 1, 14));
 		g2.drawString(s, x,y);
 		
-		//»Ö¸´Õı³£×ø±ê
+		//æ¢å¤æ­£å¸¸åæ ‡
 		g2.translate(this.getHeight(), 0);
 		g2.rotate(0.5*Math.PI);
 	}
 
 	/**
-	 * ·â×°ÑÕÉ«
+	 * å°è£…é¢œè‰²
 	 * @return
 	 */
 	private Color[] setColorList() {
@@ -264,7 +264,7 @@ public class MetricsPanel extends JPanel{
 
 	
 	/**
-	 * ·â×°ÌáÊ¾ĞÅÏ¢Êı¾İ
+	 * å°è£…æç¤ºä¿¡æ¯æ•°æ®
 	 * @return
 	 */
 	private Map<Integer, String> wrapTipsMap() {
@@ -319,7 +319,7 @@ public class MetricsPanel extends JPanel{
 	}
 	
 	/**
-	 * ·â×°¾ØĞÎ³¤¶ÈÊı¾İ
+	 * å°è£…çŸ©å½¢é•¿åº¦æ•°æ®
 	 * @return
 	 */
 	private double[] wrapMetricValues(){

@@ -63,7 +63,7 @@ public class CMDNUtil {
 	}
 	
 	/**
-	 * µÃµ½ÁªÍ¨Æ¬ÀïµÄÄÚÈİ
+	 * å¾—åˆ°è”é€šç‰‡é‡Œçš„å†…å®¹
 	 * @param fileName
 	 * @return
 	 */
@@ -91,16 +91,16 @@ public class CMDNUtil {
 			
 		}
 		
-		//ÉèÖÃ½ÚµãÄÚÈİ±êÇ©
+		//è®¾ç½®èŠ‚ç‚¹å†…å®¹æ ‡ç­¾
 		setNodesText(nodelist,SrcAction.classname);
 		
-		//µÃµ½ËùÓĞµÄÁªÍ¨Æ¬£¬ÆäÖĞ String ÊÇÀàÃû
+		//å¾—åˆ°æ‰€æœ‰çš„è”é€šç‰‡ï¼Œå…¶ä¸­ String æ˜¯ç±»å
 		ArrayList<ArrayList<String>> cc = ConnComp.getcc(matrix.clone());
 		
-		// ¹ØÁªÁªÍ¨Æ¬
+		// å…³è”è”é€šç‰‡
 		setConnected(cc,nodelist);
 		
-		//¸ù¾İÁªÍ¨Æ¬µÄ´óĞ¡½øĞĞÅÅĞò
+		//æ ¹æ®è”é€šç‰‡çš„å¤§å°è¿›è¡Œæ’åº
 		cc = sortCCBySize(cc);
 		
 		nodelist = reSetNodeList(nodelist,cc);
@@ -167,21 +167,21 @@ public class CMDNUtil {
 
 	
 	/**
-	 * Ê¹ÓÃ Map°´key½øĞĞÅÅĞò
+	 * ä½¿ç”¨ MapæŒ‰keyè¿›è¡Œæ’åº
 	 * @author revo
 	 * @param map
 	 * @return
 	 */
 	/**
-	 * ¸ù¾İÖµ½µĞòÅÅÁĞmap£¬ÖØÔØÉÏÒ»¸öº¯Êı
+	 * æ ¹æ®å€¼é™åºæ’åˆ—mapï¼Œé‡è½½ä¸Šä¸€ä¸ªå‡½æ•°
 	 */
 	public static List<Entry<String, ArrayList<String>>> sortMapByKey(Map<String, ArrayList<String>> map){
-		//ÅÅĞò
-		//ÕâÀï½«map.entrySet()×ª»»³Élist
+		//æ’åº
+		//è¿™é‡Œå°†map.entrySet()è½¬æ¢æˆlist
 		List<Map.Entry<String, ArrayList<String>>> list = new ArrayList<Map.Entry<String, ArrayList<String>>>(map.entrySet());
-		//È»ºóÍ¨¹ı±È½ÏÆ÷À´ÊµÏÖÅÅĞò
+		//ç„¶åé€šè¿‡æ¯”è¾ƒå™¨æ¥å®ç°æ’åº
 		Collections.sort(list,new Comparator<Map.Entry<String, ArrayList<String>>>() {
-			//ÉıĞòÅÅĞò
+			//å‡åºæ’åº
 			public int compare(Entry<String, ArrayList<String>> o1,
 					Entry<String, ArrayList<String>> o2) {
 				
@@ -228,7 +228,7 @@ public class CMDNUtil {
 	private static void setNodesText(List<Node> nodelist,
 			ArrayList<String> classname) {
 		
-		//´Ë´¦Ö®ËùÒÔÄÜÕâÑù×ö ÊÇÒòÎªclassname ºÍnodelist Àï±ßÔªËØË³ĞòÊÇÒ»Ò»¶ÔÓ¦µÄ
+		//æ­¤å¤„ä¹‹æ‰€ä»¥èƒ½è¿™æ ·åš æ˜¯å› ä¸ºclassname å’Œnodelist é‡Œè¾¹å…ƒç´ é¡ºåºæ˜¯ä¸€ä¸€å¯¹åº”çš„
 		for (int i = 0; i < classname.size(); i++) {
 			String fillName = classname.get(i);
 			//String name = fillName.substring(fillName.lastIndexOf(".")+1);
@@ -239,7 +239,7 @@ public class CMDNUtil {
 	}
 
 	/**
-	 * ³Ö¾Ã»¯·½·¨ÃûÁĞ±íµ½xmlÎÄ¼ş
+	 * æŒä¹…åŒ–æ–¹æ³•ååˆ—è¡¨åˆ°xmlæ–‡ä»¶
 	 * @author revo
 	 * @param mergeSetList
 	 */

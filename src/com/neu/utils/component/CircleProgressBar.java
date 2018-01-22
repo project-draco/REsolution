@@ -38,12 +38,12 @@ import javax.swing.JProgressBar;
 public class CircleProgressBar extends JProgressBar {
 	
 	/**
-	 * ±³¾°ÑÕÉ«¡£
+	 * èƒŒæ™¯é¢œè‰²ã€‚
 	 */
 	private Color backgroundColor;
 
 	/**
-	 * Ç°¾°ÑÕÉ«¡£
+	 * å‰æ™¯é¢œè‰²ã€‚
 	 */
 	private Color foregroundColor;
 	
@@ -58,10 +58,10 @@ public class CircleProgressBar extends JProgressBar {
 	}
 	
 	/**
-	 * »æÖÆÔ²ĞÎ½ø¶ÈÌõ¡£
+	 * ç»˜åˆ¶åœ†å½¢è¿›åº¦æ¡ã€‚
 	 * 
 	 * @param g
-	 *            »­±Ê¡£
+	 *            ç”»ç¬”ã€‚
 	 */
 	@Override
 	public void paint(Graphics g) {
@@ -90,7 +90,7 @@ public class CircleProgressBar extends JProgressBar {
 		graphics2d.setColor(new Color(238, 238, 238));
 		graphics2d.fillRect(0, 0, getWidth(), getHeight());
 		
-		// ¿ªÆô¿¹¾â³İ
+		// å¼€å¯æŠ—é”¯é½¿
 		graphics2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
 		
 		graphics2d.setStroke(new BasicStroke(15.0f));
@@ -100,7 +100,7 @@ public class CircleProgressBar extends JProgressBar {
 		
 		
 		graphics2d.drawArc(x, y, width, height, 90, -(int) (360 * ((getValue() * 1.0) / (getMaximum() - getMinimum()))));
-		graphics2d.setFont(new Font("ºÚÌå", Font.BOLD, fontSize));
+		graphics2d.setFont(new Font("é»‘ä½“", Font.BOLD, fontSize));
 		FontMetrics fontMetrics = graphics2d.getFontMetrics();
 		int digitalWidth = fontMetrics.stringWidth(getValue() + "%");
 		int digitalAscent = fontMetrics.getAscent();

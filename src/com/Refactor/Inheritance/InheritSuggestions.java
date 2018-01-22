@@ -32,8 +32,8 @@ import com.Refactor.NonInheritance.Suggestions;
 public class InheritSuggestions extends Suggestions {
 
 	public static ArrayList<SplitTrees> SplitTree = new ArrayList<SplitTrees>();
-	private double[] Q_Orig = new double[SplitTree.size()+1];//Ô­Ê¼ÇúÏß
-	private double[] Q_Undo = new double[SplitTree.size()+1];//ÓĞ³·ÏúÖ®ºóµÄÇúÏß
+	private double[] Q_Orig = new double[SplitTree.size()+1];//åŸå§‹æ›²çº¿
+	private double[] Q_Undo = new double[SplitTree.size()+1];//æœ‰æ’¤é”€ä¹‹åçš„æ›²çº¿
 	
 	private int undoLength = 0;
 	

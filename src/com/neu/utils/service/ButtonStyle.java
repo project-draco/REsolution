@@ -44,13 +44,13 @@ public class ButtonStyle {
 			
 			@Override
 			public void mouseReleased(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
 			@Override
 			public void mousePressed(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
@@ -68,7 +68,7 @@ public class ButtonStyle {
 			
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 		});

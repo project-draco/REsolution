@@ -89,9 +89,9 @@ public class MainMetrics {
 				  RefactorExtendsMatrix[i][j]=0;
 			  }
 		  }
-		  for(int i = 0; i < levels.size(); i++){ //±éÀúÃ¿¿Ã¼Ì³ÐÊ÷
-			  for(int j = 0; j < levels.get(i).size(); j++){//Ã¿¿Ã¼Ì³ÐÊ÷µÄÃ¿²ã
-				  for(int k =0; k <levels.get(i).get(j).size();k++){  //±éÀúÃ¿²ãµÄÃ¿¸ö½Úµã
+		  for(int i = 0; i < levels.size(); i++){ //éåŽ†æ¯æ£µç»§æ‰¿æ ‘
+			  for(int j = 0; j < levels.get(i).size(); j++){//æ¯æ£µç»§æ‰¿æ ‘çš„æ¯å±‚
+				  for(int k =0; k <levels.get(i).get(j).size();k++){  //éåŽ†æ¯å±‚çš„æ¯ä¸ªèŠ‚ç‚¹
 					  for(int o = 0; o < levels.get(i).get(j).get(k).cns.size(); o++){
 						  if(levels.get(i).get(j).get(k).cns.get(o).size()!=0){
 					    int ii = result.indexOf(levels.get(i).get(j).get(k).cns.get(o));
@@ -169,7 +169,7 @@ public class MainMetrics {
 	
 	public static ArrayList<ArrayList<String>> getResults(ArrayList<ArrayList<ArrayList<extend>>> levels,ArrayList<ArrayList<String>> result0){
 		  ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>> ();
-		  for(int i = 0; i < levels.size(); i++){ //±éÀúÃ¿¿Ã¼Ì³ÐÊ÷
+		  for(int i = 0; i < levels.size(); i++){ //éåŽ†æ¯æ£µç»§æ‰¿æ ‘
 			  for(int j = 0; j < levels.get(i).size(); j++){
 				  for(int k =0; k <levels.get(i).get(j).size();k++){
 					  if(levels.get(i).get(j).get(k).interfaceornot&&levels.get(i).get(j).get(k).cns.isEmpty()){

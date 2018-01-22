@@ -68,7 +68,7 @@ public class MaintainabilityMetrics {
 	}
 
 /*
- *  ÀàCµ÷ÓÃ¹ıµÄÍâ²¿ÀàºÍµ÷ÓÃ¹ıÀàCµÄÍâ²¿Ààde×ÜÊı
+ *  ç±»Cè°ƒç”¨è¿‡çš„å¤–éƒ¨ç±»å’Œè°ƒç”¨è¿‡ç±»Cçš„å¤–éƒ¨ç±»deæ€»æ•°
  *  */
 	public double computeCBO(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double 	CBO = 0;
@@ -145,7 +145,7 @@ public class MaintainabilityMetrics {
 	}
 	
 /*
- * Ã¿¸öÀàÖĞ·½·¨µÄ¸öÊı
+ * æ¯ä¸ªç±»ä¸­æ–¹æ³•çš„ä¸ªæ•°
  *  */
 	public double computeWMC(ArrayList<ArrayList<String>> classList){
 		double WMC = 0;
@@ -177,8 +177,8 @@ public class MaintainabilityMetrics {
 	}
 /*
  *  RFC = |Ms(C) U Mr(C)|
- *  Ms(C): CÖĞ·½·¨µÄ¼¯ºÏ£»
- *  Mr(C)£º±»Cµ÷ÓÃµÄ·½·¨µÄ¼¯ºÏ
+ *  Ms(C): Cä¸­æ–¹æ³•çš„é›†åˆï¼›
+ *  Mr(C)ï¼šè¢«Cè°ƒç”¨çš„æ–¹æ³•çš„é›†åˆ
  *  */
 	public double computeRFC(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double RFC = 0;
@@ -257,7 +257,7 @@ public class MaintainabilityMetrics {
 		return RFC;
 	}
 /*
- *  ÀàCµ÷ÓÃ¹ıµÄÍâ²¿ÀàµÄ·½·¨ºÍµ÷ÓÃ¹ıÀàCµÄÍâ²¿ÀàµÄ·½·¨de×ÜÊı
+ *  ç±»Cè°ƒç”¨è¿‡çš„å¤–éƒ¨ç±»çš„æ–¹æ³•å’Œè°ƒç”¨è¿‡ç±»Cçš„å¤–éƒ¨ç±»çš„æ–¹æ³•deæ€»æ•°
  *  */
 	public double computeMPC(ArrayList<ArrayList<String>> classList, List<ClassObject> classesArrList){
 		double MPC = 0;
@@ -349,7 +349,7 @@ public class MaintainabilityMetrics {
 			{
 			if(methodsList.get(i).size()==0)
 				continue;
-			//Ò»¸öÀàÖĞµÄËùÓĞ·½·¨
+			//ä¸€ä¸ªç±»ä¸­çš„æ‰€æœ‰æ–¹æ³•
 			ArrayList<String> OneClassMethod=methodsList.get(i);
 			int classnameindex=-1;
 			double totle=0;
@@ -361,13 +361,13 @@ public class MaintainabilityMetrics {
 				String method1="";
 				ArrayList<String> Method2List=new ArrayList<String>();
 				ArrayList<ArrayList<String>> parentFeature=new ArrayList<ArrayList<String>>();
-				//È¡³öµÄÊÇ·½·¨¶ø·ÇÊôĞÔ(µÚi¸öÀàÖĞµÄµÚj¸ö·½·¨£º)
+				//å–å‡ºçš„æ˜¯æ–¹æ³•è€Œéå±æ€§(ç¬¬iä¸ªç±»ä¸­çš„ç¬¬jä¸ªæ–¹æ³•ï¼š)
 				if(OneClassMethod.get(j)==null)
 					continue;
 				if(OneClassMethod.get(j).contains("("))
 				{
 					method1=OneClassMethod.get(j);
-					//Àài.·½·¨jµÄoutbound
+					//ç±»i.æ–¹æ³•jçš„outbound
 					char a1[]=OneClassMethod.get(j).toCharArray();
 					int index3=0;
 					for(int t=0;t<a1.length;t++)
@@ -392,7 +392,7 @@ public class MaintainabilityMetrics {
 							MethodAndFeature=classesArrList.get(classnameindex).FeatureList.get(m).outboundFeatureList;										
 						}
 					}
-					//Èç¹û·½·¨1Ã»ÓĞoutbound
+					//å¦‚æœæ–¹æ³•1æ²¡æœ‰outbound
 					if(MethodAndFeature.size()==0)
 						break;
 					//System.out.println("clas==="+classesArrList.get(classnameindex).getName());
@@ -406,8 +406,8 @@ public class MaintainabilityMetrics {
 							Method2List.add(methodsList.get(i).get(y));
 					}						
 					//System.out.println("Method2===="+Method2List);						
-					//----------ÑéÖ¤³É¹¦----------------
-					//ÕÒÆäËû·½·¨ÖĞµÄÊôĞÔÃû
+					//----------éªŒè¯æˆåŠŸ----------------
+					//æ‰¾å…¶ä»–æ–¹æ³•ä¸­çš„å±æ€§å
 					for(int k=0;k<Method2List.size();k++)
 					{
 						if(Method2List.get(k)==null)
@@ -424,7 +424,7 @@ public class MaintainabilityMetrics {
 						String classname="";
 						for(int t=0;t<index;t++)
 							classname+=a[t];
-						//Èô·½·¨2ÊÇÆäËûÀàµÄ
+						//è‹¥æ–¹æ³•2æ˜¯å…¶ä»–ç±»çš„
 						if(method1.contains(classname))
 						{
 							int index2=clas.indexOf(classname);
@@ -433,9 +433,9 @@ public class MaintainabilityMetrics {
 //								System.out.println("==="+classname);
 //								System.out.println("---"+method1);
 							}
-							if(index2!=-1)//·½·¨2ÔÚÆäËûÀàÖĞ
+							if(index2!=-1)//æ–¹æ³•2åœ¨å…¶ä»–ç±»ä¸­
 							{
-								//System.out.println("·½·¨2µÄ·½·¨Ãû£¨ÁíÀà£©===="+Method2List.get(k));
+								//System.out.println("æ–¹æ³•2çš„æ–¹æ³•åï¼ˆå¦ç±»ï¼‰===="+Method2List.get(k));
 								ArrayList<String> arr=new ArrayList<String>();
 								for(int u=0;u<classesArrList.get(index2).FeatureList.size();u++)
 								{
@@ -458,9 +458,9 @@ public class MaintainabilityMetrics {
 								parentFeature.add(arr);
 							}
 						}
-						else//·½·¨2Ò²ÔÚ´ËÀàÖĞ
+						else//æ–¹æ³•2ä¹Ÿåœ¨æ­¤ç±»ä¸­
 						{
-							//System.out.println("·½·¨2µÄ·½·¨Ãû£¨Í¬Àà£©===="+Method2List.get(k));
+							//System.out.println("æ–¹æ³•2çš„æ–¹æ³•åï¼ˆåŒç±»ï¼‰===="+Method2List.get(k));
 							int index2=clas.indexOf(classname);
 							if(index2!=-1)
 							{
@@ -488,7 +488,7 @@ public class MaintainabilityMetrics {
 						}
 					}						
 				}
-				//System.out.println("·½·¨2ListÖĞ°üº¬µÄÊôĞÔ"+parentFeature);				
+				//System.out.println("æ–¹æ³•2Listä¸­åŒ…å«çš„å±æ€§"+parentFeature);				
 				ArrayList<String> method1Feature=new ArrayList<String>();
 				if(OneClassMethod.get(j)==null)
 					continue;
@@ -521,8 +521,8 @@ public class MaintainabilityMetrics {
 						break;
 					}
 				}			
-				//System.out.println("·½·¨1µÄÊôĞÔ===="+method1Feature);
-				//ÕÒ·½·¨1ºÍ·½·¨2ÃÇÓĞÃ»ÓĞ¹²ÏíÊôĞÔ
+				//System.out.println("æ–¹æ³•1çš„å±æ€§===="+method1Feature);
+				//æ‰¾æ–¹æ³•1å’Œæ–¹æ³•2ä»¬æœ‰æ²¡æœ‰å…±äº«å±æ€§
 				for(int k=0;k<method1Feature.size();k++)
 				{
 					if(method1Feature.get(k)==null)
@@ -537,7 +537,7 @@ public class MaintainabilityMetrics {
 							index2=r;
 					}
 					String Method1Featurename=method1Feature.get(k).substring(index2+1, b.length);
-					//System.out.println("·½·¨1´¿ÊôĞÔÃû==="+Method1Featurename);
+					//System.out.println("æ–¹æ³•1çº¯å±æ€§å==="+Method1Featurename);
 					for(int t=0;t<parentFeature.size();t++)
 					{
 						
@@ -561,7 +561,7 @@ public class MaintainabilityMetrics {
 						}
 					}
 				}
-				if(gongxiangsum==0)//µ±ÎŞ¹²ÏíÊôĞÔ¹ØÏµÊ±£¬ÅĞ¶Ï·½·¨µÄµ÷ÓÃ
+				if(gongxiangsum==0)//å½“æ— å…±äº«å±æ€§å…³ç³»æ—¶ï¼Œåˆ¤æ–­æ–¹æ³•çš„è°ƒç”¨
 				{
 					char a1[]=OneClassMethod.get(j).toCharArray();
 					int index3=0;
@@ -611,7 +611,7 @@ public class MaintainabilityMetrics {
 							}							
 						}
 					}						
-					if(gongxiangsum==0)//·½·¨1Ã»ÓĞµ÷ÓÃÆäËû·½·¨Ê±£¬ÕÒÆäËû·½·¨µ÷ÓÃËû
+					if(gongxiangsum==0)//æ–¹æ³•1æ²¡æœ‰è°ƒç”¨å…¶ä»–æ–¹æ³•æ—¶ï¼Œæ‰¾å…¶ä»–æ–¹æ³•è°ƒç”¨ä»–
 					{
 						ArrayList<String> method=new ArrayList<String>();
 						for(int r=0;r<methodsList.get(i).size();r++)
@@ -715,7 +715,7 @@ public class MaintainabilityMetrics {
 	}
 	
 	private ArrayList<String> OneClassMethod(List<ClassObject> classesArrList, int i) 
-	{//µÃµ½Ò»¸öÀàÏÂµÄËùÓĞ·½·¨£¬É¾µôÀàÖĞµÄÊôĞÔ
+	{//å¾—åˆ°ä¸€ä¸ªç±»ä¸‹çš„æ‰€æœ‰æ–¹æ³•ï¼Œåˆ æ‰ç±»ä¸­çš„å±æ€§
 			ArrayList<String> method=new ArrayList<String>();
 			//System.out.println("---"+classesArrList.get(i).getName());
 			for(int j=0;j<classesArrList.get(i).FeatureList.size();j++)
@@ -778,7 +778,7 @@ public class MaintainabilityMetrics {
 				size--;
 		}	
 		NOC=sum/size;
-		System.out.println("Æ½¾ùÃ¿¸öÀàµÄÇ×º¢×Ó¸öÊı£º"+NOC);
+		System.out.println("å¹³å‡æ¯ä¸ªç±»çš„äº²å­©å­ä¸ªæ•°ï¼š"+NOC);
 		return NOC;
 	}
 	
@@ -799,12 +799,12 @@ public class MaintainabilityMetrics {
 //				System.out.println("===="+i+"====="+j);
 				if(Connect(i,j,NoParentClass,outboundClassList)==1)
 				{
-					//System.out.println("º¢×Ó£º"+i+"¸¸Ç×£º"+j+"  ¾àÀë£º"+Distance);
+					//System.out.println("å­©å­ï¼š"+i+"çˆ¶äº²ï¼š"+j+"  è·ç¦»ï¼š"+Distance);
 					SumAncestors++;
 				}		
 			}			
 		}
-		//System.out.println("ËùÓĞÀàµÄ×æÏÈ×ÜÊı£º"+SumAncestors);
+		//System.out.println("æ‰€æœ‰ç±»çš„ç¥–å…ˆæ€»æ•°ï¼š"+SumAncestors);
 		double SumAncestors1=SumAncestors;
 		double size=Matrix.length;
 		for(int i=0;i<Matrix.length;i++)
@@ -822,12 +822,12 @@ public class MaintainabilityMetrics {
 				size--;
 		}		
 		ANA=SumAncestors1/size;
-		System.out.println("Æ½¾ùÀàµÄ×æÏÈ×ÜÊı£º"+ANA);		
+		System.out.println("å¹³å‡ç±»çš„ç¥–å…ˆæ€»æ•°ï¼š"+ANA);		
 
 		return ANA;
 	}
 	
-	//µÃµ½outboundList
+	//å¾—åˆ°outboundList
 	private ArrayList<ArrayList<Integer>> GetOutbound(int[][] Matrix) 
 	{
 		ArrayList<ArrayList<Integer>> outboundClassList=new ArrayList<ArrayList<Integer>>();
@@ -843,7 +843,7 @@ public class MaintainabilityMetrics {
 					break;
 				}				
 			}
-			if(flag==1)//µÚiÀàÓĞ¸¸Àà
+			if(flag==1)//ç¬¬iç±»æœ‰çˆ¶ç±»
 			{
 				outbound.add(i);
 				for(int j=0;j<Matrix.length ;j++)
@@ -865,14 +865,14 @@ public class MaintainabilityMetrics {
 	{
 		ArrayList<ArrayList<Integer>> inboundClassList=new ArrayList<ArrayList<Integer>>();
 		
-		//£¡£¡£¡×ª»»inboundClassList£¡£¡£¡
+		//ï¼ï¼ï¼è½¬æ¢inboundClassListï¼ï¼ï¼
 		for(int i=0;i<outboundClassList.size();i++)
 		{
 			ArrayList<Integer> inbound = new ArrayList<Integer> ();		
-			for(int j=1;j<outboundClassList.get(i).size();j++)//outboundClassList[i]ÖĞ±éÀú¸¸Àà
+			for(int j=1;j<outboundClassList.get(i).size();j++)//outboundClassList[i]ä¸­éå†çˆ¶ç±»
 			{
 				int parent=outboundClassList.get(i).get(j);
-				//ÈôinboundClassListÒÑÈ¡ÍêparentÀà£¬²»ÔÙÖØ¸´È¡
+				//è‹¥inboundClassListå·²å–å®Œparentç±»ï¼Œä¸å†é‡å¤å–
 				int flag=0;
 				for(int m=0;m<inboundClassList.size();m++)
 				{
@@ -914,10 +914,10 @@ public class MaintainabilityMetrics {
 		return inboundClassList;
 	}
 	
-	//ÕÒ×æÏÈ½Úµã
+	//æ‰¾ç¥–å…ˆèŠ‚ç‚¹
 	private static ArrayList<Integer> DealHighClass(ArrayList<ArrayList<Integer>> inboundClassList,ArrayList<ArrayList<Integer>> outboundClassList) 	
 	{
-		//ÕÒÎ´´¦ÀíµÄ×î¶¥²ãµÄÀà
+		//æ‰¾æœªå¤„ç†çš„æœ€é¡¶å±‚çš„ç±»
 		ArrayList<Integer> NoParentClass = new ArrayList<Integer> ();
 		for(int i=0;i<inboundClassList.size();i++)
 		{
@@ -930,7 +930,7 @@ public class MaintainabilityMetrics {
 			if(j==outboundClassList.size())
 				NoParentClass.add(inboundClassList.get(i).get(0));
 		}
-		//System.out.println("Î´´¦ÀíµÄ×î¶¥²ãµÄÀà:"+NoParentClass);
+		//System.out.println("æœªå¤„ç†çš„æœ€é¡¶å±‚çš„ç±»:"+NoParentClass);
 		return NoParentClass;
 	}
 	
@@ -943,12 +943,12 @@ public class MaintainabilityMetrics {
 			noParent.remove(index);
 		if(Child==Parent)
 		{
-			//System.out.println("¶Ô¶Ô¶Ô");
+			//System.out.println("å¯¹å¯¹å¯¹");
 			return 1;
 		}
 		if(noParent.contains(Child))
 		{
-			//System.out.println("´í´í´í");
+			//System.out.println("é”™é”™é”™");
 			return 0;
 		}
 		for(int i=0;i<outboundClassList.size();i++)

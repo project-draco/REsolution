@@ -27,8 +27,8 @@ package com.Refactor.AdjustCoefficients;
 import java.util.ArrayList;
 
 public class returnrank {
-	int[][] indexScale; // ¸ù¾İÅÅĞòºóµÄrelationCollection¼ÆËã
-	int nodeNum; // ¸ù¾İÅÅĞòºóµÄrelationCollection¼ÆËã
+	int[][] indexScale; // éè§„åµéºæ‘ç°­éšåº£æ®‘relationCollectionç’ï¼„ç•»
+	int nodeNum; // éè§„åµéºæ‘ç°­éšåº£æ®‘relationCollectionç’ï¼„ç•»
 	int[] GroupIds = new int[nodeNum];
 	ArrayList<ArrayList<String>> groups = new ArrayList<ArrayList<String>>();
 	int[][] relationCollection;

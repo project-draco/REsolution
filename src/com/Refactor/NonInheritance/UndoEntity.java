@@ -26,12 +26,12 @@
 package com.Refactor.NonInheritance;
 
 public class UndoEntity {
-	  String entityname;//ÊµÌåÃû×Ö
-	  String source;//Ô´Àà
-	  String target;//Ä¿±êÀàÃû
+	  String entityname;//å®ä½“åå­—
+	  String source;//æºç±»
+	  String target;//ç›®æ ‡ç±»å
 	  public int newNo = -1;
 	  int targetidx = 0;
-	  double detaQ = 0;//Ä£¿é¶ÈÔöÁ¿
+	  double detaQ = 0;//æ¨¡å—åº¦å¢é‡
 	  
 	  
 	public String getEntityname() {

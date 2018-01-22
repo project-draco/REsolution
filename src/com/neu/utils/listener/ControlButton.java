@@ -61,7 +61,7 @@ public class ControlButton extends MouseAdapter implements ActionListener{
 	
 	public ControlButton(REsolution model,List<List<String>> mergeSetList){
 		this.model = model;
-		//×¼±¸Êı¾İ
+		//å‡†å¤‡æ•°æ®
 		this.mergeSetList = mergeSetList;
 				
 	}
@@ -85,7 +85,7 @@ public class ControlButton extends MouseAdapter implements ActionListener{
 	@Override
 	public void mouseClicked(MouseEvent e) {
 
-		if (e.getClickCount()==2) {//¶ÔË«»÷ÊÂ¼ş½øĞĞÏàÓ¦£¬²¢ÇÒÈ¡µÃ±»Ë«»÷µÄcheckboxµÄË÷Òı
+		if (e.getClickCount()==2) {//å¯¹åŒå‡»äº‹ä»¶è¿›è¡Œç›¸åº”ï¼Œå¹¶ä¸”å–å¾—è¢«åŒå‡»çš„checkboxçš„ç´¢å¼•
 			
 			JCheckBox box = (JCheckBox)e.getComponent();
 			int index = Integer.parseInt(box.getText().split("_")[1]);

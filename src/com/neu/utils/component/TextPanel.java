@@ -89,13 +89,13 @@ public class TextPanel extends JPanel {
                         return;  
   
                     int offset = e.getDot();  
-                    // ¼ÆËã¹â±êËùÔÚĞĞÁĞ  
+                    // è®¡ç®—å…‰æ ‡æ‰€åœ¨è¡Œåˆ—  
                     try {  
-                                                //µÃµ½¹â±êËùÔÚµÄĞĞÊı  
+                                                //å¾—åˆ°å…‰æ ‡æ‰€åœ¨çš„è¡Œæ•°  
                         line = text.getLineOfOffset(offset);  
                         //System.out.println(line);  
                         // int col = offset - text.getLineStartOffset(line);  
-                        // System.out.println("col£º"+col);  
+                        // System.out.println("colï¼š"+col);  
   
                     } catch (BadLocationException e3) {  
                         e3.printStackTrace();  
@@ -106,7 +106,7 @@ public class TextPanel extends JPanel {
   
                 @Override  
                 public void mouseClicked(MouseEvent e) {  
-                    if (e.getClickCount() == 1) {//µ¥»÷ ¸ßÁÁ  
+                    if (e.getClickCount() == 1) {//å•å‡» é«˜äº®  
                         DefaultHighlighter h = (DefaultHighlighter) text.getHighlighter();  
                         MyHighlightPainter p = new MyHighlightPainter(  
                                 new Color(72, 240, 121));  
@@ -119,7 +119,7 @@ public class TextPanel extends JPanel {
                             e1.printStackTrace();  
                         }  
                     }  
-                    if (e.getClickCount() == 2) {//Ë«»÷  
+                    if (e.getClickCount() == 2) {//åŒå‡»  
                         String[] lines = text.getText().split("\n");  
                         String store = lines[line];  
                         System.out.println(store); 

@@ -82,7 +82,7 @@ public class TreeDetailPanel extends JPanel{
 		init();
 	}
 	/**
-	 * ³õÊ¼»¯Ãæ°åÖĞËùÓÃµ½µÄÑÕÉ«ÒÔ¼°Ãæ°åµÄ±³¾°É«
+	 * åˆå§‹åŒ–é¢æ¿ä¸­æ‰€ç”¨åˆ°çš„é¢œè‰²ä»¥åŠé¢æ¿çš„èƒŒæ™¯è‰²
 	 */
 	private void init() {
 		colors.put(DotType.Intertace, Color.red);
@@ -122,22 +122,22 @@ public class TreeDetailPanel extends JPanel{
 		c.addMouseListener(new MouseListener() {
 			
 			public void mouseReleased(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
 			public void mousePressed(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
 			public void mouseExited(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
 			public void mouseEntered(MouseEvent e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ·½·¨´æ¸ù
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„æ–¹æ³•å­˜æ ¹
 				
 			}
 			
@@ -201,7 +201,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 
 	/**
-	 * »­½Úµã
+	 * ç”»èŠ‚ç‚¹
 	 * @param g
 	 * @param tree
 	 * @param startX
@@ -225,7 +225,7 @@ public class TreeDetailPanel extends JPanel{
 	
 	
 	/**
-	 * »­¼Ì³Ğ¹ØÏµµÄ¼ıÍ·
+	 * ç”»ç»§æ‰¿å…³ç³»çš„ç®­å¤´
 	 * @param g
 	 * @param classNodes
 	 */
@@ -252,7 +252,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 
 	/**
-	 * »­ÒÀÀµ¹ØÏµµÄĞéÏßµÄ¼ıÍ·
+	 * ç”»ä¾èµ–å…³ç³»çš„è™šçº¿çš„ç®­å¤´
 	 * @param g
 	 * @param classNodes2
 	 */
@@ -282,7 +282,7 @@ public class TreeDetailPanel extends JPanel{
 	
 	
 	/**
-	 * »­±êÇ©ËµÃ÷
+	 * ç”»æ ‡ç­¾è¯´æ˜
 	 * @param g
 	 * @param classNodes
 	 */
@@ -296,7 +296,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 
 	/**
-	 * ¼ÆËã½ÚµãµÄÎ»ÖÃ
+	 * è®¡ç®—èŠ‚ç‚¹çš„ä½ç½®
 	 * @param levelNode
 	 * @param level
 	 * @param y 
@@ -328,7 +328,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 
 	/**
-	 * ÅĞ¶Ï½ÚµãµÄÀàĞÍ
+	 * åˆ¤æ–­èŠ‚ç‚¹çš„ç±»å‹
 	 * @param ext
 	 * @return
 	 */
@@ -346,7 +346,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 	
 	/**
-	 * »­Í¼Àı
+	 * ç”»å›¾ä¾‹
 	 * @param g
 	 */
 	private void drawLegend(Graphics g) {
@@ -385,7 +385,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 	
 	/**
-	 * ¼ÆËãÃ¿Ò»¿ÃÊ÷ËùÕ¼ÇøÓòµÄÆğµãµÄºá×ø±ê
+	 * è®¡ç®—æ¯ä¸€æ£µæ ‘æ‰€å åŒºåŸŸçš„èµ·ç‚¹çš„æ¨ªåæ ‡
 	 * @return
 	 */
 	private int[] calculateStartX() {
@@ -424,7 +424,7 @@ public class TreeDetailPanel extends JPanel{
 	
 	
 	/**
-	 * µÃµ½×Ü²ãÊı
+	 * å¾—åˆ°æ€»å±‚æ•°
 	 * @param splitTree
 	 * @return
 	 */
@@ -451,7 +451,7 @@ public class TreeDetailPanel extends JPanel{
 //				startLevel[i] = fatherLevel+1;
 				
 			} else {
-				throw new RuntimeException("ÎŞ·¨¶¨Î»µ½¸¸Àà²ãÊı£¬¸¸Àà²»ÔÚÔ­Ê÷ÖĞ");
+				throw new RuntimeException("æ— æ³•å®šä½åˆ°çˆ¶ç±»å±‚æ•°ï¼Œçˆ¶ç±»ä¸åœ¨åŸæ ‘ä¸­");
 			}
 		}
 		
@@ -459,10 +459,10 @@ public class TreeDetailPanel extends JPanel{
 	}
 	
 	/**
-	 * µÃµ½Ô­Àà½ÚµãµÄ²ãÊı
+	 * å¾—åˆ°åŸç±»èŠ‚ç‚¹çš„å±‚æ•°
 	 * @param fatherName
 	 * @param splitTree
-	 * @return -1 ->´ú±í¸¸Àà²»ÔÚÔ­Ê÷ÖĞ
+	 * @return -1 ->ä»£è¡¨çˆ¶ç±»ä¸åœ¨åŸæ ‘ä¸­
 	 */
 	private int getFatherLevel(String fatherName,ArrayList<ArrayList<ArrayList<extend>>> splitTree) {
 		
@@ -479,7 +479,7 @@ public class TreeDetailPanel extends JPanel{
 	}
 
 	/**
-	 * µÃµ½Ã¿Ò»¿ÃÊ÷×î´óµÄ¿í¶È
+	 * å¾—åˆ°æ¯ä¸€æ£µæ ‘æœ€å¤§çš„å®½åº¦
 	 * @param splitTree
 	 * @return
 	 */
@@ -517,28 +517,28 @@ public class TreeDetailPanel extends JPanel{
 
 	/**
 	 * @author revo
-	 * @param sx ¿ªÊ¼µãµÄxÏñËØ
-	 * @param sy ¿ªÊ¼µãµÄyÏñËØ
-	 * @param ex ½áÊøµãµÄxÏñËØ
-	 * @param ey ½áÊøµãµÄyÏñËØ
-	 * @param g2 »­±Ê
-	 * @param type 0 ´ú±íÄ¬ÈÏ·ç¸ñ£¬1´ú±í ĞéÏß·ç¸ñµÄµ¥¼ıÍ·µÄÏß
+	 * @param sx å¼€å§‹ç‚¹çš„xåƒç´ 
+	 * @param sy å¼€å§‹ç‚¹çš„yåƒç´ 
+	 * @param ex ç»“æŸç‚¹çš„xåƒç´ 
+	 * @param ey ç»“æŸç‚¹çš„yåƒç´ 
+	 * @param g2 ç”»ç¬”
+	 * @param type 0 ä»£è¡¨é»˜è®¤é£æ ¼ï¼Œ1ä»£è¡¨ è™šçº¿é£æ ¼çš„å•ç®­å¤´çš„çº¿
 	 */
 	private void drawAL(int sx, int sy, int ex, int ey, Graphics2D g2,int type) {
 
-		double H = 10; // ¼ıÍ·¸ß¶È
-		double L = 4; // µ×±ßµÄÒ»°ë
+		double H = 10; // ç®­å¤´é«˜åº¦
+		double L = 4; // åº•è¾¹çš„ä¸€åŠ
 		int x3 = 0;
 		int y3 = 0;
 		int x4 = 0;
 		int y4 = 0;
-		double awrad = Math.atan(L / H); // ¼ıÍ·½Ç¶È
-		double arraow_len = Math.sqrt(L * L + H * H); // ¼ıÍ·µÄ³¤¶È
+		double awrad = Math.atan(L / H); // ç®­å¤´è§’åº¦
+		double arraow_len = Math.sqrt(L * L + H * H); // ç®­å¤´çš„é•¿åº¦
 		double[] arrXY_1 = rotateVec(ex - sx, ey - sy, awrad, true, arraow_len);
 		double[] arrXY_2 = rotateVec(ex - sx, ey - sy, -awrad, true, arraow_len);
-		double x_3 = ex - arrXY_1[0]; // (x3,y3)ÊÇµÚÒ»¶Ëµã
+		double x_3 = ex - arrXY_1[0]; // (x3,y3)æ˜¯ç¬¬ä¸€ç«¯ç‚¹
 		double y_3 = ey - arrXY_1[1];
-		double x_4 = ex - arrXY_2[0]; // (x4,y4)ÊÇµÚ¶ş¶Ëµã
+		double x_4 = ex - arrXY_2[0]; // (x4,y4)æ˜¯ç¬¬äºŒç«¯ç‚¹
 		double y_4 = ey - arrXY_2[1];
 
 		Double X3 = new Double(x_3);
@@ -549,7 +549,7 @@ public class TreeDetailPanel extends JPanel{
 		x4 = X4.intValue();
 		Double Y4 = new Double(y_4);
 		y4 = Y4.intValue();
-		// »­Ïß
+		// ç”»çº¿
 		if (type == 1) {
 			Stroke stroke = new BasicStroke(1, BasicStroke.CAP_BUTT, BasicStroke.JOIN_BEVEL, 0, new float[]{12, 12}, 0);
 			g2.setStroke(stroke);
@@ -561,15 +561,15 @@ public class TreeDetailPanel extends JPanel{
 		triangle.lineTo(x3, y3);
 		triangle.lineTo(x4, y4);
 		triangle.closePath();
-		// ÊµĞÄ¼ıÍ·
+		// å®å¿ƒç®­å¤´
 		g2.fill(triangle);
-		// ·ÇÊµĞÄ¼ıÍ·
+		// éå®å¿ƒç®­å¤´
 		// g2.draw(triangle);
 		g2.setStroke(new BasicStroke());
 	}
 
 	/**
-	 *  ¼ÆËã¼ıÍ·
+	 *  è®¡ç®—ç®­å¤´
 	 * @param px
 	 * @param py
 	 * @param ang
@@ -580,7 +580,7 @@ public class TreeDetailPanel extends JPanel{
 	public static double[] rotateVec(int px, int py, double ang,
 			boolean isChLen, double newLen) {
 		double mathstr[] = new double[2];
-		// Ê¸Á¿Ğı×ªº¯Êı£¬²ÎÊıº¬Òå·Ö±ğÊÇx·ÖÁ¿¡¢y·ÖÁ¿¡¢Ğı×ª½Ç¡¢ÊÇ·ñ¸Ä±ä³¤¶È¡¢ĞÂ³¤¶È
+		// çŸ¢é‡æ—‹è½¬å‡½æ•°ï¼Œå‚æ•°å«ä¹‰åˆ†åˆ«æ˜¯xåˆ†é‡ã€yåˆ†é‡ã€æ—‹è½¬è§’ã€æ˜¯å¦æ”¹å˜é•¿åº¦ã€æ–°é•¿åº¦
 		double vx = px * Math.cos(ang) - py * Math.sin(ang);
 		double vy = px * Math.sin(ang) + py * Math.cos(ang);
 		if (isChLen) {

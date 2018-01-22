@@ -37,7 +37,7 @@ public class VSM {
 	double[][] u;
 	double[][] v;
 	
-	//getLength:ÏòÁ¿µÄÄ£
+	//getLength:å‘é‡çš„æ¨¡
 	private double getLength( double[][] Vector )
 	{
 		double length = 0.0;
@@ -48,7 +48,7 @@ public class VSM {
 		return Math.sqrt( length );
 	}
 
-	//¼ÆËãÁ½¸öÏòÁ¿µÄ½Ç¶È
+	//è®¡ç®—ä¸¤ä¸ªå‘é‡çš„è§’åº¦
 	private double getAngle( double[][] tmpVector1, double[][] tmpVector2 )
 	{
 		double angle;
@@ -61,7 +61,7 @@ public class VSM {
 		return angle;
 	}
 
-	//µã³Ë
+	//ç‚¹ä¹˜
 	private double scalarProduct( double[][] tmpVector1, double[][] tmpVector2 )
 	{
 		double scalar = 0.0;		
@@ -81,17 +81,17 @@ public class VSM {
 			S[i][0]=i;
 
 		}
-		 //Ö±½Ó²åÈëÅÅĞò£¨´ø×ÅÎ»ÖÃÅÅ´óĞ¡)
+		 //ç›´æ¥æ’å…¥æ’åºï¼ˆå¸¦ç€ä½ç½®æ’å¤§å°)
         for (int i = 1; i < lie; i++)
         {
-            //´ı²åÈëÔªËØ
+            //å¾…æ’å…¥å…ƒç´ 
             double [] temp=new double[2];
             temp[1] = S[i][1];
             temp[0] = S[i][0];
             int j;
             for (j = i-1; j>=0; j--) 
             {
-                //½«´óÓÚtempµÄÍùºóÒÆ¶¯Ò»Î»
+                //å°†å¤§äºtempçš„å¾€åç§»åŠ¨ä¸€ä½
                 if(S[j][1]<temp[1])
                 {
                     S[j+1][1] = S[j][1];
@@ -114,7 +114,7 @@ public class VSM {
 	}
 
 	
-	//´´½¨ Uk:N*2
+	//åˆ›å»º Uk:N*2
 	public DoubleMatrix2D getUk(DoubleMatrix2D u, double[] twomax )
 	{
 		DoubleMatrix2D ukMatrix = new SparseDoubleMatrix2D(u.rows(),twomax.length);
@@ -126,7 +126,7 @@ public class VSM {
 		
 	}
 
-	//´´½¨Sk£º2*2
+	//åˆ›å»ºSkï¼š2*2
 		public DoubleMatrix2D getSk(DoubleMatrix2D s, double[] twomax )
 		{
 			DoubleMatrix2D skMatrix =new SparseDoubleMatrix2D(twomax.length,twomax.length);
@@ -136,7 +136,7 @@ public class VSM {
 		}
 		
 	
-	//´´½¨ Vk£º2*N
+	//åˆ›å»º Vkï¼š2*N
 	public DoubleMatrix2D getVk( DoubleMatrix2D v,double[] twomax )
 	{
 		DoubleMatrix2D vkMatrix = new SparseDoubleMatrix2D(twomax.length,v.rows());
@@ -152,7 +152,7 @@ public class VSM {
 
 	/*
 	 * newAmatrix:N*P
-	 * ÆäÖĞ£ºu2£ºN*N   s2:N*P   vT2:v×ªÖÃ  P*P
+	 * å…¶ä¸­ï¼šu2ï¼šN*N   s2:N*P   vT2:vè½¬ç½®  P*P
 	 */
 	public DoubleMatrix2D getnewA(DoubleMatrix2D u, DoubleMatrix2D s, DoubleMatrix2D v )
 	{
@@ -172,7 +172,7 @@ public class VSM {
 		return newAmatrix;
 	}	
 	
-	/**½«MatrixĞÍ¾ØÕó×ªÎªDoubleMatrix2DĞÎÊ½
+	/**å°†Matrixå‹çŸ©é˜µè½¬ä¸ºDoubleMatrix2Då½¢å¼
 	 * @param a
 	 * @return
 	 */
@@ -189,7 +189,7 @@ public class VSM {
 		return newA;
 	}
 
-	//´´½¨½µÎ¬ºó¾ØÕóµÄÎÄµµÏòÁ¿
+	//åˆ›å»ºé™ç»´åçŸ©é˜µçš„æ–‡æ¡£å‘é‡
 	public double[][] getDk( int t)
 	{
 		double[][] x=new double[newAmatrix.rows()][1];
@@ -199,8 +199,8 @@ public class VSM {
 			
 	}
 	
-	//°´ĞĞÏÔÊ¾ÓàÏÒÖµ:number ÎÄµµÁĞÊı
-	public double[] cosineMatrix( DoubleMatrix2D newA, int number) //aQueryÎªTermµÄ×Ö·û´®£¬k  1
+	//æŒ‰è¡Œæ˜¾ç¤ºä½™å¼¦å€¼:number æ–‡æ¡£åˆ—æ•°
+	public double[] cosineMatrix( DoubleMatrix2D newA, int number) //aQueryä¸ºTermçš„å­—ç¬¦ä¸²ï¼Œk  1
 	{
 
 		double[][] tmpVector1 = new double[newAmatrix.rows()][1];

@@ -178,7 +178,7 @@ public class HermalMatrixPanel extends JPanel{
 		
 		List<Color> colors = new ArrayList<Color>();
 		
-		float colorBarLength=103.0f;//设置颜色条的长度
+		float colorBarLength=103.0f;//鐠佸墽鐤嗘０婊嗗閺夛紕娈戦梹鍨
 		
 		float tempLength=colorBarLength/4;
 		

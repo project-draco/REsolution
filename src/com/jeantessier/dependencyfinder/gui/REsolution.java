@@ -673,7 +673,7 @@ public class REsolution extends JFrame {
 	}
     
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildSimpleScopePanelTextFields() {
@@ -805,7 +805,7 @@ public class REsolution extends JFrame {
         
         JLabel sawLabel = new JLabel("SAW");
         sawLabel.setToolTipText("Sharing Attribute Weight");
-        JLabel miwLabel = new JLabel(" +¡¡MIW");
+        JLabel miwLabel = new JLabel(" +ã€€MIW");
         miwLabel.setToolTipText("Method Invocation Weight");
         JLabel fcwLabel = new JLabel(" + FCW");
         fcwLabel.setToolTipText("Functional Coupling Weight");
@@ -996,7 +996,7 @@ public class REsolution extends JFrame {
     }
     
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildSimpleFilterPanel() {
@@ -1013,7 +1013,7 @@ public class REsolution extends JFrame {
     }
     
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildSimpleFilterPanelTextFields() {
@@ -1069,7 +1069,7 @@ public class REsolution extends JFrame {
     }
     
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildSimpleFilterPanelCheckboxes() {
@@ -1115,7 +1115,7 @@ public class REsolution extends JFrame {
     }
 
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildAdvancedScopePanel() {
@@ -1263,7 +1263,7 @@ public class REsolution extends JFrame {
     }
     
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      * @return
      */
     private JComponent buildAdvancedFilterPanel() {
@@ -1455,7 +1455,7 @@ public class REsolution extends JFrame {
     
     
 	private Component buildTreeCheckBox() {
-		// ¹¹½¨Ñ¡Ïî¿¨Ãæ°å
+		// æ„å»ºé€‰é¡¹å¡é¢æ¿
 		ControlTreeListener treeListener = new ControlTreeListener(this);
 
 		JRadioButton undoButton = new JRadioButton("Clear All");
@@ -1487,7 +1487,7 @@ public class REsolution extends JFrame {
 
 	private JComponent buildCheckBox() {
     	
-    	//¹¹½¨Ñ¡Ïî¿¨Ãæ°å
+    	//æ„å»ºé€‰é¡¹å¡é¢æ¿
 		ControlButton controlButton = new ControlButton(this);
 		
 		JRadioButton undoButton = new JRadioButton("Clear All");
@@ -1675,7 +1675,7 @@ public class REsolution extends JFrame {
     }
     
   /**
-   * @category ÔİÊ±²»ÓÃ
+   * @category æš‚æ—¶ä¸ç”¨
    */
     void doDependencyQuery() {
     	
@@ -1727,7 +1727,7 @@ public class REsolution extends JFrame {
     }
 
     /**
-     * @category ÔİÊ±²»ÓÃ
+     * @category æš‚æ—¶ä¸ç”¨
      */
     void refreshDependenciesDisplay() {
         if (dependenciesQuery != null) {

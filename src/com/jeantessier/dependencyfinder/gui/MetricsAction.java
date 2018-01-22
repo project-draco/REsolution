@@ -95,7 +95,7 @@ public class MetricsAction extends AbstractAction implements Runnable {
 	    	try {
 				Thread.sleep(200);
 			} catch (InterruptedException e) {
-				// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
+				// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
 				e.printStackTrace();
 			}
 
@@ -133,7 +133,7 @@ public class MetricsAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨ÒéÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®é¢æ¿
 	 * @param title 
 	 * @param cm 
 	 * 

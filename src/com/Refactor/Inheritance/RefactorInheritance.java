@@ -202,11 +202,11 @@ public class RefactorInheritance {
 			   }
 		   }
 		   ConnComp cu = new ConnComp();
-		   ArrayList<ArrayList<String>> Allcc = cu.getCC(extendsMatrix1.clone());	 //Ã¿Ò»¸öÁ¬Í¨Æ¬¶¼ÊÇÒ»¸ö¼Ì³ĞÊ÷
+		   ArrayList<ArrayList<String>> Allcc = cu.getCC(extendsMatrix1.clone());	 //æ¯ä¸€ä¸ªè¿é€šç‰‡éƒ½æ˜¯ä¸€ä¸ªç»§æ‰¿æ ‘
 		   ArrayList<ArrayList<String>> Allcc1 = CutTrees((ArrayList<ArrayList<String>>)Allcc.clone(),  extendsMatrix11) ;
 		   
 //		   for(int i = 0 ; i < Allcc1.size();i++){
-//			   System.out.println("*&^%$#@µÚ"+i+"¿Ã¼Ì³ĞÊ÷ÓĞ¶àÉÙ¸ö½Úµã==="+Allcc1.get(i).size());
+//			   System.out.println("*&^%$#@ç¬¬"+i+"æ£µç»§æ‰¿æ ‘æœ‰å¤šå°‘ä¸ªèŠ‚ç‚¹==="+Allcc1.get(i).size());
 //			   for(int j = 0 ; j < Allcc1.get(i).size(); j++){
 //				   System.out.println(Allcc1.get(i).get(j));
 //			   }
@@ -215,7 +215,7 @@ public class RefactorInheritance {
 		   ArrayList<ArrayList<ArrayList<extend>>> levels = new ArrayList<ArrayList<ArrayList<extend>>>();
 		  
 		   
-		   for(int i = 0 ; i < Allcc1.size(); i++){  //±éÀúÃ¿Ò»¿Ã¼Ì³ĞÊ÷
+		   for(int i = 0 ; i < Allcc1.size(); i++){  //éå†æ¯ä¸€æ£µç»§æ‰¿æ ‘
 			   ArrayList<ArrayList<extend>> level = new ArrayList<ArrayList<extend>>();
 			   ArrayList<extend> temp1 = new ArrayList<extend>();
 			   ArrayList<Integer> temp2 = new ArrayList<Integer>();
@@ -310,9 +310,9 @@ public class RefactorInheritance {
 	   
 		   }
 		   
-		   System.out.println("ÓĞ¶àÉÙ¿ÃÊ÷=="+levels.size());
+		   System.out.println("æœ‰å¤šå°‘æ£µæ ‘=="+levels.size());
 		   for(int i = 0 ; i < levels.size(); i++){
-			   System.out.println("µÚ"+i+"¿Ã-----------------");
+			   System.out.println("ç¬¬"+i+"æ£µ-----------------");
 			   for(int j = 0 ; j < levels.get(i).size(); j++){
 				   for(int k = 0 ; k < levels.get(i).get(j).size(); k++){
 				   System.out.println(levels.get(i).get(j).get(k).TreenodeName+"-----");
@@ -396,10 +396,10 @@ public class RefactorInheritance {
 		 
 		
 		for(int x = 0;  x < levels.size(); x++){
-			System.out.println("µÚ"+x+"¿ÃÊ÷---");
+			System.out.println("ç¬¬"+x+"æ£µæ ‘---");
 			   for(int yy = 0 ; yy <  levels.get(x).size(); yy++){
 			   for(int y = 0 ; y <  levels.get(x).get(yy).size(); y++){
-				   System.out.println("°üº¬Àà"+SrcAction.classname.get(levels.get(x).get(yy).get(y).matrixInd));
+				   System.out.println("åŒ…å«ç±»"+SrcAction.classname.get(levels.get(x).get(yy).get(y).matrixInd));
 			   }
 			   }
 		   }
@@ -529,7 +529,7 @@ public class RefactorInheritance {
      cnssss.set(maid,temp);
 	 return cnssss;
 	}
-	//´¦Àí¸ù½Úµã
+	//å¤„ç†æ ¹èŠ‚ç‚¹
 	
 	public static ArrayList<ArrayList<ArrayList<extend>>> rootsome(String log1, ArrayList<ArrayList<ArrayList<extend>>> levels, int ike, int jceng, int kge) throws IOException, SAXException, MWException  {
 		 if(levels.get(ike).get(jceng).get(kge).interfaceornot) {
@@ -608,7 +608,7 @@ public class RefactorInheritance {
 			zexe = semantic.filterexeBetweenclass(zexe, methodlist, xshare, ycall);
 		}
 		if(d > 0){
-			//ÓïÒåÏàËÆ¶È¾ØÕó
+			//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 			wsem = semantic.makesemanticmatrix(methodlist);
 			wsem = semantic.filterSemantic(wsem,methodlist,xshare,ycall,zexe);
 			
@@ -618,7 +618,7 @@ public class RefactorInheritance {
 		
 		A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(2,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(b, ycall)),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 			
-		returnvalue  rv = CMN.CommunityDetectionNoextentsInheritance(A, methodlist);//ÖØ¹¹ºóÀàµÄ½á¹¹
+		returnvalue  rv = CMN.CommunityDetectionNoextentsInheritance(A, methodlist);//é‡æ„åç±»çš„ç»“æ„
 		levels.get(ike).get(jceng).get(kge).cns = dealthecns(rv.cns, methodlistAll);
 		levels.get(ike).get(jceng).get(kge).mainidx = 0;
 		levels.get(ike).get(jceng).get(kge).DeltaQ = rv.MQ;
@@ -636,7 +636,7 @@ public class RefactorInheritance {
 			levels.get(ike).get(jceng).get(kge).cns = cns;
 			levels.get(ike).get(jceng).get(kge).mainidx = 0;
 		}
-//     	tool.writeByFileWrite(log1,"¸ù½Úµã±»·Ö½â½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(ike).get( jceng).get(kge).mainidx +"\n");
+//     	tool.writeByFileWrite(log1,"æ ¹èŠ‚ç‚¹è¢«åˆ†è§£ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(ike).get( jceng).get(kge).mainidx +"\n");
 		CMN.printCNS1(log1, levels.get(ike).get( jceng).get(kge).cns);
 
 			}
@@ -644,10 +644,10 @@ public class RefactorInheritance {
    }
 	
 	
-	//´¦Àí¸ù½Úµã
+	//å¤„ç†æ ¹èŠ‚ç‚¹
 	
 		public static ArrayList<ArrayList<ArrayList<extend>>> rootsome1(String log1, ArrayList<ArrayList<ArrayList<extend>>> levels, int ike, int jceng, int kge) throws IOException, SAXException, MWException  {
-//			System.out.println("½Ó¿ÚÊÇ===="+levels.get(ike).get(jceng).get(kge).interfaceornot);
+//			System.out.println("æ¥å£æ˜¯===="+levels.get(ike).get(jceng).get(kge).interfaceornot);
 			if(!levels.get(ike).get(jceng).get(kge).interfaceornot) {
 			ArrayList<String> methodlist = new ArrayList<String>();
 			ArrayList<String> methodlistAll = new ArrayList<String>();
@@ -707,7 +707,7 @@ public class RefactorInheritance {
 				zexe = NonInheritanceRefactoring.makeexecutematrix(methodlist);
 			}
 			if(d > 0){
-				//ÓïÒåÏàËÆ¶È¾ØÕó
+				//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 				wsem = semantic.makesemanticmatrix(methodlist);
 				wsem = semantic.filterSemantic(wsem,methodlist,xshare,ycall,zexe);
 				
@@ -717,11 +717,11 @@ public class RefactorInheritance {
 			
 			A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(2,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(b, ycall)),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 				
-			returnvalue  rv = CMN.CommunityDetectionNoextentsInheritance(A, methodlist);//ÖØ¹¹ºóÀàµÄ½á¹¹
+			returnvalue  rv = CMN.CommunityDetectionNoextentsInheritance(A, methodlist);//é‡æ„åç±»çš„ç»“æ„
 			levels.get(ike).get(jceng).get(kge).cns = dealthecns11(rv.cns, methodlistAll);
 			levels.get(ike).get(jceng).get(kge).mainidx = 0;
 			levels.get(ike).get(jceng).get(kge).DeltaQ = rv.MQ;
-//	     	tool.writeByFileWrite(log1,"¸ù½Úµã±»·Ö½â½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(ike).get( jceng).get(kge).mainidx +"\n");
+//	     	tool.writeByFileWrite(log1,"æ ¹èŠ‚ç‚¹è¢«åˆ†è§£ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(ike).get( jceng).get(kge).mainidx +"\n");
 			CMN.printCNS1(log1, levels.get(ike).get( jceng).get(kge).cns);
 
 				}
@@ -731,18 +731,18 @@ public class RefactorInheritance {
 	
 	public static ArrayList<ArrayList<ArrayList<extend>>> RefactorEachLevel(String log1, ArrayList<ArrayList<ArrayList<extend>>> levels, int[][] extendsMatrix, ProgressBarLisenter barLisenter) throws IOException, SAXException, MWException{
         double m = 1;
-		for(int i = 0; i < levels.size(); i++){ //±éÀúÃ¿¿Ã¼Ì³ĞÊ÷
-//			System.out.println("½Ó¿ÚÊÇ====IndexChechBox111");
+		for(int i = 0; i < levels.size(); i++){ //éå†æ¯æ£µç»§æ‰¿æ ‘
+//			System.out.println("æ¥å£æ˜¯====IndexChechBox111");
 			if(RefactorInheritance.IndexChechBox.contains(i)){
-//				System.out.println("½Ó¿ÚÊÇ====IndexChechBox222");
-//	     	 tool.writeByFileWrite(log1,"µÚ"+i+"¿Ã¼Ì³ĞÊ÷==="+"\n");
+//				System.out.println("æ¥å£æ˜¯====IndexChechBox222");
+//	     	 tool.writeByFileWrite(log1,"ç¬¬"+i+"æ£µç»§æ‰¿æ ‘==="+"\n");
   		 /**
-  		  * Ê×ÏÈ¶ÔµÚÒ»²ã´¦Àí µÚi¿ÃÊ÷µÚ0²ã
+  		  * é¦–å…ˆå¯¹ç¬¬ä¸€å±‚å¤„ç† ç¬¬iæ£µæ ‘ç¬¬0å±‚
   		  */
-//	    	 tool.writeByFileWrite(log1,"¸ù½ÚµãµÄ´¦Àí=="+"\n");
+//	    	 tool.writeByFileWrite(log1,"æ ¹èŠ‚ç‚¹çš„å¤„ç†=="+"\n");
 	    	 for(int j = 0; j < levels.get(i).get(0).size(); j++){
-	    		 //µÚi¿Ã¼Ì³ĞÊ÷£¬µÚ0²ã£¬µÚj¸ö½Úµã
-//	    		 tool.writeByFileWrite(log1,"¹²"+levels.get(i).size()+"²ã£¬"+"µÚ0²ãµÚ"+j+"¸ö½Úµã==="+SrcAction.classname.get(levels.get(i).get(0).get(j).matrixInd)+"  ÊÇ²»ÊÇ½Ó¿Ú=="+levels.get(i).get(0).get(j).interfaceornot+"\n");
+	    		 //ç¬¬iæ£µç»§æ‰¿æ ‘ï¼Œç¬¬0å±‚ï¼Œç¬¬jä¸ªèŠ‚ç‚¹
+//	    		 tool.writeByFileWrite(log1,"å…±"+levels.get(i).size()+"å±‚ï¼Œ"+"ç¬¬0å±‚ç¬¬"+j+"ä¸ªèŠ‚ç‚¹==="+SrcAction.classname.get(levels.get(i).get(0).get(j).matrixInd)+"  æ˜¯ä¸æ˜¯æ¥å£=="+levels.get(i).get(0).get(j).interfaceornot+"\n");
 	    		 if(preprocessing.DSC > 7){
 //	    			 System.out.println("preprocessing.DSC > 7");
 	    		 levels = rootsome(log1, levels, i, 0, j);	 
@@ -752,19 +752,19 @@ public class RefactorInheritance {
 	    	 }
 	    	 
 	   		 /**
-	   		  * Öğ²ã·Ö½â
+	   		  * é€å±‚åˆ†è§£
 	   		  */
 	    	 
 	    	 for(int j = 1; j < levels.get(i).size(); j++){
 	    		 for(int k =0; k <levels.get(i).get(j).size();k++){
-//	    		     tool.writeByFileWrite(log1,"µÚ"+j+"²ãµÚ"+k+"¸ö½Úµã==="+SrcAction.classname.get(levels.get(i).get(j).get(k).matrixInd)+"  ÊÇ²»ÊÇ½Ó¿Ú=="+levels.get(i).get(j).get(k).interfaceornot+"\n");
+//	    		     tool.writeByFileWrite(log1,"ç¬¬"+j+"å±‚ç¬¬"+k+"ä¸ªèŠ‚ç‚¹==="+SrcAction.classname.get(levels.get(i).get(j).get(k).matrixInd)+"  æ˜¯ä¸æ˜¯æ¥å£=="+levels.get(i).get(j).get(k).interfaceornot+"\n");
 	    			 boolean g = false;
 	    			 int indup= 0;
 	    			 for(int bb = 0 ; bb < levels.get(i).get(j-1).size();bb++){
 	    				 
 	    				 if(levels.get(i).get(j-1).get(bb).SubClassInd.contains(levels.get(i).get(j).get(k).matrixInd)){
-	    				 if(! levels.get(i).get(j-1).get(bb).cns.isEmpty()&&levels.get(i).get(j-1).get(bb).cns.size()>1){//Èç¹û¸¸Àà±»·Ö½âÁË£¬×ÓÀà²ÅĞèÒª±»·Ö½â
-	    					 indup = bb;  //±»·Ö½âµÄÄÇ¸ö¸¸ÀàµÄË÷ÒıºÅ===indup
+	    				 if(! levels.get(i).get(j-1).get(bb).cns.isEmpty()&&levels.get(i).get(j-1).get(bb).cns.size()>1){//å¦‚æœçˆ¶ç±»è¢«åˆ†è§£äº†ï¼Œå­ç±»æ‰éœ€è¦è¢«åˆ†è§£
+	    					 indup = bb;  //è¢«åˆ†è§£çš„é‚£ä¸ªçˆ¶ç±»çš„ç´¢å¼•å·===indup
 	    					 g = true;
 	    				 }
 	    				 break;
@@ -774,7 +774,7 @@ public class RefactorInheritance {
                    if(levels.get(i).get(j).get(k).SuperClassInd.size()==1){
 	    			 
 	    			if(!levels.get(i).get(j).get(k).interfaceornot&&g) {
-//	    				   tool.writeByFileWrite(log1,"Èç¹û¸¸Àà·Ö½âÁË=="+"\n");
+//	    				   tool.writeByFileWrite(log1,"å¦‚æœçˆ¶ç±»åˆ†è§£äº†=="+"\n");
 	    				   if(tool.judge(indup, j, k)){
 	    				   levels = fuleibeifenjie11(log1, levels, i, j, k,indup,extendsMatrix);
 	    				   }else{
@@ -783,11 +783,11 @@ public class RefactorInheritance {
 
 	    			}
 	    			 
-	    			   //Èç¹û¸¸ÀàÃ»±»·Ö½â   ¼Ó¶«Î÷
+	    			   //å¦‚æœçˆ¶ç±»æ²¡è¢«åˆ†è§£   åŠ ä¸œè¥¿
 	    			  
 	    			if(!levels.get(i).get(j).get(k).interfaceornot&&!g) {
 	    				   levels.get(i).get(j).get(k).NOfuleibeifenjie = true;   	
-	    				   levels = NOfuleibeifenjie(log1, levels, i, j, k, indup,extendsMatrix)  ;	 //ÓĞÎÊÌâ
+	    				   levels = NOfuleibeifenjie(log1, levels, i, j, k, indup,extendsMatrix)  ;	 //æœ‰é—®é¢˜
 	    			   }
                    }else{
                    	levels = DUOfuleibeifenjie(log1, levels.get(i).get(j).get(k).SuperClassInd, levels,i, j, k,extendsMatrix);
@@ -822,7 +822,7 @@ public class RefactorInheritance {
 		ArrayList< ArrayList<String> > cns1 = new ArrayList< ArrayList<String> >();
 		ArrayList<Integer> upIndxxx = new ArrayList<Integer> ();
 		int mainddd= 0;
-			 //ÕÒ³öÖ÷¼Ì³ĞÊ÷
+			 //æ‰¾å‡ºä¸»ç»§æ‰¿æ ‘
 		int xid = 0;
 		int ma = 0;
 		boolean flag = false;
@@ -868,13 +868,13 @@ public class RefactorInheritance {
 			
 			 int dx = levels.get(i).get(j-1).get(indup).mainidx;
 			 levels.get(i).get(j).get(k).mainidx = dx;
-			 //ÕÒ³öÖ÷¼Ì³ĞÊ÷
+			 //æ‰¾å‡ºä¸»ç»§æ‰¿æ ‘
 			 //
-			 //ÎªÃ¿Ò»¸ö¸¸Àà½¨Á¢Ò»¸ö¿ÕµÄ×ÓÀà
+			 //ä¸ºæ¯ä¸€ä¸ªçˆ¶ç±»å»ºç«‹ä¸€ä¸ªç©ºçš„å­ç±»
 			 
 			 int cn = 0;
 			 for(int bv = 0 ; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
-//				 tool.writeByFileWrite(log1,"duofulei,¸¸Àà·Ö½á¹û£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡µÚ"+bv+"¸ö=="+"\n");
+//				 tool.writeByFileWrite(log1,"duofulei,çˆ¶ç±»åˆ†ç»“æœï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ç¬¬"+bv+"ä¸ª=="+"\n");
 				 if(!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 					 cn++;
 				 }
@@ -903,7 +903,7 @@ public class RefactorInheritance {
 								}
 							}
 
-								//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+								//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 								if(CMN.getisoverride(key1,extendsMatrix)||CMN.getissuperdot(key1, value1, extendsMatrix)){
 								
 									if (buke.isEmpty()) {
@@ -914,7 +914,7 @@ public class RefactorInheritance {
 										}
 								}
 								}
-								//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+								//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 								if(!CMN.getisoverride(key1,extendsMatrix)&&!CMN.getissuperdot(key1,value1,extendsMatrix)){
 									if (duLi.isEmpty()) {
 										duLi.add(key1);
@@ -925,7 +925,7 @@ public class RefactorInheritance {
 									}
 								}
 								
-								//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+								//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 								 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 									 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 										 if(getisoverride1(key1,levels.get(i).get(j-1).get(indup).cns,bv)|| getissuperdot1(value1,key1,levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -952,7 +952,7 @@ public class RefactorInheritance {
 						
 				}
 		}
-			   }else{//ÕıÔÚ¸ÄÒ¶×Ó
+			   }else{//æ­£åœ¨æ”¹å¶å­
 				 
 				   for (int m = 0; m < co.Refactor.size(); m++) {
 					   Feature fa = SrcAction.classesMap.get(SourceParser.Getonlyclassname(co.Refactor.get(m))).featureMap.get(co.Refactor.get(m));
@@ -966,7 +966,7 @@ public class RefactorInheritance {
 									}
 								}
 						
-									//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+									//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 									if(CMN.getisoverride(co.Refactor.get(m),extendsMatrix)||CMN.getissuperdot(co.Refactor.get(m),fa, extendsMatrix)){
 									
 										if (buke.isEmpty()) {
@@ -977,7 +977,7 @@ public class RefactorInheritance {
 											}
 									}
 									}
-									//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+									//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 									if(!CMN.getisoverride(co.Refactor.get(m), extendsMatrix)&&!CMN.getissuperdot(co.Refactor.get(m),fa, extendsMatrix)){
 										if (duLi.isEmpty()) {
 											duLi.add(co.Refactor.get(m));
@@ -988,7 +988,7 @@ public class RefactorInheritance {
 										}
 									}
 									
-									//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+									//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 									 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 										 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 											 if(getisoverride1(co.Refactor.get(m),levels.get(i).get(j-1).get(indup).cns,bv )|| getissuperdot1(fa,co.Refactor.get(m),levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -1066,7 +1066,7 @@ public class RefactorInheritance {
 				}
 
 				if(d > 0){
-					//ÓïÒåÏàËÆ¶È¾ØÕó
+					//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 					wsem = semantic.makesemanticmatrix(methodlist);
 					wsem = semantic.filterSemantic(wsem);
 					
@@ -1075,10 +1075,10 @@ public class RefactorInheritance {
 		        A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(2,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(b, ycall)),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 				
 				 
-				returnvalue rv = CMN.CommunityDetectionNoextentsDUOFULEI(A,  methodlist, methodbukefen, duLi);//ÖØ¹¹ºóÀàµÄ½á¹¹
+				returnvalue rv = CMN.CommunityDetectionNoextentsDUOFULEI(A,  methodlist, methodbukefen, duLi);//é‡æ„åç±»çš„ç»“æ„
 				ArrayList<ArrayList<String>>  cns2 = rv.cns;
 
-				levels.get(i).get(j).get(k).cns = dealthecns1(cns1, cns2, methodlistAll,mainddd); //dx ÊÇÖ÷¼Ì³ĞÊ÷
+				levels.get(i).get(j).get(k).cns = dealthecns1(cns1, cns2, methodlistAll,mainddd); //dx æ˜¯ä¸»ç»§æ‰¿æ ‘
 				levels.get(i).get(j).get(k).mainidx = 0;
 				levels.get(i).get(j).get(k).DeltaQ = rv.MQ;
 				
@@ -1092,8 +1092,8 @@ public class RefactorInheritance {
 		 }
 		 
 				
-//				tool.writeByFileWrite(log1,"¸¸Àà²»Ö¹Ò»¸ö±»·Ö½â½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(i).get(j).get(k).mainidx +"\n");
-//				tool.writeByFileWrite(log1,"¸¸Àà²»Ö¹Ò»¸ö´¦Àíºócns1.size()=="+levels.get(i).get(j).get(k).cns.size()+"\n");
+//				tool.writeByFileWrite(log1,"çˆ¶ç±»ä¸æ­¢ä¸€ä¸ªè¢«åˆ†è§£ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(i).get(j).get(k).mainidx +"\n");
+//				tool.writeByFileWrite(log1,"çˆ¶ç±»ä¸æ­¢ä¸€ä¸ªå¤„ç†åcns1.size()=="+levels.get(i).get(j).get(k).cns.size()+"\n");
 				CMN.printCNS1(log1,levels.get(i).get(j).get(k).cns);
 			
 					   return levels;
@@ -1129,7 +1129,7 @@ public class RefactorInheritance {
 						}
 					}
 
-						//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+						//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 						if(CMN.getisoverride(key1,extendsMatrix)||CMN.getissuperdot(key1, value1, extendsMatrix)){
 						
 							if (buke.isEmpty()) {
@@ -1140,7 +1140,7 @@ public class RefactorInheritance {
 								}
 						}
 						}
-						//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+						//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 						if(!CMN.getisoverride(key1,extendsMatrix)&&!CMN.getissuperdot(key1, value1, extendsMatrix)){
 							if (duLi.isEmpty()) {
 								duLi.add(key1);
@@ -1161,7 +1161,7 @@ public class RefactorInheritance {
 
 						}
 	    			}
-	}else{ //¸ÄÒ¶×Ó
+	}else{ //æ”¹å¶å­
 		for (int m = 0; m < co.Refactor.size(); m++) {
 	
 			ClassObject cObject = SrcAction.classesMap.get(SourceParser.Getonlyclassname(co.Refactor.get(m)));
@@ -1175,7 +1175,7 @@ public class RefactorInheritance {
 				}
 			}
 
-				//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+				//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 				if(CMN.getisoverride(co.Refactor.get(m),extendsMatrix)|| CMN.getissuperdot(co.Refactor.get(m),fa,extendsMatrix)){
 				
 					if (buke.isEmpty()) {
@@ -1186,7 +1186,7 @@ public class RefactorInheritance {
 						}
 				}
 				}
-				//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+				//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 				if(!CMN.getisoverride(co.Refactor.get(m), extendsMatrix)&&!CMN.getissuperdot(co.Refactor.get(m), fa, extendsMatrix)){
 					if (duLi.isEmpty()) {
 						duLi.add(co.Refactor.get(m));
@@ -1242,7 +1242,7 @@ public class RefactorInheritance {
 		}
 
 		if(d > 0){
-			//ÓïÒåÏàËÆ¶È¾ØÕó
+			//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 			wsem = semantic.makesemanticmatrix(methodlist);
 			wsem = semantic.filterSemantic(wsem);
 			
@@ -1251,7 +1251,7 @@ public class RefactorInheritance {
         A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(2,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(b, ycall)),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 		
 		
-        returnvalue rv = CMN.CommunityDetectionNoextentsNOFULEI(A,  methodlist, methodbukefen, duLi);//ÖØ¹¹ºóÀàµÄ½á¹¹
+        returnvalue rv = CMN.CommunityDetectionNoextentsNOFULEI(A,  methodlist, methodbukefen, duLi);//é‡æ„åç±»çš„ç»“æ„
 		levels.get(i).get(j).get(k).cns = dealthecns2(rv.cns, methodbukefen, methodlistAll);
 		levels.get(i).get(j).get(k).DeltaQ = rv.MQ;
 
@@ -1267,7 +1267,7 @@ public class RefactorInheritance {
 	    }
 
 		levels.get(i).get(j).get(k).mainidx = 0;
-//		tool.writeByFileWrite(log1,"Èç¹û¸¸ÀàÃ»ÓĞ±»·Ö½â£¬Æä½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(i).get(j).get(k).mainidx  +"\n");
+//		tool.writeByFileWrite(log1,"å¦‚æœçˆ¶ç±»æ²¡æœ‰è¢«åˆ†è§£ï¼Œå…¶ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(i).get(j).get(k).mainidx  +"\n");
 		CMN.printCNS1(log1, levels.get(i).get(j).get(k).cns);
 		return levels;
 }
@@ -1491,7 +1491,7 @@ public static ArrayList<ArrayList<String>> dealthecns1(ArrayList<ArrayList<Strin
 				if(cns2.get(j).containsAll(cns1.get(i))&&!IfScatter(cns2.get(j))){
 					cns1.set(i,cns2.get(j));
 				}
-				if(cns2.get(j).containsAll(cns1.get(i))&&IfScatter(cns2.get(j))){ //   ÔÚ¸¸Àà±»·Ö½âµÄÇé¿öÏÂ£¬×ÓÀàÈôÓĞËöËé½ÚµãµÄ´¦Àí·½·¨
+				if(cns2.get(j).containsAll(cns1.get(i))&&IfScatter(cns2.get(j))){ //   åœ¨çˆ¶ç±»è¢«åˆ†è§£çš„æƒ…å†µä¸‹ï¼Œå­ç±»è‹¥æœ‰çç¢èŠ‚ç‚¹çš„å¤„ç†æ–¹æ³•
 					tep.addAll(cns2.get(j));
 
 				}
@@ -1609,7 +1609,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 		 
 		ArrayList< ArrayList<String> > cns1 = new ArrayList< ArrayList<String> >();
 		for(int bv = 0 ; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
-//			 tool.writeByFileWrite(log1,"Æä¸¸Àà·Ö½á¹û£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡µÚ"+bv+"¸ö=="+"\n");
+//			 tool.writeByFileWrite(log1,"å…¶çˆ¶ç±»åˆ†ç»“æœï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ç¬¬"+bv+"ä¸ª=="+"\n");
 			ArrayList<String> subnewArrayList = new ArrayList<String>();
 			cns1.add(subnewArrayList);
 			
@@ -1642,7 +1642,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 							}
 						}
 				
-							//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+							//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 							if(CMN.getisoverride(key1,extendsMatrix)||CMN.getissuperdot(key1, value1, extendsMatrix)){
 							
 								if (buke.isEmpty()) {
@@ -1653,7 +1653,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 									}
 							}
 							}
-							//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+							//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 							if(!CMN.getisoverride(key1,extendsMatrix)&&!CMN.getissuperdot(key1, value1, extendsMatrix)){
 								if (duLi.isEmpty()) {
 									duLi.add(key1);
@@ -1664,7 +1664,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 								}
 							}
 							
-							//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+							//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 							 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 								 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 									 if(getisoverride1(key1,levels.get(i).get(j-1).get(indup).cns, bv )|| getissuperdot1(value1,key1,levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -1683,7 +1683,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 					
 			}
 	}
-			}else{ //Ò¶×Ó
+			}else{ //å¶å­
 				
 				for (int m = 0; m < co.Refactor.size(); m++) {
 					ClassObject cObject = SrcAction.classesMap.get(SourceParser.Getonlyclassname(co.Refactor.get(m)));
@@ -1698,7 +1698,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 								}
 							}
 					
-								//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+								//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 								if(CMN.getisoverride(key, extendsMatrix)|| CMN.getissuperdot(key, fa, extendsMatrix)){
 								
 									if (buke.isEmpty()) {
@@ -1709,7 +1709,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 										}
 								}
 								}
-								//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+								//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 								if(!CMN.getisoverride(key,extendsMatrix)&&!CMN.getissuperdot(key, fa, extendsMatrix)){
 									if (duLi.isEmpty()) {
 										duLi.add(key);
@@ -1720,7 +1720,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 									}
 								}
 								
-								//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+								//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 								 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 									 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 										 if(getisoverride1(key,levels.get(i).get(j-1).get(indup).cns, bv )|| getissuperdot1(fa,key,levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -1804,7 +1804,7 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
 			}
 
 			if(d > 0){
-				//ÓïÒåÏàËÆ¶È¾ØÕó
+				//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 				wsem = semantic.makesemanticmatrix(methodlist);
 				wsem = semantic.filterSemanticIher(wsem);
 				
@@ -1813,12 +1813,12 @@ public static ArrayList<ArrayList<String>> dealthecns111(ArrayList<ArrayList<Str
             A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(2,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(b, ycall)),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 			
             
-            returnvalue rv = CMN.CommunityDetectionNoextentsFuleifenjie(A,  methodlist, methodbukefen, duLi);//ÖØ¹¹ºóÀàµÄ½á¹¹
+            returnvalue rv = CMN.CommunityDetectionNoextentsFuleifenjie(A,  methodlist, methodbukefen, duLi);//é‡æ„åç±»çš„ç»“æ„
             ArrayList<ArrayList<String>>  cns2 = rv.cns;
 
-			levels.get(i).get(j).get(k).cns = dealthecns1(cns1, cns2, methodlistAll,dx); //dx ÊÇÖ÷¼Ì³ĞÊ÷
+			levels.get(i).get(j).get(k).cns = dealthecns1(cns1, cns2, methodlistAll,dx); //dx æ˜¯ä¸»ç»§æ‰¿æ ‘
 			levels.get(i).get(j).get(k).DeltaQ = rv.MQ;		
-//			tool.writeByFileWrite(log1,"¸¸Àà±»·Ö½â£¬´¦Àíºó±»·Ö½â½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(i).get(j).get(k).mainidx +"\n");
+//			tool.writeByFileWrite(log1,"çˆ¶ç±»è¢«åˆ†è§£ï¼Œå¤„ç†åè¢«åˆ†è§£ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(i).get(j).get(k).mainidx +"\n");
 			CMN.printCNS1(log1, levels.get(i).get(j).get(k).cns);
 		
 			return levels;
@@ -1833,7 +1833,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 		 
 		ArrayList< ArrayList<String> > cns1 = new ArrayList< ArrayList<String> >();
 		for(int bv = 0 ; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
-//			 tool.writeByFileWrite(log1,"Æä¸¸Àà·Ö½á¹û£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡£¡µÚ"+bv+"¸ö=="+"\n");
+//			 tool.writeByFileWrite(log1,"å…¶çˆ¶ç±»åˆ†ç»“æœï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ï¼ç¬¬"+bv+"ä¸ª=="+"\n");
 			ArrayList<String> subnewArrayList = new ArrayList<String>();
 			cns1.add(subnewArrayList);
 			
@@ -1866,7 +1866,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 							}
 						}
 				
-							//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+							//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 							if(CMN.getisoverride(key1,extendsMatrix)||CMN.getissuperdot(key1, value1, extendsMatrix)){
 							
 								if (buke.isEmpty()) {
@@ -1877,7 +1877,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 									}
 							}
 							}
-							//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+							//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 							if(!CMN.getisoverride(key1,extendsMatrix)&&!CMN.getissuperdot(key1, value1, extendsMatrix)){
 								if (duLi.isEmpty()) {
 									duLi.add(key1);
@@ -1888,7 +1888,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 								}
 							}
 							
-							//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+							//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 							 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 								 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 									 if(getisoverride1(key1,levels.get(i).get(j-1).get(indup).cns, bv )|| getissuperdot1(value1,key1,levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -1907,7 +1907,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 					
 			}
 	}
-			}else{ //Ò¶×Ó
+			}else{ //å¶å­
 				
 				for (int m = 0; m < co.Refactor.size(); m++) {
 					ClassObject cObject = SrcAction.classesMap.get(SourceParser.Getonlyclassname(co.Refactor.get(m)));
@@ -1922,7 +1922,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 								}
 							}
 					
-								//ÕÒ³öÈ«²¿µ÷ÓÃ¸¸ÀàµÄº¯ÊıºÍÖØĞ´¸¸ÀàµÄº¯Êı
+								//æ‰¾å‡ºå…¨éƒ¨è°ƒç”¨çˆ¶ç±»çš„å‡½æ•°å’Œé‡å†™çˆ¶ç±»çš„å‡½æ•°
 								if(CMN.getisoverride(key, extendsMatrix)|| CMN.getissuperdot(key, fa, extendsMatrix)){
 								
 									if (buke.isEmpty()) {
@@ -1933,7 +1933,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 										}
 								}
 								}
-								//Ã»ÓĞµ÷ÓÃ¸¸ÀàºÍÖØĞ´¿ÉÒÔ½øĞĞÉçÇø»®·Ö
+								//æ²¡æœ‰è°ƒç”¨çˆ¶ç±»å’Œé‡å†™å¯ä»¥è¿›è¡Œç¤¾åŒºåˆ’åˆ†
 								if(!CMN.getisoverride(key,extendsMatrix)&&!CMN.getissuperdot(key, fa, extendsMatrix)){
 									if (duLi.isEmpty()) {
 										duLi.add(key);
@@ -1944,7 +1944,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 									}
 								}
 								
-								//ÕÒ³öonlyµ÷ÓÃºÍÖØĞ´
+								//æ‰¾å‡ºonlyè°ƒç”¨å’Œé‡å†™
 								 for(int bv = 0; bv < levels.get(i).get(j-1).get(indup).cns.size(); bv++){
 									 if(bv != dx&&!levels.get(i).get(j-1).get(indup).cns.get(bv).isEmpty()){
 										 if(getisoverride1(key,levels.get(i).get(j-1).get(indup).cns, bv )|| getissuperdot1(fa,key,levels.get(i).get(j-1).get(indup).cns,bv )){
@@ -2028,7 +2028,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 			}
 
 			if(d > 0){
-				//ÓïÒåÏàËÆ¶È¾ØÕó
+				//è¯­ä¹‰ç›¸ä¼¼åº¦çŸ©é˜µ
 				wsem = semantic.makesemanticmatrix(methodlist);
 				wsem = semantic.filterSemanticIher(wsem);
 				
@@ -2037,14 +2037,14 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
             A = MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixPlus(MatrixComputing.MatrixDotMultiply(1,MatrixComputing.MatrixDotMultiply(a, xshare)),MatrixComputing.MatrixDotMultiply(1,MatrixComputing.MatrixDotMultiply(b, ycall))),MatrixComputing.MatrixDotMultiply(c, zexe)),MatrixComputing.MatrixDotMultiply(0, MatrixComputing.MatrixDotMultiply(d, wsem)));
 			
             
-            returnvalue rv = CMN.CommunityDetectionNoextentsFuleifenjie(A,  methodlist, methodbukefen, duLi);//ÖØ¹¹ºóÀàµÄ½á¹¹
+            returnvalue rv = CMN.CommunityDetectionNoextentsFuleifenjie(A,  methodlist, methodbukefen, duLi);//é‡æ„åç±»çš„ç»“æ„
             ArrayList<ArrayList<String>>  cns2 = rv.cns;
 //            levels.get(i).get(j).get(k).cns = cns2 ;
             if(cns2.size()>1){
-			levels.get(i).get(j).get(k).cns = dealthecns111(cns1, cns2, methodlistAll,dx); //dx ÊÇÖ÷¼Ì³ĞÊ÷
+			levels.get(i).get(j).get(k).cns = dealthecns111(cns1, cns2, methodlistAll,dx); //dx æ˜¯ä¸»ç»§æ‰¿æ ‘
             }
 			levels.get(i).get(j).get(k).DeltaQ = rv.MQ;		
-//			tool.writeByFileWrite(log1,"¸¸Àà±»·Ö½â£¬´¦Àíºó±»·Ö½â½á¹û  methodlistAll=="+methodlistAll.size()+"  Ö÷¼Ì³ĞÊ÷==="+levels.get(i).get(j).get(k).mainidx +"\n");
+//			tool.writeByFileWrite(log1,"çˆ¶ç±»è¢«åˆ†è§£ï¼Œå¤„ç†åè¢«åˆ†è§£ç»“æœ  methodlistAll=="+methodlistAll.size()+"  ä¸»ç»§æ‰¿æ ‘==="+levels.get(i).get(j).get(k).mainidx +"\n");
 			CMN.printCNS1(log1, levels.get(i).get(j).get(k).cns);
 		
 			return levels;
@@ -2052,18 +2052,18 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 	
 	public static ArrayList<SplitTrees>  TidyResults(ArrayList<ArrayList<ArrayList<extend>>> levels) throws IOException{
 		String log1 = "D:\\Results.txt";
-//		tool.writeByFileWrite(log1,"¹²"+levels.size()+"¿Ã¼Ì³ĞÊ÷==="+"\n");
+//		tool.writeByFileWrite(log1,"å…±"+levels.size()+"æ£µç»§æ‰¿æ ‘==="+"\n");
 		
-		ArrayList<SplitTrees> SplitTree = new ArrayList<SplitTrees>();//±»·Ö½âµÄÀàµÄË÷Òı
+		ArrayList<SplitTrees> SplitTree = new ArrayList<SplitTrees>();//è¢«åˆ†è§£çš„ç±»çš„ç´¢å¼•
 		
-		 for(int i = 0; i < levels.size(); i++){ //±éÀúÃ¿¿Ã¼Ì³ĞÊ÷
+		 for(int i = 0; i < levels.size(); i++){ //éå†æ¯æ£µç»§æ‰¿æ ‘
 			SplitTrees sTrees = new SplitTrees();
 			int move = 0;
-//			tool.writeByFileWrite(log1,"µÚ"+i+"¿Ã¼Ì³ĞÊ÷==="+"\n");
+//			tool.writeByFileWrite(log1,"ç¬¬"+i+"æ£µç»§æ‰¿æ ‘==="+"\n");
 			boolean flag = false;
 			int max = 0;
 			 for(int j = 0; j < levels.get(i).size(); j++){
-//				 tool.writeByFileWrite(log1,"¹²"+levels.get(i).size()+"²ã==="+"\n");
+//				 tool.writeByFileWrite(log1,"å…±"+levels.get(i).size()+"å±‚==="+"\n");
 			
 	    		 for(int k =0; k <levels.get(i).get(j).size();k++){
 	    			 int cnt = 0;
@@ -2083,7 +2083,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 	    		    	 max = levels.get(i).get(j).get(k).cns.size(); 
 	    		     }
 	    		     levels.get(i).get(j).get(k).split = true;
-//			         tool.writeByFileWrite(log1,"µÚ"+j+"²ã£¬"+"µÚ"+k+"¸ö½Úµã==="+SrcAction.classname.get(levels.get(i).get(j).get(k).matrixInd)+"±»·Ö½â³É"+cnt+"¸öÀà"+"\n");
+//			         tool.writeByFileWrite(log1,"ç¬¬"+j+"å±‚ï¼Œ"+"ç¬¬"+k+"ä¸ªèŠ‚ç‚¹==="+SrcAction.classname.get(levels.get(i).get(j).get(k).matrixInd)+"è¢«åˆ†è§£æˆ"+cnt+"ä¸ªç±»"+"\n");
 	    			 }
 				    		
 			}
@@ -2099,12 +2099,12 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 			 
 		 }
 		 
-//		 tool.writeByFileWrite(log1,"¹²ÓĞ"+SplitTree.size()+"¿ÃÊ÷±»·Ö½â"+"\n");
+//		 tool.writeByFileWrite(log1,"å…±æœ‰"+SplitTree.size()+"æ£µæ ‘è¢«åˆ†è§£"+"\n");
 		 for(int i = 0; i < SplitTree.size(); i++){
-//			 tool.writeByFileWrite(log1,"µÚ"+SplitTree.get(i).TreeIndex+"¿ÃÊ÷±»·Ö½â"+SplitTree.get(i).TreeNum+"¿ÃÊ÷"+"\n");
+//			 tool.writeByFileWrite(log1,"ç¬¬"+SplitTree.get(i).TreeIndex+"æ£µæ ‘è¢«åˆ†è§£"+SplitTree.get(i).TreeNum+"æ£µæ ‘"+"\n");
 		 }
 		
-		 for(int i = 0; i < SplitTree.size(); i++){ //±éÀúÃ¿¿Ã¼Ì³ĞÊ÷
+		 for(int i = 0; i < SplitTree.size(); i++){ //éå†æ¯æ£µç»§æ‰¿æ ‘
 			
 			 for(int j = 0; j < levels.get(SplitTree.get(i).TreeIndex).size(); j++){
 				 ArrayList<ArrayList<ArrayList<extend>>> levelSplit = new ArrayList<ArrayList<ArrayList<extend>>>();
@@ -2127,8 +2127,8 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 									 }
 									 
 									 extend ed = new extend();
-//									 ArrayList<String> SubClassName = new  ArrayList<String>();//×ÓÀàµÄÀàÃû
-//									 ArrayList<String> SuperClassName = new  ArrayList<String>();  //¸¸ÀàµÄÀàÃû
+//									 ArrayList<String> SubClassName = new  ArrayList<String>();//å­ç±»çš„ç±»å
+//									 ArrayList<String> SuperClassName = new  ArrayList<String>();  //çˆ¶ç±»çš„ç±»å
 									 ed.cns.clear();
 									 ArrayList<String> cn = new ArrayList<String>();
 									 cn.addAll(levels.get(SplitTree.get(i).TreeIndex).get(p).get(q).cns.get(k));
@@ -2248,19 +2248,19 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 		 
 		 
 		 for(int i = 0; i < SplitTree.size(); i++){
-//			 tool.writeByFileWrite(log1,"µÚ"+SplitTree.get(i).TreeIndex+"¿ÃÊ÷±»·Ö½â-----"+"\n");
+//			 tool.writeByFileWrite(log1,"ç¬¬"+SplitTree.get(i).TreeIndex+"æ£µæ ‘è¢«åˆ†è§£-----"+"\n");
 			 ArrayList<ArrayList<ArrayList<extend>>> levelSplit = SplitTree.get(i).levelSplit;
 			 for(int j = 0; j < levelSplit.size(); j++){
-//				 tool.writeByFileWrite(log1,"·Ö½â³ÉµÚµÚ"+j+"¿ÃÊ÷!!!!!!!!!!!!!!!!!!!"+"\n");
+//				 tool.writeByFileWrite(log1,"åˆ†è§£æˆç¬¬ç¬¬"+j+"æ£µæ ‘!!!!!!!!!!!!!!!!!!!"+"\n");
 				 for(int k = 0; k < levelSplit.get(j).size(); k++){
-//					 tool.writeByFileWrite(log1,"µÚ"+k+"²ã-----"+"\n");
+//					 tool.writeByFileWrite(log1,"ç¬¬"+k+"å±‚-----"+"\n");
 					 for(int t = 0; t < levelSplit.get(j).get(k).size(); t++){
-//						 tool.writeByFileWrite(log1,"µÚ"+t+"¸öÀà-----"+levelSplit.get(j).get(k).get(t).TreenodeName+"\n");
+//						 tool.writeByFileWrite(log1,"ç¬¬"+t+"ä¸ªç±»-----"+levelSplit.get(j).get(k).get(t).TreenodeName+"\n");
 //						 tool.writeByFileWrite(log1,"IndependencyClassName-----"+levelSplit.get(j).get(k).get(t).IndependencyClassName+"\n");
 //						 tool.writeByFileWrite(log1,"OutdependencyClassName-----"+levelSplit.get(j).get(k).get(t).OutdependencyClassName+"\n");
 //						 tool.writeByFileWrite(log1,"SubClassName-----"+levelSplit.get(j).get(k).get(t).SubClassName+"\n");
 //						 tool.writeByFileWrite(log1,"SuperClassName-----"+levelSplit.get(j).get(k).get(t).SuperClassName+"\n");
-//						 tool.writeByFileWrite(log1,"DrawlevelNo-----"+levelSplit.get(j).get(k).get(t).DrawlevelNo+"   k²ã"+k+"\n");
+//						 tool.writeByFileWrite(log1,"DrawlevelNo-----"+levelSplit.get(j).get(k).get(t).DrawlevelNo+"   kå±‚"+k+"\n");
 //						 for(int q = 0; q < levelSplit.get(j).get(k).get(t).cns.get(0).size(); q++){
 //							 tool.writeByFileWrite(log1,levelSplit.get(j).get(k).get(t).cns.get(0).get(q)+"\n");
 //						 }
@@ -2353,7 +2353,7 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 			System.out.println("Q_Undo[y]=="+RefactorInheritance.Q_Undo[y]);
 		}
 		
-		System.out.println("µ÷ÓÃYtotal=="+Ymax+"  tool--Ymin=="+RefactorInheritance.Ymin+"   Xtotal=="+Xtotal+"  Ycurrent=="+Ycurrent+"  Xcurrent=="+Xcurrent);
+		System.out.println("è°ƒç”¨Ytotal=="+Ymax+"  tool--Ymin=="+RefactorInheritance.Ymin+"   Xtotal=="+Xtotal+"  Ycurrent=="+Ycurrent+"  Xcurrent=="+Xcurrent);
 		
 	}
 	
@@ -2368,14 +2368,14 @@ public static ArrayList<ArrayList<ArrayList<extend>>> fuleibeifenjie11(String lo
 //		 int[][] extendsMatrix = preprocessing.printextendsandimplements();
 		 levels =  getInheritanceTreelevels(preprocessing.extendsMatrix.clone());
 		 levels =  getinterfaces(levels);
-		 levels =  getTreesBeforeRefactoring(levels);//ÖØ¹¹Ç°µÄ¼Ì³ĞÊ÷½á¹¹
+		 levels =  getTreesBeforeRefactoring(levels);//é‡æ„å‰çš„ç»§æ‰¿æ ‘ç»“æ„
 //		 System.out.println("levels.size()=="+ levels.size());
 		 ArrayList<ArrayList<ArrayList<extend>>> levelsRefactor = (ArrayList<ArrayList<ArrayList<extend>>>)levels.clone(); 
-		 RefactorInheritance.TempIndexChechBox();//ÓëÑ§µÜ¶ÔÍê½Ó¿ÚÉ¾³ı
+		 RefactorInheritance.TempIndexChechBox();//ä¸å­¦å¼Ÿå¯¹å®Œæ¥å£åˆ é™¤
 		 RefactorInheritance.persent = 0;
 		 levelsRefactor = RefactorEachLevel(log1,levelsRefactor,preprocessing.extendsMatrix.clone(),barLisenter);
 		 
-		 ArrayList<SplitTrees> SplitTree = TidyResults(levelsRefactor);//ĞèÒª±»·Ö½âµÄÊ÷ ĞÅÏ¢
+		 ArrayList<SplitTrees> SplitTree = TidyResults(levelsRefactor);//éœ€è¦è¢«åˆ†è§£çš„æ ‘ ä¿¡æ¯
 		 SplitTree = CalculatInheritanceTreesQ(SplitTree,levelsRefactor);
 		 RefactorInheritance.rv.levelsRefactor = levelsRefactor;
 		 RefactorInheritance.rv.SplitTree = SplitTree;

@@ -54,7 +54,7 @@ public class preprocessing {
 		dependencyMatrix = printdependencyrelasions();
 		
 		int[][] remainMatrix = removeInheritanceNodefromDependency(extendsMatrix.clone(),dependencyMatrix.clone());
-		ArrayList <String>  rem = InheritanceNodes(remainMatrix); //¼Ì³ĞÌåÏµÖĞµÄ·ÇÒ¶×Ó½ÚµãµÄ½ÚµãÁĞ±í
+		ArrayList <String>  rem = InheritanceNodes(remainMatrix); //ç»§æ‰¿ä½“ç³»ä¸­çš„éå¶å­èŠ‚ç‚¹çš„èŠ‚ç‚¹åˆ—è¡¨
 	
 		MergeSetList = getAllClassToBeMergedfromNoInheritance(remainMatrix,extendsMatrix.clone(),rem);//Method Set to be merged
 		
@@ -88,7 +88,7 @@ public class preprocessing {
 	}
 
 	/**
-	 * È¡µÃ¼Ì³Ğ¹ØÏµ¾ØÕó
+	 * å–å¾—ç»§æ‰¿å…³ç³»çŸ©é˜µ
 	 * 
 	 */
 	public static int[][] printextendsandimplements() {
@@ -132,9 +132,9 @@ public class preprocessing {
 		int[][] dependencyMatrix = new int[SrcAction.classname.size()][SrcAction.classname.size()];
 		for (int i = 0; i < SrcAction.classname.size(); i++) {
 					int ind_i = i;
-					// ´¦ Àíclass.feoutbound
+					// å¤„ ç†class.feoutbound
 					for (int e = 0; e < SrcAction.classesMap.get(SrcAction.classname.get(i)).outboundFeatureList.size(); e++) {
-						// Èç¹û°üº¬£¨£© ¼´ÊÇº¯ÊıµÄÊôĞÔ !!ÇĞ¼Ç»¹ÓĞÁíÒ»ÖÖÇé¿ö!
+						// å¦‚æœåŒ…å«ï¼ˆï¼‰ å³æ˜¯å‡½æ•°çš„å±æ€§ !!åˆ‡è®°è¿˜æœ‰å¦ä¸€ç§æƒ…å†µ!
 						if (SrcAction.classesMap.get(SrcAction.classname.get(i)).outboundFeatureList.get(e) != null) {
 							String st = SourceParser.Getonlyclassname(SrcAction.classesMap.get(SrcAction.classname.get(i)).outboundFeatureList.get(e));
 							if (SrcAction.classname.contains(st)) {
@@ -149,9 +149,9 @@ public class preprocessing {
 						}
 					}
 
-					// ´¦ Àíclass.feinbound
+					// å¤„ ç†class.feinbound
 					for (int e = 0; e < SrcAction.classesMap.get(SrcAction.classname.get(i)).inboundFeatureList.size(); e++) {
-						// Èç¹û°üº¬£¨£© ¼´ÊÇº¯ÊıµÄÊôĞÔ !!ÇĞ¼Ç»¹ÓĞÁíÒ»ÖÖÇé¿ö!
+						// å¦‚æœåŒ…å«ï¼ˆï¼‰ å³æ˜¯å‡½æ•°çš„å±æ€§ !!åˆ‡è®°è¿˜æœ‰å¦ä¸€ç§æƒ…å†µ!
 						if (SrcAction.classesMap.get(SrcAction.classname.get(i)).inboundFeatureList.get(e) != null) {
 							String st = SourceParser.Getonlyclassname(SrcAction.classesMap.get(SrcAction.classname.get(i)).inboundFeatureList.get(e));
 							if (SrcAction.classname.contains(st)) {
@@ -184,7 +184,7 @@ public class preprocessing {
 								}
 							}
 						}
-						// ´¦Àíclass.feature.feoutbound
+						// å¤„ç†class.feature.feoutbound
 						for (int f = 0; f < value.outboundFeatureList.size(); f++) {
 							if (value.outboundFeatureList.get(f) != null) {
 								String st = SourceParser.Getonlyclassname(value.outboundFeatureList.get(f));
@@ -211,7 +211,7 @@ public class preprocessing {
 								}
 							}
 						}
-						// ´¦Àíclass.feature.feoutbound
+						// å¤„ç†class.feature.feoutbound
 						for (int f = 0; f < value.inboundFeatureList.size(); f++) {
 							if (value.inboundFeatureList.get(f) != null) {
 								String st = SourceParser.Getonlyclassname(value.inboundFeatureList.get(f));
@@ -242,7 +242,7 @@ public class preprocessing {
 
 		for (int i = 0; i < extendsMatrix.length; i++) {
 			if (MatrixComputing.getOutdgree(extendsMatrix, i)== 0 && MatrixComputing.getIndgree(extendsMatrix, i) != 0 || MatrixComputing.getOutdgree(extendsMatrix, i) != 0 && MatrixComputing.getIndgree(extendsMatrix, i) != 0) {
-				dele.add(i);//¼Ì³ĞÌåÏµÖĞµÄ·ÇÒ¶×Ó½ÚµãÈ«²¿É¾³ı
+				dele.add(i);//ç»§æ‰¿ä½“ç³»ä¸­çš„éå¶å­èŠ‚ç‚¹å…¨éƒ¨åˆ é™¤
 			}
 
 		}
@@ -289,7 +289,7 @@ public class preprocessing {
 			}
 		}
 		NonIherCount = count;
-//		System.out.println("ÍøÂçÖĞ½Úµã×ÜÊı==="+remainMatrix.length+"   Ò¶×Ó½ÚµãºÍ·Ç¼Ì³ĞÌåÏµ½Úµã×ÜÊı==="+count+"   ¼Ì³ĞÌåÏµÖĞµÄ·ÇÒ¶×Ó½ÚµãµÄ½Úµã×ÜÊı==="+count1);
+//		System.out.println("ç½‘ç»œä¸­èŠ‚ç‚¹æ€»æ•°==="+remainMatrix.length+"   å¶å­èŠ‚ç‚¹å’Œéç»§æ‰¿ä½“ç³»èŠ‚ç‚¹æ€»æ•°==="+count+"   ç»§æ‰¿ä½“ç³»ä¸­çš„éå¶å­èŠ‚ç‚¹çš„èŠ‚ç‚¹æ€»æ•°==="+count1);
 		return rem;
 	}
 	
@@ -300,7 +300,7 @@ public class preprocessing {
 		int threhold = 20;
 		ArrayList<ArrayList<String>> Allcc = new ArrayList<ArrayList<String>>();
 		if(preprocessing.DSC>7){
-		Allcc = CMN.CommunityDetectionNoextentsClass(remainMatrix,threhold);//½«·Ç¼Ì³ĞÌåÏµµÄÀà¼°Ò¶×ÓÒ¶½Úµã·Ö³É¼¸¸öÉçÇø
+		Allcc = CMN.CommunityDetectionNoextentsClass(remainMatrix,threhold);//å°†éç»§æ‰¿ä½“ç³»çš„ç±»åŠå¶å­å¶èŠ‚ç‚¹åˆ†æˆå‡ ä¸ªç¤¾åŒº
 		}else{
 			Allcc = tool.processExample(Allcc);
 		}
@@ -308,7 +308,7 @@ public class preprocessing {
 		int   mmm  = 0;
 		for (int t = 0; t < Allcc.size(); t++) {
 			
-			List<String> classnameList = Allcc.get(t); //¼´½«ºÏ²¢µÄÀàµÄÁĞ±í
+			List<String> classnameList = Allcc.get(t); //å³å°†åˆå¹¶çš„ç±»çš„åˆ—è¡¨
 			mmm= mmm+Allcc.get(t).size();
 			if(!tool.JudgeExample(classnameList)){
 			classnameList.removeAll(rem);
@@ -317,10 +317,10 @@ public class preprocessing {
 			MergeMethodNonInheri rm = new MergeMethodNonInheri();
 			ArrayList<String> methodlist = new ArrayList<String>();
 			ArrayList<ArrayList<String>> methodlistoriginalpart = new ArrayList<ArrayList<String>>();
-			ArrayList<ArrayList<String>> methodbukefen = new ArrayList<ArrayList<String>>();//²»¿É²ğ·Ö·½·¨£¬¼´ÈôÒ¶×Ó½ÚµãÖĞµ÷ÓÃÁË¸¸ÀàµÄ·½·¨£¬»òÕß´æÔÚoverideµÄÇé¿ö£¬²»²ğ·Ö£¬ÇÒ×îÖÕ¸ÃÉçÇøÈÔÈ»Òª¼Ì³ĞÆä¸¸Àà
-			ArrayList<String> methodduli= new ArrayList<String>();//¿ÉÒÔ²ğ·Ö½Úµã£¬¼°ºÏ²¢ºóµÄº¯Êı¼¯ºÏÔÚ³õÊ¼Ê±×ÔÉí¿ÉÊÓÎª¶ÀÁ¢ÉçÍÅ·½·¨
+			ArrayList<ArrayList<String>> methodbukefen = new ArrayList<ArrayList<String>>();//ä¸å¯æ‹†åˆ†æ–¹æ³•ï¼Œå³è‹¥å¶å­èŠ‚ç‚¹ä¸­è°ƒç”¨äº†çˆ¶ç±»çš„æ–¹æ³•ï¼Œæˆ–è€…å­˜åœ¨overideçš„æƒ…å†µï¼Œä¸æ‹†åˆ†ï¼Œä¸”æœ€ç»ˆè¯¥ç¤¾åŒºä»ç„¶è¦ç»§æ‰¿å…¶çˆ¶ç±»
+			ArrayList<String> methodduli= new ArrayList<String>();//å¯ä»¥æ‹†åˆ†èŠ‚ç‚¹ï¼ŒåŠåˆå¹¶åçš„å‡½æ•°é›†åˆåœ¨åˆå§‹æ—¶è‡ªèº«å¯è§†ä¸ºç‹¬ç«‹ç¤¾å›¢æ–¹æ³•
 			for (int i = 0; i < classnameList.size(); i++){
-					ArrayList<String> methodlisttem = new ArrayList<String>();//µ±Ç°ÀàµÄ·½·¨ÁĞ±í
+					ArrayList<String> methodlisttem = new ArrayList<String>();//å½“å‰ç±»çš„æ–¹æ³•åˆ—è¡¨
 					ArrayList<String> buke = new ArrayList<String>();
 					ArrayList<String> duLi = new ArrayList<String>();
 					Map<String, Feature> featuremap  =  SrcAction.classesMap.get(classnameList.get(i)).featureMap;
@@ -357,14 +357,14 @@ public class preprocessing {
 									}
 					        }
 
-						if(GenerateRefactoringSuggestions.IfScatter(methodlisttem)){//·½·¨×ÜÊıĞ¡ÓÚ3µÄÀà²»ÖØ¹¹
+						if(GenerateRefactoringSuggestions.IfScatter(methodlisttem)){//æ–¹æ³•æ€»æ•°å°äº3çš„ç±»ä¸é‡æ„
 							Main.buchai.addAll(methodlisttem);
 							if(SrcAction.classesMap.get(classnameList.get(i)).isLeaf){
 								if(!methodlisttem.isEmpty()){
-									SrcAction.classesMap.get(classnameList.get(i)).Refactor = methodlisttem; //Ò¶×Ó½ÚµãµÄ²»²ğ·Ö
+									SrcAction.classesMap.get(classnameList.get(i)).Refactor = methodlisttem; //å¶å­èŠ‚ç‚¹çš„ä¸æ‹†åˆ†
 								                            }	
 							}else{
-								if(!methodlisttem.isEmpty()){//·ÇÒ¶×Ó½ÚµãµÄ²»²ğ·Ö
+								if(!methodlisttem.isEmpty()){//éå¶å­èŠ‚ç‚¹çš„ä¸æ‹†åˆ†
 									Main.jiubuchai.add( methodlisttem);
 								                            }
 							}
@@ -384,11 +384,11 @@ public class preprocessing {
 						}
 						}
 			}//	for (int i = 0; i < classnameList.size(); i++) {
-			rm.methodlist = methodlist;//¸ÃÀà¼¶Á¬Í¨Æ¬ÖĞ°üº¬µÄËùÓĞ·½·¨	
-			rm.methodlistoriginalpart = methodlistoriginalpart;//¸ÃÀà¼¶Á¬Í¨Æ¬ÖĞÔ­Ê¼µÄ·½·¨»®·Ö·½Ê½
-			rm.methodbukefen = methodbukefen;//²»¿É²ğ·Ö·½·¨£¬¼´ÈôÒ¶×Ó½ÚµãÖĞµ÷ÓÃÁË¸¸ÀàµÄ·½·¨£¬»òÕß´æÔÚoverideµÄÇé¿ö£¬²»²ğ·Ö£¬ÇÒ×îÖÕ¸ÃÉçÇøÈÔÈ»Òª¼Ì³ĞÆä¸¸Àà
-			rm.methodduli = methodduli;//¿ÉÒÔ²ğ·Ö½Úµã£¬¼°ºÏ²¢ºóµÄº¯Êı¼¯ºÏÔÚ³õÊ¼Ê±×ÔÉí¿ÉÊÓÎª¶ÀÁ¢ÉçÍÅ·½·¨
-			rm.classnameListmerge = classnameList;//¸ÃÀà¼¶Á¬Í¨Æ¬´ıºÏ²¢µÄÀà½áºÏ
+			rm.methodlist = methodlist;//è¯¥ç±»çº§è¿é€šç‰‡ä¸­åŒ…å«çš„æ‰€æœ‰æ–¹æ³•	
+			rm.methodlistoriginalpart = methodlistoriginalpart;//è¯¥ç±»çº§è¿é€šç‰‡ä¸­åŸå§‹çš„æ–¹æ³•åˆ’åˆ†æ–¹å¼
+			rm.methodbukefen = methodbukefen;//ä¸å¯æ‹†åˆ†æ–¹æ³•ï¼Œå³è‹¥å¶å­èŠ‚ç‚¹ä¸­è°ƒç”¨äº†çˆ¶ç±»çš„æ–¹æ³•ï¼Œæˆ–è€…å­˜åœ¨overideçš„æƒ…å†µï¼Œä¸æ‹†åˆ†ï¼Œä¸”æœ€ç»ˆè¯¥ç¤¾åŒºä»ç„¶è¦ç»§æ‰¿å…¶çˆ¶ç±»
+			rm.methodduli = methodduli;//å¯ä»¥æ‹†åˆ†èŠ‚ç‚¹ï¼ŒåŠåˆå¹¶åçš„å‡½æ•°é›†åˆåœ¨åˆå§‹æ—¶è‡ªèº«å¯è§†ä¸ºç‹¬ç«‹ç¤¾å›¢æ–¹æ³•
+			rm.classnameListmerge = classnameList;//è¯¥ç±»çº§è¿é€šç‰‡å¾…åˆå¹¶çš„ç±»ç»“åˆ
 
 			MethodsToBeMerged.add(rm);
 		}   	

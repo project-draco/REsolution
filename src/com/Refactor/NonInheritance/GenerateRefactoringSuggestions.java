@@ -38,7 +38,7 @@ import com.jeantessier.dependencyfinder.gui.SrcAction;
 
 public class GenerateRefactoringSuggestions {
 	public static int zengjialei = 0;
-	public static boolean JudgeConstructor(String featureName) { //ÅĞ¶Ï¸Ãº¯ÊıÊÇ·ñÎª¹¹Ôìº¯Êı
+	public static boolean JudgeConstructor(String featureName) { //åˆ¤æ–­è¯¥å‡½æ•°æ˜¯å¦ä¸ºæ„é€ å‡½æ•°
 		boolean ifConstructor = false;
 		if(featureName.contains("(")){
 			String str[] = featureName.split("\\(");
@@ -116,7 +116,7 @@ public class GenerateRefactoringSuggestions {
 	public static boolean IftheScatterIsSameClass(ArrayList<ArrayList<String>> cns, int current, String classname){
 		boolean flag = false;
 		ArrayList<String> catogoryCurrent = new ArrayList<String> ();
-		for(int i = 0; i < cns.get(current).size(); i++){ //ÅĞ¶Ïµ±Ç°ÁãÉ¢ÉçÇø
+		for(int i = 0; i < cns.get(current).size(); i++){ //åˆ¤æ–­å½“å‰é›¶æ•£ç¤¾åŒº
 			if(!SourceParser.Getonlyclassname(cns.get(current).get(i)).equals(classname)){
 				flag = false;
 				break;
@@ -163,7 +163,7 @@ public class GenerateRefactoringSuggestions {
 			
 			
 			
-			for(int i = 0; i < cns.get(current).size(); i++){ //ÅĞ¶Ïµ±Ç°ÁãÉ¢ÉçÇø
+			for(int i = 0; i < cns.get(current).size(); i++){ //åˆ¤æ–­å½“å‰é›¶æ•£ç¤¾åŒº
 				if(catogoryCurrent.isEmpty()){
 					catogoryCurrent.add(SourceParser.Getonlyclassname(cns.get(current).get(i)));
 				}else{
@@ -172,7 +172,7 @@ public class GenerateRefactoringSuggestions {
 					}
 				}
 			}
-			if(catogoryCurrent.size()==1){//Èç¹ûcurrentÁãÉ¢ÉçÇøÄÚµÄº¯ÊıÍ¬ÊôÓÚÒ»¸öÀà
+			if(catogoryCurrent.size()==1){//å¦‚æœcurrenté›¶æ•£ç¤¾åŒºå†…çš„å‡½æ•°åŒå±äºä¸€ä¸ªç±»
 				ArrayList<Integer> mergeIndex = new ArrayList<Integer>();
 				mergeIndex.add(current);
 				mergescatter.addAll(cns.get(current));
@@ -246,7 +246,7 @@ public class GenerateRefactoringSuggestions {
 				
 				
 				
-			}else{//Èç¹ûcurrentÁãÉ¢ÉçÇøÄÚµÄº¯ÊıÍ¬²»ÊôÓÚÒ»¸öÀà
+			}else{//å¦‚æœcurrenté›¶æ•£ç¤¾åŒºå†…çš„å‡½æ•°åŒä¸å±äºä¸€ä¸ªç±»
 				ArrayList<String> currentList = new  ArrayList<String>();
 				ArrayList<String> getcurrent = (ArrayList<String>) cns.get(current).clone();
 				for(int p = 0; p < catogoryCurrent.size(); p++){
@@ -342,7 +342,7 @@ public class GenerateRefactoringSuggestions {
 	public static ArrayList<ArrayList<String>> MergeLittleMethodsChange(ArrayList<ArrayList<String>> cns,int n,ArrayList<ArrayList<String>>  methodbukefen) {
 		
 /**
- * Ê×ÏÈ£¬ÈôÒ»¸öÉçÇøÖĞÖ»º¬ÓĞÒ»¸öÆäËûÀàµÄ¹¹Ôìº¯Êı£¬Ôòremove¹¹Ôìº¯Êı£¬¶ÀÁ¢³ÉÉçÍÅ
+ * é¦–å…ˆï¼Œè‹¥ä¸€ä¸ªç¤¾åŒºä¸­åªå«æœ‰ä¸€ä¸ªå…¶ä»–ç±»çš„æ„é€ å‡½æ•°ï¼Œåˆ™removeæ„é€ å‡½æ•°ï¼Œç‹¬ç«‹æˆç¤¾å›¢
  */
 		ArrayList<ArrayList<String>> cns1  = (ArrayList<ArrayList<String>> ) cns.clone();
 		for (int i = 0; i < cns.size(); i++) {
@@ -381,7 +381,7 @@ public class GenerateRefactoringSuggestions {
 		
 		cns = cns1;
 		boolean stop = true;
-		while (stop) {  //  Ö»ÒªÓĞÁãÉ¢ÉçÍÅ¾ÍÒ»Ö±Ñ­»·
+		while (stop) {  //  åªè¦æœ‰é›¶æ•£ç¤¾å›¢å°±ä¸€ç›´å¾ªç¯
 			for (int i = 0; i < cns.size(); i++) {
 				if (cns.get(i).size() <= 3 && cns.get(i).size() >= 1) {
 					ArrayList<String> merge = new ArrayList<String>();
@@ -398,9 +398,9 @@ public class GenerateRefactoringSuggestions {
 						}
 					}
 					mergeN.add(i);
-					cns =  MergeNcns(cns, i, mergeN, merge );//½«ËöËé½ÚµãºÏ²¢cns.get(0)		
+					cns =  MergeNcns(cns, i, mergeN, merge );//å°†çç¢èŠ‚ç‚¹åˆå¹¶cns.get(0)		
 					/**
-					 * ½«ËöËé½ÚµãÓë¹¹Ôìº¯ÊıºÏ²¢
+					 * å°†çç¢èŠ‚ç‚¹ä¸æ„é€ å‡½æ•°åˆå¹¶
 					 */
 					boolean ifcontainconstr = false;
 					for(int p = 0 ; p < cns.get(0).size(); p++){
@@ -438,14 +438,14 @@ public class GenerateRefactoringSuggestions {
 						}
 					}
 					
-					if(!ifcontainconstr){//Èç¹ûºÏ²¢µÄËöËéÉçÍÅ²»°üº¬ ¹¹Ôìº¯Êı
+					if(!ifcontainconstr){//å¦‚æœåˆå¹¶çš„çç¢ç¤¾å›¢ä¸åŒ…å« æ„é€ å‡½æ•°
 						for (int j = 0; j < cns.size(); j++) {
 							if(j!=0){
 								for (int k = 0; k < cns.get(j).size(); k++) {
 									if(SourceParser.Getonlyclassname(cns.get(j).get(k)).equals(cls)&&JudgeConstructor(cns.get(j).get(k))){
 
 										mt mmMt = new mt();
-										mmMt = CMN.mergeCNS_i_jcg( cns, 0, j);//ºÏ²¢ºóµÄÉçÍÅÊÇj
+										mmMt = CMN.mergeCNS_i_jcg( cns, 0, j);//åˆå¹¶åçš„ç¤¾å›¢æ˜¯j
 										cns = mmMt.cns;
 										int dx = mmMt.i;
 										
@@ -559,8 +559,8 @@ public class GenerateRefactoringSuggestions {
 	}
 	
 	public static void PrintRefactoringSuggestions(Suggestions sg) throws IOException{
-		String log1   =  "D:\\°áÒÆº¯ÊıÖØ¹¹½¨Òé1.txt";  //???
-		String log   =  "D:\\ÌáÁ¶ÀàÖØ¹¹½¨Òé1.txt";  //???
+		String log1   =  "D:\\æ¬ç§»å‡½æ•°é‡æ„å»ºè®®1.txt";  //???
+		String log   =  "D:\\æç‚¼ç±»é‡æ„å»ºè®®1.txt";  //???
 
 		for(int i = 0; i < sg.UndoEntitySort.size(); i++){
 		       UndoEntity value = sg.UndoEntitySort.get(i);
@@ -577,12 +577,12 @@ public class GenerateRefactoringSuggestions {
 			UndoClass value = sg.undoClasseSort.get(i);
 			ArrayList<newclass>  ExtractClass = SrcAction.classesMap.get(value.classname).ExtractClass;
 			zengjialei = zengjialei + ExtractClass.size() - 1;
-//			tool.writeByFileWrite(log, "ĞèÒª½«´óÀà"+value.classname+"  methodsize=  "+SrcAction.classesMap.get(value.classname).featureMap.size()+"·Ö½âÎª"+ ExtractClass.size()+"¸öĞÂÀà==="+"\n");
+//			tool.writeByFileWrite(log, "éœ€è¦å°†å¤§ç±»"+value.classname+"  methodsize=  "+SrcAction.classesMap.get(value.classname).featureMap.size()+"åˆ†è§£ä¸º"+ ExtractClass.size()+"ä¸ªæ–°ç±»==="+"\n");
 			for(int k = 0; k  < ExtractClass.size(); k++){
 				if(ExtractClass.get(k).isLeaf){
-//			tool.writeByFileWrite(log, value.classname+"new_"+k+"------"+"   ·Ö½âºóÊÇ²»ÊÇÒ¶×Ó½Úµã--"+ExtractClass.get(k).isLeaf+"   Æä¸¸Àà½ÚµãÊÇ--"+ExtractClass.get(k).superclass+"\n");
+//			tool.writeByFileWrite(log, value.classname+"new_"+k+"------"+"   åˆ†è§£åæ˜¯ä¸æ˜¯å¶å­èŠ‚ç‚¹--"+ExtractClass.get(k).isLeaf+"   å…¶çˆ¶ç±»èŠ‚ç‚¹æ˜¯--"+ExtractClass.get(k).superclass+"\n");
 				}else{
-//			tool.writeByFileWrite(log, value.classname+"new_"+k+"------"+"   ·Ö½âºóÊÇ²»ÊÇÒ¶×Ó½Úµã--"+ExtractClass.get(k).isLeaf+"\n");	
+//			tool.writeByFileWrite(log, value.classname+"new_"+k+"------"+"   åˆ†è§£åæ˜¯ä¸æ˜¯å¶å­èŠ‚ç‚¹--"+ExtractClass.get(k).isLeaf+"\n");	
 				}
 			for(int o = 0; o < ExtractClass.get(k).extractedclass.size(); o++){
 //				tool.writeByFileWrite(log,ExtractClass.get(k).extractedclass.get(o)+"\n");
@@ -597,17 +597,17 @@ public class GenerateRefactoringSuggestions {
 	
 	
 	/**
-	 * Ñ°ÕÒÖØ¹¹½¨Òé
+	 * å¯»æ‰¾é‡æ„å»ºè®®
 	 */
 	public static Suggestions FindRefactoringSuggestions(ArrayList< ArrayList<String> > cns, ArrayList<ArrayList<String>> methodbukefen,List<String> classnameListmerge) throws SAXException, IOException {
 		
 		
 		/**
-		 * ÏÈ·ÖÎö ÌáÁ¶ÀàÖØ¹¹µÄÇé¿ö
+		 * å…ˆåˆ†æ æç‚¼ç±»é‡æ„çš„æƒ…å†µ
 		 */
 		Suggestions sg = new Suggestions();
-		String log   =  "D:\\ÌáÁ¶ÀàÖØ¹¹½¨Òé.txt";  //???
-		String log1   =  "D:\\°áÒÆº¯ÊıÖØ¹¹½¨Òé.txt";  //???
+		String log   =  "D:\\æç‚¼ç±»é‡æ„å»ºè®®.txt";  //???
+		String log1   =  "D:\\æ¬ç§»å‡½æ•°é‡æ„å»ºè®®.txt";  //???
 		ArrayList<MoveMethods> Move = new  ArrayList<MoveMethods>();
 		for(int i = 0; i < cns.size(); i++){
 			ArrayList<String>  classes = new ArrayList<String>();
@@ -737,7 +737,7 @@ public class GenerateRefactoringSuggestions {
 		}
 		
 		/**
-		 * ÔÙ·ÖÎö°áÒÆº¯ÊıÖØ¹¹Çé¿ö
+		 * å†åˆ†ææ¬ç§»å‡½æ•°é‡æ„æƒ…å†µ
 		 */
 		for(int b=0;b <Move.size();b++){
 			for(int vv= 0; vv < classnameListmerge.size(); vv++){

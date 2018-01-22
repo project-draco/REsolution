@@ -59,7 +59,7 @@ public class semantic {
 	static VSM VSM = new VSM();
 	static ArrayList<String> wordss = new ArrayList<String>();
 	
-	 public static double[] Reverbubsort(double[] num){  //´ó-¡·Ğ¡
+	 public static double[] Reverbubsort(double[] num){  //å¤§-ã€‹å°
 	        int i, j, flag = 1;  
 	        double temp;
 	        int MAX = num.length;
@@ -78,7 +78,7 @@ public class semantic {
 			return num;
 	 }
 	 
-	 public static int[] bubsort(int[] num, int[] idx){  //Ğ¡ ´ó
+	 public static int[] bubsort(int[] num, int[] idx){  //å° å¤§
 	        int i, j, flag = 1;  
 	        int temp;
 	        int tempx ;
@@ -164,7 +164,7 @@ public class semantic {
 			
 			num = bubsort(num);
 			if(num.length>2){
-			if(num.length % 2 == 0){//Å¼Êı
+			if(num.length % 2 == 0){//å¶æ•°
 				min  = (num[num.length/2 - 1] + num[num.length/2])/(double)2;
 			}else{
 				min  = num[(num.length + 1)/2];
@@ -193,7 +193,7 @@ public class semantic {
 	
 	
 	
-	 public static ArrayList<UndoClass> ReverbClasssort(ArrayList<UndoClass>  undoClasseSort){  //´ó-¡·Ğ¡
+	 public static ArrayList<UndoClass> ReverbClasssort(ArrayList<UndoClass>  undoClasseSort){  //å¤§-ã€‹å°
 	        int i, j, flag = 1;  
 	        UndoClass temp;
 	       
@@ -212,13 +212,13 @@ public class semantic {
 	        }
 	        
 	        for(int m = 0; m<undoClasseSort.size();m++){
-	        	System.out.println("ÀàÀàÅÅĞòÀ²£¡"+m+"  "+undoClasseSort.get(m).classname+"   detaA==========="+undoClasseSort.get(m).detaQ);
+	        	System.out.println("ç±»ç±»æ’åºå•¦ï¼"+m+"  "+undoClasseSort.get(m).classname+"   detaA==========="+undoClasseSort.get(m).detaQ);
 	        }
 			return undoClasseSort;
 	 }
 	 
 	 
-	 public static ArrayList<SplitTrees> ReverbSplitTreessort(ArrayList<SplitTrees>  SplitTree){  //´ó-¡·Ğ¡
+	 public static ArrayList<SplitTrees> ReverbSplitTreessort(ArrayList<SplitTrees>  SplitTree){  //å¤§-ã€‹å°
 	        int i, j,  flag = 1;  
 	        SplitTrees temp;
 	        int MAX = SplitTree.size();
@@ -236,12 +236,12 @@ public class semantic {
 	        }
 	        
 	        for(int m = 0; m<SplitTree.size();m++){
-	        	System.out.println("Ê÷Ê÷ÅÅĞòÀ²£¡"+m+"  "+SplitTree.get(m).TreeIndex +"   detaA==========="+SplitTree.get(m).detaQ);
+	        	System.out.println("æ ‘æ ‘æ’åºå•¦ï¼"+m+"  "+SplitTree.get(m).TreeIndex +"   detaA==========="+SplitTree.get(m).detaQ);
 	        }
 			return SplitTree;
 	 }
 	 
-	 public static ArrayList<UndoEntity> ReverbEntitySort(ArrayList<UndoEntity>  UndoEntitySort){  //´ó-¡·Ğ¡
+	 public static ArrayList<UndoEntity> ReverbEntitySort(ArrayList<UndoEntity>  UndoEntitySort){  //å¤§-ã€‹å°
 	        int i, j, flag = 1;  
 	        UndoEntity temp;
 	        int MAX = UndoEntitySort.size();
@@ -259,7 +259,7 @@ public class semantic {
 	        }
 	        
 	        for(int m = 0; m<UndoEntitySort.size();m++){
-	        	System.out.println("ÊôĞÔÅÅĞòÀ²£¡"+m+"  "+UndoEntitySort.get(m).entityname+"   detaA==========="+UndoEntitySort.get(m).detaQ);
+	        	System.out.println("å±æ€§æ’åºå•¦ï¼"+m+"  "+UndoEntitySort.get(m).entityname+"   detaA==========="+UndoEntitySort.get(m).detaQ);
 	        }
 			return UndoEntitySort;
 	 }
@@ -289,7 +289,7 @@ public class semantic {
 //			       Feature value = entry.getValue();  
 //			      // if(key.contains("getImageIcon")){
 ////			       if(value.methodlinesbe==0&&value.methodlinesaf==0&&key.contains("("))
-////			       System.out.println("º¯Êı"+key+"´ÓµÚ"+value.methodlinesbe+"¿ªÊ¼£¬´ÓµÚ"+value.methodlinesaf+"½áÊø");
+////			       System.out.println("å‡½æ•°"+key+"ä»ç¬¬"+value.methodlinesbe+"å¼€å§‹ï¼Œä»ç¬¬"+value.methodlinesaf+"ç»“æŸ");
 //			     //  }
 //			}
 //		}
@@ -304,13 +304,13 @@ public class semantic {
 	
 	
 	/**
-	 * ÕÒµ½Ã¿¸öº¯ÊıËùÔÚµÄĞĞºÅ
+	 * æ‰¾åˆ°æ¯ä¸ªå‡½æ•°æ‰€åœ¨çš„è¡Œå·
 	 * @param barLisenter 
 	 * 
 	 * @throws IOException
 	 */
 	public static void findmethodlines(ProgressBarLisenter barLisenter)throws IOException {
-		String filename = null;// È«Â·¾¶Ãûfilename = E:\Tomcat\apache-tomcat-6.0.14-src\java\org\apache\catalina\connector\InputBuffer.java
+		String filename = null;// å…¨è·¯å¾„åfilename = E:\Tomcat\apache-tomcat-6.0.14-src\java\org\apache\catalina\connector\InputBuffer.java
 		
 		for (int a = 0; a < SrcAction.classname.size(); a++) {
 			
@@ -328,14 +328,14 @@ public class semantic {
 			if(str1.length == 1){
 				filename = str1[str1.length - 1] + ".java";
 			}
-//				 System.out.println("º¯Êıfilename=="+filename);
+//				 System.out.println("å‡½æ•°filename=="+filename);
 			for(int i = 0; i < SrcAction.allJavaFilePaths.size(); i++){
 				if(SrcAction.allJavaFilePaths.get(i).contains(filename)){
 					filename = SrcAction.allJavaFilePaths.get(i);
 					break;
 				}
 			}
-//			System.out.println("ÎÒÕâÀïfilename ==="+filename );
+//			System.out.println("æˆ‘è¿™é‡Œfilename ==="+filename );
 			 
 			barLisenter.endFile();
 			
@@ -404,7 +404,7 @@ public class semantic {
 //			       String key = entry.getKey();  
 //			       Feature value = entry.getValue();  
 //			     //  if(key.contains("getImageIcon")){
-//			       System.out.println("º¯Êı"+key+"´ÓµÚ"+value.methodlinesbe+"¿ªÊ¼£¬´ÓµÚ"+value.methodlinesaf+"½áÊø");
+//			       System.out.println("å‡½æ•°"+key+"ä»ç¬¬"+value.methodlinesbe+"å¼€å§‹ï¼Œä»ç¬¬"+value.methodlinesaf+"ç»“æŸ");
 //			      // }
 //			}
 //		}
@@ -549,7 +549,7 @@ public class semantic {
 	public static ArrayList<Methodfeature> GetmethodlinesTinfo(String filename, List<String> methodList) throws IOException {
 		File file0 = new File(filename);
 		/**
-		 * ¶ÁÈ¡ ·½·¨ºÍÊôĞÔÁĞ±í
+		 * è¯»å– æ–¹æ³•å’Œå±æ€§åˆ—è¡¨
 		 */
 
 		String javaclassname = null;
@@ -561,7 +561,7 @@ public class semantic {
 		ArrayList<Methodfeature> methodlines = new ArrayList<Methodfeature>();
 		if (filename.endsWith(".java")) {
 			str0 = filename.split("\\" + "\\");
-			javaclassname = str0[str0.length - 1]; // µÃµ½×ÓÀàÃû³Æ
+			javaclassname = str0[str0.length - 1]; // å¾—åˆ°å­ç±»åç§°
 			str1 = javaclassname.split(".java");
 
 			classname = str1[0];
@@ -577,19 +577,19 @@ public class semantic {
 			}
 		}
 		/**
-		 * ¶ÁÈ¡ ·½·¨ºÍÊôĞÔÁĞ±íÍê±Ï
+		 * è¯»å– æ–¹æ³•å’Œå±æ€§åˆ—è¡¨å®Œæ¯•
 		 */
 		if (methodList.size() != 0) {
 
 			int line = 1;
-			// Ò»´Î¶ÁÈëÒ»ĞĞ£¬Ö±µ½¶ÁÈënullÎªÎÄ¼ş½áÊø
+			// ä¸€æ¬¡è¯»å…¥ä¸€è¡Œï¼Œç›´åˆ°è¯»å…¥nullä¸ºæ–‡ä»¶ç»“æŸ
 
 			for (int q = 0; q < methodList.size(); q++) {
 
 				BufferedReader reader1 = null;
 				Stack<Character> stack = new Stack<Character>();
 				Stack<Character> stackkh = new Stack<Character>();
-				reader1 = new BufferedReader(new FileReader(file0)); // ¶ÁÈ¡javaÎÄ¼ş
+				reader1 = new BufferedReader(new FileReader(file0)); // è¯»å–javaæ–‡ä»¶
 				String tempString1 = null;
 
 				String methodListonly = methodonlyname(methodList.get(q));
@@ -605,7 +605,7 @@ public class semantic {
 				boolean khsametime = false;
 				String tempStringfirst = null;
 				while ((tempString1 = reader1.readLine()) != null) {
-					// ÏÔÊ¾ĞĞºÅ
+					// æ˜¾ç¤ºè¡Œå·
 					methodline++;
 					boolean heheazu = false;
 					waitnopu = false;
@@ -763,7 +763,7 @@ public class semantic {
 							}
 
 							/**
-							 * Îª½â¾ö º¯Êı£¨£©ºóµÚÒ»¸ö{ÎÊÌâ
+							 * ä¸ºè§£å†³ å‡½æ•°ï¼ˆï¼‰åç¬¬ä¸€ä¸ª{é—®é¢˜
 							 */
 							if (!tempString1.contains("{")) {
 								if (tempString1.contains("(")|| tempString1.contains(")")) {
@@ -810,7 +810,7 @@ public class semantic {
 								continue;
 							}
 					
-							if (tempString1.contains("{")) {// °üº¬{
+							if (tempString1.contains("{")) {// åŒ…å«{
 								if (Throw) {
 									Throw = false;
 								}
@@ -839,7 +839,7 @@ public class semantic {
 					}
 					if (waitnext == false && lineupanddown != null&& waitCloud == true) {
 
-						if (lineupanddown.contains(",")) {// ¶à²ÎÊıµÄÇé¿ö
+						if (lineupanddown.contains(",")) {// å¤šå‚æ•°çš„æƒ…å†µ
 							
 							boolean parasame = false;
 							String s1[] = {};
@@ -927,8 +927,8 @@ public class semantic {
 								continue;
 							}
 
-						}// ¶à²ÎÊı
-						else {// Ò»¸ö²ÎÊı
+						}// å¤šå‚æ•°
+						else {// ä¸€ä¸ªå‚æ•°
 							boolean parasame = false;
 							if (paraname != null) {
 								if (paraname.length == 1) {
@@ -994,7 +994,7 @@ public class semantic {
 								methodlines.add(Methodfeature1);
 								continue;
 							}
-						}// Ò»¸ö²ÎÊı
+						}// ä¸€ä¸ªå‚æ•°
 
 					}
 
@@ -1008,14 +1008,14 @@ public class semantic {
 						int pp = tempString1.indexOf(methodListonly);
 						if (tempString1.contains("(")) {
 						
-							if (pp + methodListonly.length() < tempString1.length()) {// ´óĞÜ
+							if (pp + methodListonly.length() < tempString1.length()) {// å¤§ç†Š
 								o = tempString1.charAt(pp+ methodListonly.length());
 								oo = String.valueOf(o);
 							} else {
 								continue;
 							}
 						}
-						if (pp > 0) {// Ç°Ò»×ÖÄ¸
+						if (pp > 0) {// å‰ä¸€å­—æ¯
 							u = tempString1.charAt(pp - 1);
 							uu = String.valueOf(u);
 						}
@@ -1023,7 +1023,7 @@ public class semantic {
 						if (tempString1.contains("//")) {
 							int z = tempString1.indexOf("//");
 							if (z < pp) {
-								before = true; // ±»×¢ÊÍµôµÄÄÚÈİ
+								before = true; // è¢«æ³¨é‡Šæ‰çš„å†…å®¹
 							}
 						}
 					}
@@ -1048,7 +1048,7 @@ public class semantic {
 							}
 						
 							/**
-							 * public º¯ÊıÃû ²ÎÊı
+							 * public å‡½æ•°å å‚æ•°
 							 */
 							if (waitAZU&& !before&& tempString1.contains(methodListonly)&& (!tempString1.contains(";"))&& tempString1.contains("(")&& (uu.equals(".") || uu.equals(" ") || uu.equals("\t"))&& ((!tempString1.contains("public")
 											&& !tempString1.contains("protected") && !tempString1.contains("private")))) {
@@ -1061,7 +1061,7 @@ public class semantic {
 						continue;
 					}
 					/**
-					 * public º¯ÊıÃû ²ÎÊı
+					 * public å‡½æ•°å å‚æ•°
 					 */
 					if (!tempString1.contains("class")&& !tempString1.contains("=")&& !tempString1.contains("(")&& !before&& (!tempString1.contains(methodListonly))
 							&& (!tempString1.contains(";"))&& ((tempString1.contains("public")|| tempString1.contains("protected") || tempString1.contains("private")) && (!tempString1.contains("abstract")))
@@ -1069,7 +1069,7 @@ public class semantic {
 						waitAZU = true;
 						continue;
 					}
-					// Í¬Ê±ÓĞ{}
+					// åŒæ—¶æœ‰{}
 					if ((!before&& tempString1.contains(methodListonly)&& (tempString1.contains("{"))&& (tempString1.contains("}"))&& tempString1.contains("(")&& (oo.equals("(") || onextkh)
 							&& (uu.equals(".") || uu.equals(" ") || uu.equals("\t"))&& (tempString1.contains("public")|| tempString1.contains("protected")|| tempString1.contains("private") || tempString1.contains("void")) && (!tempString1.contains("abstract")))) {
 						khsametime = true;
@@ -1093,7 +1093,7 @@ public class semantic {
 						}
 						int j = 0;
 						boolean skh = false;
-						// ĞÂÔöÀ¨ºÅÆ¥ÅäËã·¨
+						// æ–°å¢æ‹¬å·åŒ¹é…ç®—æ³•
 						if (tempString1.contains("(")) {
 							if (tempString1.charAt(x) == '(') {
 
@@ -1131,10 +1131,10 @@ public class semantic {
 							otherkh = false;
 						}
 
-						if (otherkh) {// À¨ºÅÆ¥ÅäËã·¨ºó£¬ÓĞÁíÒ»¸ö£¨µÄÇéĞÎ
+						if (otherkh) {// æ‹¬å·åŒ¹é…ç®—æ³•åï¼Œæœ‰å¦ä¸€ä¸ªï¼ˆçš„æƒ…å½¢
 							otherkh = false;
-							if (j - x > 1) {// ÓĞ²ÎÊı
-								if (tempString1.substring(x + 1, j).contains(",")) {// ¶à²ÎÊıµÄÇé¿ö
+							if (j - x > 1) {// æœ‰å‚æ•°
+								if (tempString1.substring(x + 1, j).contains(",")) {// å¤šå‚æ•°çš„æƒ…å†µ
 									String s[] = {};
 									s = tempString1.substring(x + 1, j).split("\\,");
 
@@ -1155,7 +1155,7 @@ public class semantic {
 												}
 												yy = ok.split(" ");
 												/**
-												 * ĞÂÔö¼¸ÖÖÀıÍâ final && String[]
+												 * æ–°å¢å‡ ç§ä¾‹å¤– final && String[]
 												 */
 												if (yy[0].equals("final")) {
 													ok = yy[1];
@@ -1192,10 +1192,10 @@ public class semantic {
 											continue;
 										}
 									}
-								} else {// Ò»¸ö²ÎÊıµÄÇé¿ö
+								} else {// ä¸€ä¸ªå‚æ•°çš„æƒ…å†µ
 									if (paraname != null) {
 										if (paraname.length == 1) {
-											if (paraname[0].contains("$")) {// ÄÚ²¿Àà
+											if (paraname[0].contains("$")) {// å†…éƒ¨ç±»
 												paraname[0] = paraname[0].replaceAll("\\$","\\.");
 											}
 											boolean yiwen = false;
@@ -1241,7 +1241,7 @@ public class semantic {
 										continue;
 									}
 								}
-							} else {// ÎŞ²ÎÊı
+							} else {// æ— å‚æ•°
 								if (paraname == null) {
 									parasame = true;
 								}
@@ -1282,7 +1282,7 @@ public class semantic {
 								stack.clear();
 
 							}
-							if (tempString1.contains("{")&& tempString1.contains("}"))// Í¬Ê±°üº¬{}
+							if (tempString1.contains("{")&& tempString1.contains("}"))// åŒæ—¶åŒ…å«{}
 							{
 								methodlines.get(methodlines.size() - 1).methodlinesaf = methodline;
 								break;
@@ -1296,9 +1296,9 @@ public class semantic {
 				}// readline
 				reader1.close();
 
-			}// Ã»¸ö·½·¨Ñ­»·Ò»´Î
+			}// æ²¡ä¸ªæ–¹æ³•å¾ªç¯ä¸€æ¬¡
 
-			Comparatormethodline comparator = new Comparatormethodline();// ÁÙÊ±×¢µô
+			Comparatormethodline comparator = new Comparatormethodline();// ä¸´æ—¶æ³¨æ‰
 			Collections.sort(methodlines, comparator);
 			for (int m = 0; m < methodlines.size(); m++) {
 				if (methodlines.get(m).methodlinesaf == 0) {
@@ -1457,7 +1457,7 @@ public class semantic {
 
 	}
 	/**
-	 * ÌáÈ¡´Ê
+	 * æå–è¯
 	 * 
 	 * @throws IOException
 	 */
@@ -1491,7 +1491,7 @@ public class semantic {
 				}
 			}
 			File file0 = new File(filename);
-			BufferedReader reader1 = new BufferedReader(new FileReader(file0)); // ¶ÁÈ¡javaÎÄ¼ş
+			BufferedReader reader1 = new BufferedReader(new FileReader(file0)); // è¯»å–javaæ–‡ä»¶
 			String tempString1 = null;
 
 			int methodline = 0;
@@ -1506,7 +1506,7 @@ public class semantic {
 
 						value.extract = paraextract1(value.extract,tempString1);
 						SrcAction.classesMap.get(SrcAction.classname.get(a)).featureMap.put(key, value);
-//						System.out.println("È¡´Ê=="+SaveFileAction.classesMap.get(SaveFileAction.classname.get(a)).featureMap.get(key).extract);
+//						System.out.println("å–è¯=="+SaveFileAction.classesMap.get(SaveFileAction.classname.get(a)).featureMap.get(key).extract);
 						break;
 					}
 				}
@@ -1520,7 +1520,7 @@ public class semantic {
 				if(key!=null&&value.extract==null){
 					value.extract = splitthestring(value.extract,methodonlyname(key));
 					SrcAction.classesMap.get(SrcAction.classname.get(a)).featureMap.put(key, value);
-//					System.out.println("È¡´Ê=="+SaveFileAction.classesMap.get(SaveFileAction.classname.get(a)).featureMap.get(key).extract);
+//					System.out.println("å–è¯=="+SaveFileAction.classesMap.get(SaveFileAction.classname.get(a)).featureMap.get(key).extract);
 				}
 			}
 			barLisenter.endFile();
@@ -1530,7 +1530,7 @@ public class semantic {
 	
 	
 	/**
-	 * ´¦Àíº¯ÊıµÄÍÕ·åÎÊÌâ
+	 * å¤„ç†å‡½æ•°çš„é©¼å³°é—®é¢˜
 	 */
 
 	public static ArrayList<Integer> continuousCASE(String str) {
@@ -1583,7 +1583,7 @@ public class semantic {
 				id.add(i);
 			}
 		}
-		if (id.size() == str.length()) {// ¶¼ÊÇ´óĞ´×ÖÄ¸£¬ÓÃÏÂ»®Ïß·Ö¸î
+		if (id.size() == str.length()) {// éƒ½æ˜¯å¤§å†™å­—æ¯ï¼Œç”¨ä¸‹åˆ’çº¿åˆ†å‰²
 			id.clear();
 			for (int i = 0; i < ch.length; i++) {
 
@@ -1908,7 +1908,7 @@ public class semantic {
 			
 			num = bubsort(num);
 			if(num.length>2){
-			if(num.length % 2 == 0){//Å¼Êı
+			if(num.length % 2 == 0){//å¶æ•°
 				min  = (num[num.length/2 - 1] + num[num.length/2])/(double)2;
 			}else{
 				min  = num[(num.length + 1)/2];
@@ -1953,7 +1953,7 @@ public class semantic {
 			
 			num = bubsort(num);
 			if(num.length>2){
-			if(num.length % 2 == 0){//Å¼Êı
+			if(num.length % 2 == 0){//å¶æ•°
 				min  = (num[num.length/2 - 1] + num[num.length/2])/(double)2;
 			}else{
 				min  = num[(num.length + 1)/2];
@@ -1995,7 +1995,7 @@ public class semantic {
 			
 			num = bubsort(num);
 			if(num.length>2){
-			if(num.length % 2 == 0){//Å¼Êı
+			if(num.length % 2 == 0){//å¶æ•°
 				min  = (num[num.length/2 - 1] + num[num.length/2])/(double)2;
 			}else{
 				min  = num[(num.length + 1)/2];
@@ -2057,7 +2057,7 @@ public class semantic {
 			DoubleMatrix2D newA = VSM.getnewA(U, S, V);
 
 			for (int i = 0; i < n; i++) {
-				x[i] = VSM.cosineMatrix(newA,i);// x[i]ÎªµÚi¸ö·½·¨ÓëËùÓĞ·½·¨¼ÆËãµÄÓàÏÒÖµ£¨ËùÓĞµÚiĞĞ£©
+				x[i] = VSM.cosineMatrix(newA,i);// x[i]ä¸ºç¬¬iä¸ªæ–¹æ³•ä¸æ‰€æœ‰æ–¹æ³•è®¡ç®—çš„ä½™å¼¦å€¼ï¼ˆæ‰€æœ‰ç¬¬iè¡Œï¼‰
 
 			}
 
@@ -2080,7 +2080,7 @@ public class semantic {
 		return x;
 	}
 	
-	// Ğ´ÎÄ¼şº¯Êı
+	// å†™æ–‡ä»¶å‡½æ•°
 	  	public static void writeByFileWrite(String _sDestFile, String _sContent)
 
 	  	throws IOException {
@@ -2112,7 +2112,7 @@ public class semantic {
 	  	}
 
 	
-	/**½«MatrixĞÍ¾ØÕó×ªÎªDoubleMatrix2DĞÎÊ½
+	/**å°†Matrixå‹çŸ©é˜µè½¬ä¸ºDoubleMatrix2Då½¢å¼
 	 * @param a
 	 * @return
 	 */

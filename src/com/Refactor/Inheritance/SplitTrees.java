@@ -29,9 +29,9 @@ import java.util.ArrayList;
 
 public class SplitTrees {
 	
-	public int TreeIndex;//levelsÖĞµÚ¼¸¸öÊ÷ĞèÒª±»·Ö½â
-	int TreeNum;//±»·Ö½â³É¼¸¿ÃÊ÷
-	ArrayList<ArrayList<ArrayList<extend>>> levelSplit = new ArrayList<ArrayList<ArrayList<extend>>>();//Õâ¸ö¿ÃÊ÷·Ö½âµÄ½á¹¹
+	public int TreeIndex;//levelsä¸­ç¬¬å‡ ä¸ªæ ‘éœ€è¦è¢«åˆ†è§£
+	int TreeNum;//è¢«åˆ†è§£æˆå‡ æ£µæ ‘
+	ArrayList<ArrayList<ArrayList<extend>>> levelSplit = new ArrayList<ArrayList<ArrayList<extend>>>();//è¿™ä¸ªæ£µæ ‘åˆ†è§£çš„ç»“æ„
 	public double detaQ = 0;
 	public int move = 0;//cost
 	public int getTreeNum() {

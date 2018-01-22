@@ -213,9 +213,9 @@ public class accuracy {
 			Group.add(tp);
 		}
 
-		ArrayList<ArrayList<Integer>> id = new ArrayList<ArrayList<Integer>>(); // A»®·ÖÖĞµÄÃ¿¸öcluster
-																				// ËùÓĞ¿ÉÄÜÊôÓÚ
-																				// GroupµÄË÷ÒıºÅ
+		ArrayList<ArrayList<Integer>> id = new ArrayList<ArrayList<Integer>>(); // Aåˆ’åˆ†ä¸­çš„æ¯ä¸ªcluster
+																				// æ‰€æœ‰å¯èƒ½å±äº
+																				// Groupçš„ç´¢å¼•å·
 
 		for (int i = 0; i < Apartition.size(); i++) {
 			ArrayList<Integer> count = new ArrayList<Integer>(Bpartition.size());
@@ -251,7 +251,7 @@ public class accuracy {
 
 		int relationCollectionlength = 0;
 		int relationCollectionLen = 1;
-		for (int i = 0; i < id.size(); i++) {// ×îÍâ²ãÑ­»·
+		for (int i = 0; i < id.size(); i++) {// æœ€å¤–å±‚å¾ªç¯
 
 			relationCollectionLen = relationCollectionLen * id.get(i).size();
 			relationCollectionlength = relationCollectionlength + id.get(i).size();
@@ -307,6 +307,6 @@ public class accuracy {
 		return MoJOFM;
 	}
 
-	// ÔİÊ±´æ·Å½á¹ûµÄ³¤¶ÈÎªnodeNumÊı×é
+	// æš‚æ—¶å­˜æ”¾ç»“æœçš„é•¿åº¦ä¸ºnodeNumæ•°ç»„
 
 }

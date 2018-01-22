@@ -180,8 +180,8 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 			levelsRefactor = RefactorInheritance.RefactorEachLevel(log1,
 					levelsRefactor, preprocessing.extendsMatrix.clone(),
 					barLisenter);
-			SplitTree = RefactorInheritance.TidyResults(levelsRefactor);// ĞèÒª±»·Ö½âµÄÊ÷
-																		// ĞÅÏ¢
+			SplitTree = RefactorInheritance.TidyResults(levelsRefactor);// éœ€è¦è¢«åˆ†è§£çš„æ ‘
+																		// ä¿¡æ¯
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -196,7 +196,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 		// RefactorInheritance.rv.SplitTree = SplitTree;
 
 		/**
-		 * ·â×°Êı¾İ
+		 * å°è£…æ•°æ®
 		 */
 		InheritSuggestions suggestions = new InheritSuggestions(SplitTree,
 				RefactorInheritance.Q_Orig, RefactorInheritance.Q_Undo);
@@ -207,7 +207,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨ÒéÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®é¢æ¿
 	 * 
 	 * @return
 	 */
@@ -252,7 +252,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÓÒÏÂ
+	 * æ„å»ºå³ä¸‹
 	 * 
 	 * @param data
 	 * 
@@ -313,9 +313,9 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÕÛÏßÍ¼Ãæ°å
+	 * æ„å»ºæŠ˜çº¿å›¾é¢æ¿
 	 * 
-	 * @return ÕÛÏßÍ¼Ãæ°å
+	 * @return æŠ˜çº¿å›¾é¢æ¿
 	 */
 	private JPanel buildCenterPanelLeftDownJPanel(Data data) {
 		JPanel resultPanel = new JPanel(new BorderLayout());
@@ -348,7 +348,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨Òé½µĞòÅÅÁĞµÄÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®é™åºæ’åˆ—çš„é¢æ¿
 	 * 
 	 * @param list
 	 * @param title
@@ -358,7 +358,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 
 		JPanel resultPanel = new JPanel(new BorderLayout());
 
-		// ÖĞ¼äÏÔÊ¾Ãæ°å
+		// ä¸­é—´æ˜¾ç¤ºé¢æ¿
 		JPanel centerPanel = buildPanel(data, title);
 
 		JPanel s = new JPanel();
@@ -377,11 +377,11 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * ¹¹½¨ÖØ¹¹½¨ÒéÎÄ±¾¿òÃæ°å
+	 * æ„å»ºé‡æ„å»ºè®®æ–‡æœ¬æ¡†é¢æ¿
 	 * 
 	 * @param data
 	 * @param title
-	 * @return ÖØ¹¹½¨ÒéÎÄ±¾¿òÃæ°å
+	 * @return é‡æ„å»ºè®®æ–‡æœ¬æ¡†é¢æ¿
 	 */
 	private JPanel buildPanel(Data data, String title) {
 		InheritSuggestion advicePanel = new InheritSuggestion(data);
@@ -389,7 +389,7 @@ public class InheritRefactorAction extends AbstractAction implements Runnable {
 	}
 
 	/**
-	 * µÃµ½ÓÃ»§Ñ¡ÔñÒªÖØ¹¹µÄÁªÍ¨Æ¬µÄË÷Òı
+	 * å¾—åˆ°ç”¨æˆ·é€‰æ‹©è¦é‡æ„çš„è”é€šç‰‡çš„ç´¢å¼•
 	 * 
 	 * @param checkBoxList
 	 * @return indexList

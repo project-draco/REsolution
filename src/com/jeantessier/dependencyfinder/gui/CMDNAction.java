@@ -65,7 +65,7 @@ import com.sun.media.sound.ModelAbstractChannelMixer;
 
 public class CMDNAction extends AbstractAction implements Runnable{	
 	
-	//ÁªÍ¨Æ¬
+	//è”é€šç‰‡
 	
 	public static boolean flag = false;
 	
@@ -113,7 +113,7 @@ public class CMDNAction extends AbstractAction implements Runnable{
 
 	private JPanel buildOptionPanel() {
 		JPanel jPanel = model.getControlCheckjPanel();
-		//×¼±¸Êı¾İ
+		//å‡†å¤‡æ•°æ®
 		String fileName = "method_list.xml";
 		List<List<String>> unicomFilmList = null;
 		try {
@@ -124,7 +124,7 @@ public class CMDNAction extends AbstractAction implements Runnable{
 					"system tips", JOptionPane.YES_OPTION, JOptionPane.INFORMATION_MESSAGE);
 		}
 
-//		 ´´½¨checkboxLIst
+//		 åˆ›å»ºcheckboxLIst
 		List<JCheckBox> checkBoxList = model.getCheckBoxList();
 		List<JButton> buttonList = model.getButtonList();
 		
@@ -149,7 +149,7 @@ public class CMDNAction extends AbstractAction implements Runnable{
 				detailButton.setActionCommand("detail_"+i);
 				buttonList.add(detailButton);
 			}
-			// Ìí¼Óµ½Ãæ°åÖĞ			
+			// æ·»åŠ åˆ°é¢æ¿ä¸­			
 			GridBagPanel checkPanel = new GridBagPanel();
 			
 			for (int i = 0; i < checkBoxList.size(); i++) {
@@ -174,18 +174,18 @@ public class CMDNAction extends AbstractAction implements Runnable{
 	}
 
 	/**
-	 * ¹¹½¨½á¹ûÃæ°åÓÒ±ßÃæ°åµÄÑ¡Ïî¿¨Ãæ°å
+	 * æ„å»ºç»“æœé¢æ¿å³è¾¹é¢æ¿çš„é€‰é¡¹å¡é¢æ¿
 	 * @author revo
 	 */
 	private JPanel buildResultPanelTabbedPane() {
 		
 		JPanel panel = new JPanel(new GridLayout(1,2));
 		
-		//×¼±¸Êı¾İ
+		//å‡†å¤‡æ•°æ®
 		String inhentance_DATA = Node.NODE_TYPE_INHERITANCE+"_net.xml";
 		String non_inhentance_DATA = Node.NODE_TYPE_NON_INHERITANCE+"_net.xml";
 		
-		//¹¹½¨Ãæ°åÄÚÈİ
+		//æ„å»ºé¢æ¿å†…å®¹
 		JPanel inhentance;
 		JPanel non_inhentance;
 		try {
@@ -215,14 +215,14 @@ public class CMDNAction extends AbstractAction implements Runnable{
 		
 		JPanel result = new JPanel(new BorderLayout());
 		
-		//ÖĞÑëÃæ°å
+		//ä¸­å¤®é¢æ¿
 		JPanel  centerjPanel =new JPanel(new BorderLayout());
 		JPanel titlePanel = new JPanel();
 		titlePanel.add(new JLabel(title));
 		centerjPanel.add(titlePanel,BorderLayout.NORTH);
 		centerjPanel.add(data, BorderLayout.CENTER);
 		
-		//ËÄ±ßÃæ°å
+		//å››è¾¹é¢æ¿
 		JPanel n = new JPanel();
 		JPanel w = new JPanel();
 		JPanel e = new JPanel();
