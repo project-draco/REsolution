@@ -319,9 +319,9 @@ public class semantic {
 			String str1[] = {};
 			str1 = SrcAction.classname.get(a).split("\\.");
 			if (str1.length > 1) {
-				filename = str1[0] + "\\";
+				filename = str1[0] + File.separator;
 				for (int b = 1; b < str1.length - 1; b++) {
-					filename = filename + str1[b] + "\\";
+					filename = filename + str1[b] + File.separator;
 				}
 				filename = filename + str1[str1.length - 1] + ".java";
 			}
@@ -1469,9 +1469,9 @@ public class semantic {
 			String str1[] = {};
 			str1 = SrcAction.classname.get(a).split("\\.");
 			if (str1.length > 1) {
-				filename = str1[0] + "\\";
+				filename = str1[0] + File.separator;
 				for (int b = 1; b < str1.length - 1; b++) {
-					filename = filename + str1[b] + "\\";
+					filename = filename + str1[b] + File.separator;
 				}
 				if (str1[str1.length - 1].contains("$")) {
 					int v = str1[str1.length - 1].indexOf("$");

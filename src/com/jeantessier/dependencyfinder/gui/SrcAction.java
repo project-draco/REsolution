@@ -178,6 +178,7 @@ public class SrcAction extends AbstractAction implements Runnable {
     public void run() {
     	Date start = new Date();
     	
+        final ProgressBarLisenter barLisenter = new ProgressBarLisenter();
         try {
         	
             model.getStatusLine().showInfo("Saving " + file.getName() + " ...");
@@ -200,7 +201,6 @@ public class SrcAction extends AbstractAction implements Runnable {
             	return;
             }
 
-            final ProgressBarLisenter barLisenter = new ProgressBarLisenter();
         	final CircleProgressBar progressBar = new CircleProgressBar();
         	SwingUtilities.invokeLater(new Runnable() {
     			@Override
@@ -227,11 +227,16 @@ public class SrcAction extends AbstractAction implements Runnable {
             System.out.println();
             System.out.println("解析+重构用时：" + (time2-time1));
             
-            barLisenter.endSession();
+            Date stop = new Date();
+
+            model.getStatusLine().showInfo("Done (" + ((stop.getTime() - start.getTime()) / (double) 1000) + " secs).");
         } catch (Exception e) {
+            e.printStackTrace();
         	
         	FileUtils.fileWrite("src.log", e.getMessage());
             model.getStatusLine().showError("Cannot save: " + e.getClass().getName() + ": " + e.getMessage());
+        } finally {
+            barLisenter.endSession();
         }
 //       catch (SAXException e) {
 //			// TODO Auto-generated catch block
@@ -240,9 +245,6 @@ public class SrcAction extends AbstractAction implements Runnable {
 //			// TODO Auto-generated catch block
 //			e.printStackTrace();
 //		}
-        Date stop = new Date();
-
-        model.getStatusLine().showInfo("Done (" + ((stop.getTime() - start.getTime()) / (double) 1000) + " secs).");
         model.setTitle("REsolution - Src");
         model.activeNext(this);
         model.inactiveAt(1);
