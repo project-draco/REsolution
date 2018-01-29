@@ -1157,7 +1157,7 @@ public class semantic {
 												/**
 												 * 新增几种例外 final && String[]
 												 */
-												if (yy[0].equals("final")) {
+												if (yy[0].equals("final") && yy.length > 2) {
 													ok = yy[1];
 													ok2 = yy[2];
 												} else {
