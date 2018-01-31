@@ -868,7 +868,7 @@ public class semantic {
 											break;
 										}
 										yy = ok.split(" ");
-										if (yy[0].equals("final")) {
+										if (yy[0].equals("final") && yy.length > 2) {
 											ok = yy[1];
 											ok2 = yy[2];
 										} else {
@@ -945,7 +945,7 @@ public class semantic {
 										continue;
 									}
 									yy = ok.split(" ");
-									if (yy[0].equals("final")) {
+									if (yy[0].equals("final") && yy.length > 2) {
 										ok = yy[1];
 										ok2 = yy[2];
 									} else {
@@ -1208,7 +1208,7 @@ public class semantic {
 											}
 
 											yy = ok.split(" ");
-											if (yy[0].equals("final")) {
+											if (yy[0].equals("final") && yy.length > 2) {
 												ok = yy[1];
 												ok2 = yy[2];
 											} else {
