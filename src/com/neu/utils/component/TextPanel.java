@@ -120,9 +120,14 @@ public class TextPanel extends JPanel {
                         }  
                     }  
                     if (e.getClickCount() == 2) {//双击  
-                        String[] lines = text.getText().split("\n");  
+                        String[] lines = text.getText().split("\n");
+                        for (String s : lines) {
+							UndoEntity entity = NewFrame.entityFromStoreLine(s);
+							String[] arr = entity.getTarget().split("\\.");
+							System.out.println(entity.getEntityname()+";"+arr[arr.length-1]);
+						}
                         String store = lines[line];  
-                        System.out.println(store); 
+                        //System.out.println(store); 
                         
                         NewFrame newFrame = new NewFrame(store);
                         (new Thread(newFrame)).start();
@@ -207,9 +212,8 @@ class NewFrame extends JFrame implements Runnable{
 		Suggestions sg = NonInheritanceRefactoring.sgs;
 		
 		if (store.indexOf("Method")>=0) {
-			
-			int index = Integer.parseInt(store.split(" ")[0]);
-			UndoEntity entity = sg.getUndoEntitySort().get(index - 1);
+		
+			UndoEntity entity = entityFromStoreLine(store);
 
 			contentStr += "Method:" + entity.getEntityname() + "\r\n";
 			contentStr += "Source Class:" + entity.getSource() + "\r\n";
@@ -289,6 +293,13 @@ class NewFrame extends JFrame implements Runnable{
 		
 		
 		return contentStr;
+	}
+
+	public static UndoEntity entityFromStoreLine(String store) {
+		Suggestions sg = NonInheritanceRefactoring.sgs;
+		int index = Integer.parseInt(store.split(" ")[0]);
+		UndoEntity entity = sg.getUndoEntitySort().get(index - 1);
+		return entity;
 	}
 
 	public void run() {
