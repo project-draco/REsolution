@@ -192,6 +192,10 @@ public class FileViewer {
 		
 		String regex="package";
 		
+        if (strlines == null) {
+            return null;
+        }
+
 		for (String string : strlines) {
 			
 			//System.out.println(string.indexOf(regex));

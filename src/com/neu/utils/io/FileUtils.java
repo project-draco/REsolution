@@ -65,8 +65,10 @@ public class FileUtils {
 		FileOutputStream fopstream=null;
 		try {
 			fopstream=new FileOutputStream(file);
-			fopstream.write(str.getBytes());
-		} catch (Exception e1) {
+            if (str != null) {
+                fopstream.write(str.getBytes());
+            }
+		} catch (Throwable e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}finally{
