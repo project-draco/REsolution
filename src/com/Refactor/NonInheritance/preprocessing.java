@@ -299,10 +299,10 @@ public class preprocessing {
 		ArrayList<MergeMethodNonInheri> MethodsToBeMerged = new ArrayList<MergeMethodNonInheri>();
 		int threhold = 20;
 		ArrayList<ArrayList<String>> Allcc = new ArrayList<ArrayList<String>>();
-		if(preprocessing.DSC>7){
+		/*if(preprocessing.DSC>7)*/{
 		Allcc = CMN.CommunityDetectionNoextentsClass(remainMatrix,threhold);//将非继承体系的类及叶子叶节点分成几个社区
-		}else{
-			Allcc = tool.processExample(Allcc);
+		//}else{
+		//	Allcc = tool.processExample(Allcc);
 		}
 		int   mm  = 0;
 		int   mmm  = 0;
